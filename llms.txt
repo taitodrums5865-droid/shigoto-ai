@@ -5,5 +5,6 @@
 記事は各サービスの公式情報を調べてまとめ、出典を示し、定期的に見直しています。
 
 ## 記事
+- [AIスクール比較、給付金対象で絞る3つの軸](https://shigoto.aobaworks.com/ai-school-comparison-subsidy/): AIスクール比較で迷ったら、給付金の対象講座か・自分が受給条件を満たすか・自己負担の総額はいくらかの3つで絞ります。無料カウンセリングで聞く質問と申し込み前の手順まで、2026年10月時点でまとめました。
 - [ChatGPT GAS自動化、始め方の3手順](https://shigoto.aobaworks.com/chatgpt-gas-automation-start/): ChatGPTでGAS(Google Apps Script)の自動化を始めるやり方を3手順で解説。コードの頼み方、権限の承認、試しモードでの確認、社内承認、OpenAI APIのキー管理と料金まで公式情報で整理。テンプレートつき。
 - [ChatGPT Claude Copilot使い分けの基準](https://shigoto.aobaworks.com/chatgpt-claude-copilot-tsukaiwake/): ChatGPT Claude Copilot 使い分けに迷う人へ。資料作成はChatGPT、社内データ参照はMicrosoft 365 Copilot、長文コード生成はClaudeと、シーン別に1つに絞って公式情報から理由・料金・注意点を解説します。
