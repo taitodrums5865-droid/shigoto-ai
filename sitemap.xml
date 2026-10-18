@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://shigoto.aobaworks.com/</loc><lastmod>2026-10-17</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/</loc><lastmod>2026-10-19</lastmod></url>
 <url><loc>https://shigoto.aobaworks.com/about/</loc></url>
 <url><loc>https://shigoto.aobaworks.com/privacy/</loc></url>
-<url><loc>https://shigoto.aobaworks.com/tag/</loc><lastmod>2026-10-17</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/tag/</loc><lastmod>2026-10-19</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/claude-shikata-muryou-hani/</loc><lastmod>2026-10-19</lastmod></url>
 <url><loc>https://shigoto.aobaworks.com/claude-howto-beginner-3steps/</loc><lastmod>2026-10-17</lastmod></url>
 <url><loc>https://shigoto.aobaworks.com/ai-school-comparison-subsidy/</loc><lastmod>2026-10-15</lastmod></url>
 <url><loc>https://shigoto.aobaworks.com/chatgpt-gas-automation-start/</loc><lastmod>2026-10-15</lastmod></url>
 <url><loc>https://shigoto.aobaworks.com/chatgpt-claude-copilot-tsukaiwake/</loc><lastmod>2026-10-14</lastmod></url>
-<url><loc>https://shigoto.aobaworks.com/tag/chatgpt/</loc><lastmod>2026-10-17</lastmod></url>
-<url><loc>https://shigoto.aobaworks.com/tag/claude/</loc><lastmod>2026-10-17</lastmod></url>
-<url><loc>https://shigoto.aobaworks.com/tag/%E7%94%9F%E6%88%90ai/</loc><lastmod>2026-10-17</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/tag/chatgpt/</loc><lastmod>2026-10-19</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/tag/claude/</loc><lastmod>2026-10-19</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/tag/%E4%BD%BF%E3%81%84%E6%96%B9/</loc><lastmod>2026-10-19</lastmod></url>
+<url><loc>https://shigoto.aobaworks.com/tag/%E7%94%9F%E6%88%90ai/</loc><lastmod>2026-10-19</lastmod></url>
 </urlset>
