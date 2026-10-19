@@ -5,6 +5,7 @@
 記事は各サービスの公式情報を調べてまとめ、出典を示し、定期的に見直しています。
 
 ## 記事
+- [Claude Code使い方|無料の範囲と料金表・導入7手順](https://shigoto.aobaworks.com/claude-code-how-to-use-free/): claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。
 - [Claudeの使い方|無料で始める4手順とProに替える判断表](https://shigoto.aobaworks.com/claude-shikata-muryou-hani/): 「claude 使い方 無料」で調べた人向けに、無料プランでできることと始め方の4手順を説明します。公式ヘルプをもとに、5時間ごとの利用制限、使える量が減りやすい使い方、Proに替える目安も表にしました。
 - [Claude使い方、初心者がまず押さえる3手順](https://shigoto.aobaworks.com/claude-howto-beginner-3steps/): Claudeの使い方を初心者向けに3手順で解説。無料登録と最初に見る設定、最初に入れる文章のひな形、返答の直させ方まで、画面の言葉どおりに紹介します。つまずきやすい所の直し方と料金の目安ものせています。
 - [AIスクール比較、給付金対象で絞る3つの軸](https://shigoto.aobaworks.com/ai-school-comparison-subsidy/): AIスクール比較で迷ったら、給付金の対象講座か・自分が受給条件を満たすか・自己負担の総額はいくらかの3つで絞ります。無料カウンセリングで聞く質問と申し込み前の手順まで、2026年10月時点でまとめました。

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude Code使い方|無料の範囲と料金表・導入7手順 | AIツール比較</title><meta name="description" content="claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。"><link rel="canonical" href="https://shigoto.aobaworks.com/claude-code-how-to-use-free/">
+<meta property="og:type" content="article"><meta property="og:title" content="Claude Code使い方|無料の範囲と料金表・導入7手順 | AIツール比較"><meta property="og:description" content="claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。">
+<meta property="og:url" content="https://shigoto.aobaworks.com/claude-code-how-to-use-free/"><meta property="og:site_name" content="AIツール比較"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://shigoto.aobaworks.com/og/claude-code-how-to-use-free.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta property="article:published_time" content="2026-10-20">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#151719" media="(prefers-color-scheme: dark)"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='8' fill='%23fbfaf6' stroke='%231d2329' stroke-width='5'/%3E%3Ctext x='32' y='45' font-size='36' font-weight='700' text-anchor='middle' fill='%231d2329' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AIツール比較" href="/feed.xml"><style>:root{--ink:#1d2329;--sub:#5a6470;--line:#e2dfd6;--bg:#fbfaf6;--card:#fff;--accent:#1f6f5c;--code:#f1efe8;--mark:#7a5c1e;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--ink:#e6e5df;--sub:#a5abb1;--line:#363a3e;--bg:#151719;--card:#1c1f22;--accent:#72c6ac;--code:#24282b;--mark:#d8b56c}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.9 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;overflow-wrap:break-word;line-break:strict}
+a{color:var(--accent);text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header,main,footer{max-width:740px;margin:0 auto;padding:0 20px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 18px;padding-top:18px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.brand{font-weight:800;font-size:1.1875rem;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.gnav{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:0.875rem}.gnav a{color:var(--sub);text-decoration:none}.gnav a:hover{color:var(--accent)}
+.tag{color:var(--sub);font-size:0.875rem;margin:0;flex-basis:100%;line-height:1.6}
+h1{font-size:clamp(25px,5.6vw,33px);line-height:1.4;margin:22px 0 10px;letter-spacing:.01em}
+h2{font-size:clamp(21px,4.4vw,24px);line-height:1.45;margin:44px 0 12px;padding-top:14px;border-top:2px solid var(--ink)}
+h3{font-size:1.1875rem;line-height:1.5;margin:30px 0 8px;padding-left:10px;border-left:4px solid var(--mark)}h4{font-size:1.0625rem;margin:22px 0 6px}
+p{margin:0 0 1.05em}li{margin:.25em 0}ul,ol{padding-left:1.4em}strong{font-weight:700}
+.crumbs{font-size:0.8438rem;color:var(--sub);margin:16px 0 0;line-height:1.6}.crumbs a{color:var(--sub)}.crumbs span{margin:0 6px}
+.meta{color:var(--sub);font-size:0.875rem;margin:4px 0 10px}.meta time{font-variant-numeric:tabular-nums}
+.hero{display:block;width:100%;height:auto;aspect-ratio:1200/630;border:1px solid var(--line);border-radius:6px;margin:10px 0 6px}
+.tags{margin:8px 0 14px;line-height:2}.tags a{display:inline-block;font-size:0.8125rem;line-height:1.7;padding:0 10px;margin:0 6px 4px 0;border:1px solid var(--line);border-radius:999px;color:var(--sub);text-decoration:none;background:var(--card)}
+.tags a:hover{border-color:var(--accent);color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 20px 10px;margin:20px 0 28px}.toc p{margin:0 0 4px;font-size:0.9375rem}
+.toc ol{margin:0;padding-left:1.4em;font-size:0.9375rem;line-height:1.7}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{color:var(--accent);text-decoration:underline}
+.note{font-size:0.875rem;color:var(--sub);background:var(--code);border-radius:6px;padding:8px 12px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.88em}
+pre{background:var(--code);border:1px solid var(--line);padding:14px 16px;border-radius:6px;overflow:auto;font-size:0.875rem;line-height:1.6}pre code{background:none;padding:0;font-size:inherit}
+blockquote{margin:18px 0;padding:6px 16px;border-left:3px solid var(--accent);color:var(--sub);background:var(--card)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 22px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:0.9375rem;line-height:1.65}.tbl table{margin:0}main>table{display:block;overflow-x:auto;margin:18px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;min-width:6.5em}th{background:var(--code);font-weight:700}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(127,127,127,.05)}
+.tbl th:first-child,.tbl td:first-child,main>table th:first-child,main>table td:first-child{position:sticky;left:0;z-index:1;background:var(--card);box-shadow:inset -1px 0 0 var(--line)}.tbl thead th:first-child,main>table thead th:first-child{z-index:2;background:var(--s2,var(--code))}
+img{max-width:100%;height:auto;border-radius:4px}
+.list{list-style:none;padding:0;margin:8px 0}.list li{padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+.list a{font-size:1.1875rem;font-weight:700;line-height:1.5;text-decoration:none;color:var(--ink)}.list a:hover{color:var(--accent);text-decoration:underline}
+.list p{margin:6px 0 0;color:var(--sub);font-size:0.9375rem;line-height:1.75}.list .d{font-size:0.8125rem;color:var(--sub);margin:0 0 2px}
+.lead{color:var(--sub);font-size:1rem}.hubs{margin:10px 0 24px}
+.related{margin-top:44px;padding-top:6px;border-top:1px solid var(--line)}.related h2{margin-top:26px}
+.list h2,.list h3{margin:2px 0 6px;font-size:1.1875rem;line-height:1.5}.list h2 a,.list h3 a{color:var(--ink);text-decoration:none}
+.toc-h{font-weight:700;margin:0 0 6px}
+.brand-sub{font-weight:400;font-size:0.875rem;color:var(--sub);margin-left:10px}
+.site-foot p,body>footer p{margin:0 0 6px}
+.credit{margin-top:32px;padding-top:12px;border-top:1px solid var(--line);font-size:0.8438rem;color:var(--sub)}
+footer{color:var(--sub);font-size:0.8438rem;padding:28px 20px 40px;margin-top:56px;border-top:2px solid var(--ink);line-height:2}footer a{color:var(--sub)}
+td:first-child{min-width:8.5em}
+@media (max-width:600px){body{font-size:1.0312rem;line-height:1.85}header{padding-top:14px;padding-bottom:10px}header .tag{display:none}.list a{font-size:1.0938rem}th,td{padding:8px 10px;font-size:0.9062rem}}/* ui.py(共通の動く部品) */
+/* デザインの決まり v2(2026-10-17 design-harness/docs/デザインシステムの研究.md: 押す場所44px・見えるフォーカス枠) */
+button,.btn,.ui-menu-btn,.ui-fab button,.ui-fab a,.ui-tablist button{min-height:44px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.pills a,.tags a{min-height:32px;display:inline-flex;align-items:center}
+body > header{position:relative;padding-right:120px}body > header .ui-menu-btn{position:absolute;right:16px;top:14px}
+@media (max-width:700px){.site-nav,body > header .gnav{display:none}body > header{padding-right:100px}}
+.ui-bar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--accent);z-index:30}
+.ui-menu-btn{margin-left:auto;align-self:center;font:inherit;font-size:.9375rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.ui-menu-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ui-scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.ui-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);background:var(--card);border-left:1px solid var(--line);
+  transform:translateX(100%);transition:transform .22s ease;z-index:41;overflow-y:auto;padding:18px 20px 40px}
+.ui-open .ui-scrim{opacity:1;pointer-events:auto}.ui-open .ui-drawer{transform:none}
+.ui-drawer h2{font-size:.8125rem;letter-spacing:.02em;color:var(--sub);margin:22px 0 8px;font-weight:700}
+.ui-drawer .ui-x{float:right;font:inherit;font-size:.875rem;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--sub)}
+.ui-drawer ul,.ui-drawer ol{list-style:none;padding:0;margin:0}.ui-drawer li{margin:0;border-bottom:1px solid var(--line)}
+.ui-drawer li a{display:block;padding:10px 4px;text-decoration:none;color:var(--ink);font-size:.96875rem;line-height:1.45}
+.ui-drawer li a:hover,.ui-drawer li a.on{color:var(--accent)}.ui-drawer li a.on{font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
+.ui-fab{position:fixed;right:16px;bottom:18px;z-index:25;display:flex;gap:8px}
+.ui-fab button,.ui-fab a{font:inherit;font-size:.90625rem;background:var(--card);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none}
+.ui-fab .ui-next{background:var(--accent);border-color:var(--accent);color:var(--card);display:none}.ui-fab .ui-next.show{display:inline-block}
+.ui-fab .ui-top{display:none}.ui-fab .ui-top.show{display:inline-block}
+.ui-tabs{margin:8px 0 26px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.ui-tablist{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.ui-tablist button{flex:none;font:inherit;font-size:.9375rem;background:none;border:0;border-bottom:3px solid transparent;color:var(--sub);padding:12px 16px;cursor:pointer;white-space:nowrap}
+.ui-tablist button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+.ui-panel{padding:6px 18px 4px}.ui-panel[hidden]{display:none}.ui-panel>h3:first-child{margin-top:12px}
+.ui-faq details{border-bottom:1px solid var(--line)}.ui-faq details:first-of-type{border-top:1px solid var(--line)}
+.ui-faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 2px;font-weight:700;position:relative;line-height:1.45}
+.ui-faq summary::-webkit-details-marker{display:none}
+.ui-faq summary::after{content:"+";position:absolute;right:6px;top:12px;font-weight:400;font-size:1.25rem;color:var(--sub)}
+.ui-faq details[open] summary::after{content:"−"}.ui-faq .ui-a{padding:0 2px 8px}
+.ui-sum{border:2px solid var(--ink);border-radius:10px;background:var(--card);padding:14px 18px 10px;margin:4px 0 26px}
+.ui-sum-h{font-weight:800;font-size:.9375rem;margin:0 0 6px}.ui-sum ul{margin:0 0 8px;padding-left:20px}.ui-sum li{margin:4px 0;font-size:1.03125rem;line-height:1.55}
+.ui-sum-who{font-size:.9375rem;color:var(--sub);margin:0 0 4px;border-top:1px solid var(--line);padding-top:8px}
+.table-wrap{max-height:80vh;overflow:auto}.table-wrap thead th{position:sticky;top:0;z-index:1}
+.table-wrap td:first-child,.table-wrap th:first-child{position:sticky;left:0;background:var(--card);z-index:1}.table-wrap thead th:first-child{z-index:2;background:var(--pre,var(--card))}
+.ui-kicker{margin:28px 0 4px;font-weight:700;color:var(--accent);font-size:.9375rem}.ui-hero{font-size:2.125rem;line-height:1.35;margin:0 0 22px;max-width:22em;text-wrap:balance;word-break:auto-phrase}
+@media (max-width:600px){.ui-hero{font-size:1.625rem}}
+.ui-cards{display:grid;grid-template-columns:1fr;gap:18px;list-style:none;padding:0}
+.ui-cards>li{display:grid;grid-template-columns:200px 1fr;gap:4px 18px;align-items:start;border:1px solid var(--line)!important;border-radius:12px;background:var(--card);padding:14px!important;margin:0}
+.ui-cards>li>*{grid-column:2}.ui-cards .ui-thumb-a{grid-column:1;grid-row:1 / span 4}
+.ui-cards .ui-thumb{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.ui-cards>li.ui-noimg{grid-template-columns:1fr}.ui-cards>li.ui-noimg>*{grid-column:1}
+.ui-cards>li:hover{border-color:var(--accent)!important}
+@media (max-width:600px){.ui-cards>li{grid-template-columns:1fr}.ui-cards>li>*,.ui-cards .ui-thumb-a{grid-column:1}.ui-cards .ui-thumb-a{grid-row:auto}}
+.ui-side{display:none}
+@media (min-width:1240px){.ui-side{display:block;position:fixed;top:96px;left:calc(50% + 400px);width:260px;max-height:calc(100vh - 140px);overflow-y:auto;font-size:.875rem;border-left:1px solid var(--line);padding-left:14px}
+.ui-side p{font-weight:700;color:var(--sub);margin:0 0 6px;font-size:.8125rem}.ui-side ol{list-style:none;padding:0;margin:0}.ui-side li{margin:0}
+.ui-side a{display:block;padding:5px 0;color:var(--sub);text-decoration:none;line-height:1.4}.ui-side a:hover,.ui-side a.on{color:var(--accent)}.ui-side a.on{font-weight:700}
+.ui-fab button{display:none}}
+@media (prefers-reduced-motion:reduce){.ui-drawer,.ui-scrim{transition:none}html{scroll-behavior:auto}}
+@media print{.ui-bar,.ui-fab,.ui-drawer,.ui-scrim,.ui-menu-btn{display:none}}
+:root{--font-body:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","BIZ UDPGothic",Meiryo,system-ui,sans-serif;--font-head:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","BIZ UDPMincho",serif;--font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;--mark-ch:"AI";--mark-fs:.75rem;--fs-body:1.0625rem;--lh-body:1.85;--ls-body:.02em;--ls-head:.02em;--measure:40em;--page:1120px;--col:44rem;--danger-bg:#faf3e8;--danger-tx:#6e4a12;--danger-bd:#c8a46e;--warn-bg:#faf3e8;--warn-tx:#6e4a12;--warn-bd:#c8a46e;--ok-bg:#f5f6f8;--ok-tx:#1b1f24;--code-bg:var(--s2);--code-ink:var(--ink);--code-sub:var(--sub);--code-line:var(--line);--bg:#ffffff;--card:#ffffff;--surface:#ffffff;--s2:#f5f6f8;--pre:#f5f6f8;--ink:#1b1f24;--sub:#4f5964;--line:#e3e6ea;--border:#8a939d;--accent:#1f4f7a;--link:#1f4f7a;--on-accent:#ffffff;--due-bg:#faf3e8;--due-tx:#6e4a12;--focus:#1f4f7a;--head-bg:#ffffff;--head-ink:#1b1f24;--head-sub:#4f5964;--hover:#f6f7f9;}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}}
+:root[data-theme=dark]{--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}
+
+/* ===== 見た目 v3(ui.py theme_css)。古い CSS のあとに読み込み、上書きする ===== */
+html{scroll-padding-top:16px}
+body{font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-body);background:var(--bg);color:var(--ink);
+  font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+html[lang=ja] body{line-break:strict;overflow-wrap:anywhere;text-autospace:ideograph-alpha;text-spacing-trim:normal}
+h1,h2,h3,h4{font-family:var(--font-head);letter-spacing:var(--ls-head);color:var(--ink);text-wrap:balance}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3{font-feature-settings:"palt";word-break:auto-phrase}
+h1,.ui-hero{font-size:clamp(1.75rem,1.35rem + 1.7vw,2.5rem);line-height:1.25;font-weight:750;margin:.5rem 0 1rem}
+html[lang=ja] h1,html[lang=ja] .ui-hero{line-height:1.45;font-weight:700}
+h2{font-size:clamp(1.375rem,1.2rem + .7vw,1.75rem);line-height:1.3;font-weight:700;margin:3rem 0 .75rem;padding-top:0;border-top:0}
+html[lang=ja] h2{line-height:1.5}
+h3{font-size:clamp(1.125rem,1.06rem + .3vw,1.25rem);line-height:1.4;font-weight:700;margin:2rem 0 .5rem;padding-left:0;border-left:0}
+h4{font-size:1.0625rem;margin:1.5rem 0 .4rem}
+p,ul,ol{margin:0 0 1.1em}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+strong{font-weight:700}
+html[lang=ja] em,html[lang=ja] i{font-style:normal;font-weight:700}
+.lede,.lead{font-size:1.1875rem;line-height:1.6;color:var(--sub);max-width:var(--measure)}
+html[lang=ja] .lede,html[lang=ja] .lead{font-size:1.0625rem;line-height:1.85}
+.meta,.crumbs{font-size:.875rem;color:var(--sub)}
+.crumbs{margin:1.25rem 0 0;white-space:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;text-overflow:ellipsis}.crumbs a{color:var(--sub)}
+.ui-kicker{display:none}
+main>h1:first-of-type,.ui-hero{margin-top:2.5rem}main>.crumbs+h1{margin-top:.75rem}
+
+/* ヘッダー: 全幅の帯・中は --page の幅。データのサイトは濃い帯(信頼・公的データの読み物の型: USWDS/GOV.UK の考え方。色は自分のもの) */
+body>header,body>header.site-head{max-width:none;margin:0;background:var(--head-bg);color:var(--head-ink);border-bottom:1px solid var(--line);padding:0}
+body>header:not(.site-head){display:flex;flex-wrap:wrap;align-items:center;gap:4px 20px;padding:12px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head .wrap{max-width:var(--page);display:flex;align-items:center;gap:8px 20px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--head-ink);text-decoration:none;font-family:var(--font-head);font-weight:750;font-size:1.25rem;letter-spacing:-.01em;line-height:1.2;min-height:44px}
+html[lang=ja] .brand{letter-spacing:.04em;font-weight:700}
+.brand svg{display:none}
+.brand::before{content:var(--mark-ch);flex:none;display:inline-grid;place-items:center;width:32px;height:32px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font:700 var(--mark-fs)/1 var(--font-body);letter-spacing:0}
+.brand-sub{font-family:var(--font-body);font-weight:400;font-size:.875rem;color:var(--head-sub);letter-spacing:0;margin-left:4px}
+.site-nav,.gnav{display:flex;gap:4px;margin-left:auto;font-size:.9375rem}
+.site-nav a,.gnav a{color:var(--head-sub);text-decoration:none;padding:10px 12px;margin:0;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.site-nav a:hover,.gnav a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+body>header .tag{order:5;flex-basis:100%;font-size:.875rem;color:var(--head-sub);margin:-4px 0 0;line-height:1.5}
+body>header .ui-menu-btn{position:static;order:4;margin-left:8px;background:transparent;color:var(--head-ink);border:1px solid var(--border);border-radius:6px;font-size:.9375rem;padding:8px 14px}
+body>header:not(.site-head){padding-right:max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head{padding-right:0}
+@media (max-width:700px){body>header .ui-menu-btn{margin-left:auto}.brand-sub{display:none}body>header .site-nav,body>header .gnav{display:none}}
+.brand{white-space:nowrap}
+
+/* 本文の列。データのサイトは広い面(表)+読む文は --measure まで(GOV.UK の 2/3 の列の考え方) */
+main{padding-bottom:3rem}
+.disclaimer{margin:20px 0 0;padding:10px 16px;border:0;border-left:4px solid var(--border);background:var(--s2);color:var(--sub);font-size:.875rem;line-height:1.55;border-radius:0 6px 6px 0;max-width:var(--measure)}
+.intro{padding:2.5rem 0 .5rem}
+blockquote{border-left:4px solid var(--border);background:transparent;color:var(--ink);padding:.25rem 0 .25rem 1rem;border-radius:0;margin:1.5rem 0}
+
+/* ボタン・チップ(押す場所 44px: Apple HIG / Material 3 は 48dp) */
+.ui-cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:1.5rem 0}
+.ui-btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid var(--border);border-radius:6px;background:var(--card);
+  color:var(--ink);font-weight:600;text-decoration:none;line-height:1.25}
+.ui-btn:hover{border-color:var(--ink);text-decoration:none}
+.ui-btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ui-btn-primary:hover{filter:brightness(1.08);border-color:var(--accent);color:var(--on-accent)}
+.ui-cta-note{color:var(--sub);font-size:.875rem}
+.ui-group{margin:1.25rem 0}
+.ui-group-h{font-weight:700;font-size:.9375rem;margin:0 0 .5rem;color:var(--ink)}
+.ui-chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.ui-chips li{margin:0}
+.ui-chips a{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);text-decoration:none;font-size:.9375rem;line-height:1.3}
+.ui-chips a:hover{border-color:var(--accent);color:var(--accent)}
+@media (pointer:coarse){.ui-chips a{min-height:44px}}
+.pills a,.tags a{border-radius:6px;border-color:var(--line);color:var(--ink);background:var(--card);font-size:.875rem;padding:4px 12px}
+.pills a:hover,.tags a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ホームの「いまの数字」と期限が近い表(USWDS の summary box と collection の考え方) */
+.ui-dash{margin:2rem 0 1rem}
+.ui-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;border:1px solid var(--line);border-radius:8px;background:var(--line);margin:0 0 .5rem;overflow:hidden}
+.ui-stats>div{padding:14px 18px;background:var(--card)}
+.ui-stats b{display:block;font-size:1.75rem;line-height:1.2;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--ink)}
+.ui-stats span{display:block;font-size:.875rem;color:var(--sub);line-height:1.45;margin-top:2px}
+.ui-src{font-size:.8125rem;color:var(--sub);margin:0 0 1.5rem}
+.ui-dash-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2rem 0 .75rem}
+.ui-dash-h h2{margin:0}
+.ui-dash-h a{font-weight:600}
+@media (max-width:600px){.ui-stats{grid-template-columns:1fr 1fr}.ui-stats>div:last-child:nth-child(odd){grid-column:1/-1}.ui-stats b{font-size:1.375rem}.ui-stats>div{padding:12px 14px}.lede,.lead{font-size:1.0625rem}h1,.ui-hero{font-size:1.75rem}
+  .ui-cta .ui-btn{flex:1 1 100%;justify-content:center}.disclaimer{font-size:.8125rem;padding:8px 12px}}
+
+/* 表(デジタル庁: 数字は右よせ・見出しは太字・スマホは表の中だけ動かす / Carbon: 行の高さをそろえる) */
+.table-wrap,.tbl{border:1px solid var(--line);border-radius:8px;background:var(--card);margin:0 0 1.5rem;overflow:auto}
+table{font-size:.9375rem;line-height:1.5;font-variant-numeric:tabular-nums;border-collapse:collapse;width:100%}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--s2);color:var(--ink);font-weight:700;font-size:.875rem;border-bottom:2px solid var(--border);white-space:nowrap}
+tbody tr:nth-child(even) td{background:transparent}
+tbody tr:hover td{background:var(--hover)}
+td:first-child a{font-weight:600}
+td.ui-num,th.ui-num{text-align:right;white-space:nowrap}
+td.ui-date{white-space:nowrap}
+button[data-sort]{font:inherit;font-size:.875rem;min-height:44px;padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button[data-sort][aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* 見出しの行がない表 = 項目と値(GOV.UK の summary list の型) */
+main table:not(:has(thead)){border-top:1px solid var(--line);margin:1rem 0 2rem;font-size:1rem;max-width:52rem}
+main table:not(:has(thead)) th{background:transparent;width:32%;font-weight:700;color:var(--ink);padding:14px 16px 14px 0;white-space:normal}
+main table:not(:has(thead)) td{padding:14px 0}
+main table:not(:has(thead)) tr:hover td{background:transparent}
+/* スマホ: 3列以上の表は1件ずつの箱に積む(USWDS の stacked table。ui.js が data-label をつける) */
+@media (max-width:640px){
+  table.ui-stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.ui-stack,table.ui-stack tbody,table.ui-stack tr,table.ui-stack td{display:block;width:auto}
+  table.ui-stack tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.ui-stack td{border:0;padding:2px 0;min-width:0;position:static;background:transparent!important;display:grid;grid-template-columns:7.5em 1fr;gap:8px;font-size:.9375rem}
+  table.ui-stack td::before{content:attr(data-label);color:var(--sub);font-size:.8125rem;font-weight:600;padding-top:2px}
+  table.ui-stack td:first-child{display:block;font-size:1rem;margin-bottom:4px}
+  table.ui-stack td:first-child::before{content:none}
+  table.ui-stack caption{display:block;width:auto;text-align:left}
+  table.ui-stack td.ui-num{text-align:left}
+  .table-wrap:has(table.ui-stack),.tbl:has(table.ui-stack){max-height:none;overflow:visible}
+}
+/* 期限の札(色だけにせず「あと3日」と文字で) */
+.ui-due{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:4px;font-size:.8125rem;font-weight:700;line-height:1.5;white-space:nowrap;border:1px solid transparent;vertical-align:1px}
+.ui-due-now{background:var(--due-bg);color:var(--due-tx)}
+.ui-due-soon{background:var(--danger-bg);color:var(--danger-tx);border-color:var(--danger-bd)}
+.ui-due-week{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+
+/* 記事の一覧 */
+.list .when,.list .d{font-size:.875rem;color:var(--sub)}
+.ui-cards{gap:16px}
+.ui-cards>li{border-radius:8px;padding:16px!important;border-color:var(--line)!important;background:var(--card)}
+.ui-cards h2,.ui-cards h3{font-size:1.1875rem;line-height:1.4;margin:2px 0 6px}
+.ui-cards h2 a,.ui-cards h3 a,.ui-cards>li>a{color:var(--ink);text-decoration:none}
+.ui-cards>li:hover h2 a,.ui-cards>li:hover h3 a{color:var(--accent);text-decoration:underline}
+.ui-cards p{font-size:.9375rem;line-height:1.65;color:var(--sub)}
+
+/* 目次・要点・注意書き */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:8px}
+.toc-h{text-transform:none;letter-spacing:0;font-size:.9375rem;color:var(--ink)}
+.ui-sum{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--card)}
+.note{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:1rem 0 0;font-size:.875rem;color:var(--sub)}
+.pr-note,.ai-note{font-size:.875rem}
+
+/* コード(Stripe・Linear の文書の型: 暗い面・言語のラベル・コピーのボタン) */
+code{font-family:var(--font-mono);font-size:.875em;background:var(--s2);border:1px solid var(--line);border-radius:4px;padding:.05em .35em}
+pre{position:relative;background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-line);border-radius:8px;padding:16px 18px;font-size:.875rem;line-height:1.65;overflow-x:auto;margin:1.25rem 0 1.75rem;letter-spacing:0;tab-size:2}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+pre[data-lang]{padding-top:44px}
+pre[data-lang]::before{position:absolute;left:0;right:0;top:0;padding:8px 18px;margin:0;border-bottom:1px solid rgba(127,127,127,.25);font:600 .75rem/1.4 var(--font-mono);color:var(--code-sub);text-transform:none;letter-spacing:0}
+.ui-copy{position:absolute;top:5px;right:6px;min-height:30px!important;font:600 .75rem/1 var(--font-body);color:var(--code-sub);background:transparent;border:1px solid rgba(127,127,127,.35);border-radius:5px;padding:6px 10px;cursor:pointer}
+.ui-copy:hover{color:var(--code-ink);border-color:var(--code-sub)}
+pre:not([data-lang]) .ui-copy{top:8px}
+
+/* フッター */
+body>footer,.site-foot{max-width:none;margin:4rem 0 0;padding:0;background:var(--s2);border-top:1px solid var(--line);color:var(--sub);font-size:.875rem;line-height:1.8}
+body>footer:not(.site-foot){padding:28px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px)) 40px}
+.site-foot .wrap{max-width:var(--page);padding-top:28px;padding-bottom:40px}
+body>footer a,.site-foot a{color:var(--sub)}
+.sisters{margin-top:.75rem}
+@media print{body>header,body>footer{background:none;color:#000}}
+
+caption.ui-cap{caption-side:top;text-align:left;font-size:.875rem;line-height:1.5;color:var(--sub);padding:10px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+main table:not(:has(thead)) caption.ui-cap{padding:0 0 10px;border:0;background:transparent}
+.table-wrap table:not(:has(thead)),.tbl table:not(:has(thead)){border-top:0;margin:0;max-width:none}
+.table-wrap table:not(:has(thead)) :is(th,caption.ui-cap),.tbl table:not(:has(thead)) :is(th,caption.ui-cap){padding-left:16px}
+.table-wrap table:not(:has(thead)) td,.tbl table:not(:has(thead)) td{padding-right:16px}
+caption.ui-cap-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;padding:0;border:0}
+time{font-variant-numeric:tabular-nums}
+
+body>header,body>header.site-head{background:var(--head-bg);border-bottom:1px solid var(--line)}
+.brand::before{content:none;display:none}
+.brand{font-size:1.1875rem}
+body>header .tag{display:none}
+.ui-due-now,.ui-due-soon{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+.ui-due-week{background:transparent;color:var(--sub);border-color:var(--line)}
+.ui-find{border:1px solid var(--line);border-radius:8px;background:var(--s2);padding:20px 24px;margin:1.25rem 0 2rem}
+.ui-find>h2{font-size:1.125rem;margin:0 0 12px;line-height:1.4}
+.ui-jump{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0}
+.ui-jump label{flex-basis:100%;font-weight:600;font-size:.875rem;color:var(--sub);margin:0}
+.ui-jump select{font:inherit;font-size:1rem;min-height:48px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);flex:1 1 260px;max-width:420px;min-width:0;text-overflow:ellipsis}
+.ui-jump .ui-btn{min-height:48px;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+.ui-find .ui-group{margin:18px 0 0}
+.ui-find .ui-group-h{font-size:.875rem;color:var(--sub)}
+html[lang=ja] .brand{letter-spacing:.02em}
+@media (max-width:600px){.ui-find .ui-same{display:none}.ui-find{padding:16px}.ui-jump select{max-width:100%;width:100%;min-width:0;flex-basis:100%;box-sizing:border-box}.ui-jump .ui-btn{flex:1 1 100%;justify-content:center}}
+.ui-lede{font-size:1.125rem;line-height:1.75;color:var(--sub);max-width:var(--measure);margin:-.25rem 0 1.75rem}
+html[lang=en] .ui-lede{line-height:1.6}
+.ui-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;list-style:none;padding:0;margin:0 0 1rem}
+.ui-topics li{margin:0}
+.ui-topics a{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);text-decoration:none}
+.ui-topics a b{font-size:1rem;font-weight:700;line-height:1.35}
+.ui-topics a span{font-size:.8125rem;color:var(--sub)}
+.ui-topics a:hover{border-color:var(--accent)}.ui-topics a:hover b{color:var(--accent)}
+
+.ui-lang{display:flex;align-items:center;gap:2px;font-size:.875rem;margin-left:4px;flex:none}
+.ui-lang a{color:var(--head-sub);text-decoration:none;padding:10px 10px;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.ui-lang a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+.ui-lang span[aria-current]{color:var(--head-ink);font-weight:650;padding:10px 6px}
+@media (max-width:700px){body>header .ui-lang{margin-left:auto}body>header .ui-lang~.ui-menu-btn{margin-left:4px}.ui-lang span[aria-current]{display:none}.ui-lang a{padding:10px 8px}}
+.ui-l-short{display:none}
+@media (max-width:480px){.ui-l-long{display:none}.ui-l-short{display:inline}}
+@media print{.ui-lang{display:none}}
+
+/* 記事のサイト: 読む列は狭く、トップだけ広く(カードを並べる) */
+.wrap{max-width:var(--page)}
+main.wrap,body>main{max-width:calc(var(--col) + 48px)}
+main.wrap:has(>.intro),body>main:has(.ui-hero){max-width:var(--page)}
+main:has(>.intro) .ui-cards,main:has(.ui-hero) .ui-cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+main:has(>.intro) .ui-cards>li,main:has(.ui-hero) .ui-cards>li{grid-template-columns:1fr}
+main:has(>.intro) .ui-cards>li>*,main:has(.ui-hero) .ui-cards>li>*{grid-column:1}
+main:has(>.intro) .ui-cards .ui-thumb-a,main:has(.ui-hero) .ui-cards .ui-thumb-a{grid-row:auto;grid-column:1;margin-bottom:8px}
+main:has(>.intro) .intro>:is(p,h1),main:has(.ui-hero)>:is(p,h1){max-width:var(--measure)}
+body>header,body>header.site-head{background:var(--bg)}
+article p,article li{max-width:var(--col)}
+.ui-side{left:calc(50% + 24px + var(--col) / 2)}
+
+/* 先頭の記事を大きく(トップだけ・広い画面) */
+@media (min-width:860px){
+main:has(.ui-hero) .ui-cards>li:first-child,main:has(>.intro) .ui-cards>li:first-child{grid-column:1/-1;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6px 32px;padding:20px!important;align-items:center}
+main:has(.ui-hero) .ui-cards>li:first-child>*,main:has(>.intro) .ui-cards>li:first-child>*{grid-column:2}
+main:has(.ui-hero) .ui-cards>li:first-child .ui-thumb-a,main:has(>.intro) .ui-cards>li:first-child .ui-thumb-a{grid-column:1;grid-row:1 / span 6;margin:0}
+main:has(.ui-hero) .ui-cards>li:first-child>a:not(.ui-thumb-a),main:has(.ui-hero) .ui-cards>li:first-child h3,main:has(>.intro) .ui-cards>li:first-child h3{font-size:1.5rem;line-height:1.4}
+main:has(.ui-hero) .ui-cards>li:first-child p:not(.d):not(.when),main:has(>.intro) .ui-cards>li:first-child p:not(.d):not(.when){font-size:1rem}
+}
+.ui-cards>li>a:not(.ui-thumb-a){font-weight:700;font-size:1.125rem;line-height:1.45;display:block;margin:2px 0 6px;color:var(--ink);text-decoration:none}
+.ui-cards>li:hover>a:not(.ui-thumb-a){color:var(--accent);text-decoration:underline}
+h1,h2,h3,.brand{font-weight:600}h3{font-family:var(--font-body);font-weight:700}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Code使い方|無料の範囲と料金表・導入7手順", "image": ["https://shigoto.aobaworks.com/og/claude-code-how-to-use-free.png"], "description": "claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "mainEntityOfPage": "https://shigoto.aobaworks.com/claude-code-how-to-use-free/", "url": "https://shigoto.aobaworks.com/claude-code-how-to-use-free/", "inLanguage": "ja", "keywords": "Claude Code, Claude, 料金, 無料, インストール, VS Code, AIエージェント, Anthropic", "isPartOf": {"@type": "WebSite", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/"}, "author": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/about/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}}, "publisher": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}, "publishingPrinciples": "https://shigoto.aobaworks.com/about/", "logo": "https://shigoto.aobaworks.com/og/_site-5808b969.png", "contactPoint": {"@type": "ContactPoint", "contactType": "editorial", "email": "shigoto.ai.note@gmail.com"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://shigoto.aobaworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Claude Code", "item": "https://shigoto.aobaworks.com/tag/claude-code/"}, {"@type": "ListItem", "position": 3, "name": "Claude Code使い方|無料の範囲と料金表・導入7手順", "item": "https://shigoto.aobaworks.com/claude-code-how-to-use-free/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Claude Codeはスマホでも使えますか?", "acceptedAnswer": {"@type": "Answer", "text": "使えます。ただし、パソコンのターミナル版をそのまま動かすわけではありません。公式によると、Web版のClaude Code(claude.ai/code)はiOSとAndroidのClaudeアプリから使え、作業はクラウドで進みます。使うには有料のプランが要ります。"}}, {"@type": "Question", "name": "Claude Codeに無料トライアルはありますか?", "acceptedAnswer": {"@type": "Answer", "text": "2026-10-20時点の公式ドキュメントでは、Claude Code専用の無料トライアルは確認できませんでした。Freeプランは対象外と、公式にはっきり書かれています。費用を抑えて試すなら、Proを月払いで1か月だけ契約するか、Consoleで少額を前払いするのが現実的です。"}}, {"@type": "Question", "name": "Claude Codeを使うのにAPIキーは必須ですか?", "acceptedAnswer": {"@type": "Answer", "text": "必須ではありません。ProやMaxのアカウントでブラウザからログインすれば、APIキーは要りません。むしろ ANTHROPICAPIKEY が設定されていると、プランではなくAPIの料金で請求されることがあるので気をつけてください。"}}, {"@type": "Question", "name": "Claude CodeとGitHub Copilotはどちらを選ぶべきですか?", "acceptedAnswer": {"@type": "Answer", "text": "エディタで書いている途中の補完がほしいならCopilot、フォルダ全体の調査や、複数のファイルの修正・テスト・コミットまでまとめて任せたいならClaude Codeが合います。会社ですでにどちらかを契約しているなら、まずそれを使い切るのが近道です。選ぶ基準はChatGPT Claude Copilot使い分けの基準で詳しく比べています。"}}, {"@type": "Question", "name": "ProとMaxで使えるClaude Codeの機能は違いますか?", "acceptedAnswer": {"@type": "Answer", "text": "公式ヘルプで分かる違いは、主に使える量です。Max 5xはProの5倍、Max 20xは20倍使えます。さらにMaxは毎月のAPIクレジットが付きますが、Claude Codeには使えません。"}}]}</script>
+</head><body><header><a class="brand" href="/">AIツール比較</a><nav class="gnav" aria-label="メニュー"><a href="/">記事一覧</a><a href="/tag/">テーマ</a><a href="/about/">このサイトについて</a></nav><p class="tag">AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p></header>
+<main><nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span>›</span><a href="/tag/claude-code/">Claude Code</a><span>›</span>Claude Code使い方|無料の範囲と料金表・導入7手順</nav><article><h1>Claude Code使い方|無料の範囲と料金表・導入7手順</h1><p class="meta">運営 <a href="/about/">Aoba Works</a> · 公開 <time datetime="2026-10-20">2026年10月20日</time> · 29分で読めます</p><p class="meta src-note">調べ方: <time datetime="2026-10-20">2026-10-20</time> に、各サービスの公式ページ・ヘルプなどで事実を確かめて書きました(出典 17 件・8 サイト・<a href="#出典">一覧</a>)。公開の前に、出典の無い事実・作り話の体験・誇張が無いかを自動で点検しています。<a href="/about/">編集方針</a></p><p class="tags"><a href="/tag/claude-code/">#Claude Code</a> <a href="/tag/claude/">#Claude</a> <a href="/tag/%E6%96%99%E9%87%91/">#料金</a> <a href="/tag/anthropic/">#Anthropic</a></p><p>Claude Codeは、Claudeの無料プラン(Free)では使えません。いちばん安く始めるなら、Claude Proに月20ドル(年払いなら月17ドル)で入るか、Claude Consoleにお金を前払いして使った分だけ払うやり方になります。無料でできるのは、公式の無料講座で学ぶことと、インストールして動くか確かめるところまでです(2026年10月時点・最新は<a href="https://claude.com/pricing" rel="noopener">公式の料金ページ</a>で確認)。</p>
+<blockquote><p>「The free claude.ai plan does not include Claude Code access.」(<a href="https://code.claude.com/docs/en/setup" rel="noopener">Claude Code Docs: Advanced setup</a>)</p></blockquote>
+<p>訳: 無料のclaude.aiプランには、Claude Codeを使う権利が含まれていません。</p>
+<aside class="ui-sum" aria-label="要点"><p class="ui-sum-h">この記事の要点</p><ul><li>Claude CodeはFreeプランでは使えず、Pro月20ドルから</li><li>入れる手順は公式どおりの7段、VS Code拡張も同じ契約で動く</li><li>ANTHROPIC_API_KEYを設定するとAPI料金で請求される</li></ul><p class="ui-sum-who"><b>向いている人: </b>Claude Codeを無料か少ない費用で試したい会社員・個人事業主</p></aside><nav class="toc" aria-label="目次"><p class="toc-h">目次</p><ol><li><a href="#あなたに合うのはどれ">あなたに合うのはどれ?</a></li><li><a href="#claude-codeとは何か-通常のclaude-チャットai-と何が違うのか">Claude Codeとは何か、通常のClaude(チャットAI)と何が違うのか</a></li><li><a href="#claude-codeは無料で使えるのか">Claude Codeは無料で使えるのか</a></li><li><a href="#claude-code無料版-使い方の手順">claude code無料版 使い方の手順</a></li><li><a href="#claude-codeのインストール方法-mac-windows">Claude Codeのインストール方法(Mac/Windows)</a></li><li><a href="#claude-code-vscode-使い方-無料">claude code vscode 使い方 無料</a></li><li><a href="#claude-proプランとclaude-codeの料金プランの違い">Claude ProプランとClaude Codeの料金プランの違い</a></li><li><a href="#claude-codeの料金はどのくらいかかるのか-使用量課金の目安">Claude Codeの料金はどのくらいかかるのか(使用量課金の目安)</a></li><li><a href="#claude-codeの基本的な使い方-コマンド-初回タスクの例">Claude Codeの基本的な使い方(コマンド・初回タスクの例)</a></li><li><a href="#次にやること">次にやること</a></li><li><a href="#よくある質問">よくある質問</a></li><li><a href="#出典">出典</a></li></ol></nav><h2 id="あなたに合うのはどれ">あなたに合うのはどれ?</h2>
+<p>迷ったら、まずはPro(月20ドル)です。Claude Codeを使える一番安い月額プランで、チャットのClaudeも一緒に使えます。状況ごとのおすすめを1行ずつ並べました。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">あなたに合うのはどれ?</caption><thead><tr><th>状況</th><th>まず選ぶもの</th><th>最初に開くページ</th><th>理由</th></tr></thead><tbody><tr><td>お金はかけず、何ができるかだけ知りたい</td><td>無料講座「Claude Code 101」</td><td><a href="https://academy.claude.com/courses/claude-code-101" rel="noopener">Claude Academy</a></td><td>講座は無料。ただし実際に動かすには有料の契約が要る</td></tr><tr><td>初心者。少ない費用で実際に動かしたい</td><td>Claude Pro(月20ドル)</td><td><a href="https://claude.com/pricing" rel="noopener">料金ページ</a></td><td>料金が月ごとに決まっていて、使いすぎても請求は増えない(追加の利用枠をオンにしない限り)</td></tr><tr><td>月に数回だけ、短い作業をさせたい</td><td>Claude Console(前払い・従量課金)</td><td><a href="https://platform.claude.com/" rel="noopener">Claude Console</a></td><td>使った分だけ払う。少なく使う月は安く済む</td></tr><tr><td>仕事で毎日、何時間も使う</td><td>Max 5x(月100ドル)かMax 20x(月200ドル)</td><td><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">Maxプランの説明</a></td><td>使える量がProの5倍か20倍</td></tr><tr><td>会社のチームで入れたい</td><td>TeamかEnterprise</td><td><a href="https://claude.com/pricing" rel="noopener">料金ページ</a></td><td>管理画面で人ごとの上限や使用量を管理できる</td></tr><tr><td>ターミナル(黒い画面)が苦手</td><td>ProとデスクトップアプリかVS Code拡張</td><td><a href="https://code.claude.com/docs/en/vs-code" rel="noopener">VS Code拡張の説明</a></td><td>ボタンで操作でき、変更点も見やすい</td></tr></tbody></table></div>
+<p>チャットのClaudeを無料でどこまで使えるかは、<a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a>にまとめています。この記事はClaude Codeの話に絞ります。</p>
+<h2 id="claude-codeとは何か-通常のclaude-チャットai-と何が違うのか">Claude Codeとは何か、通常のClaude(チャットAI)と何が違うのか</h2>
+<p>Claude Codeは、パソコンの中のファイルを読み、書き換え、コマンドまで実行するAIエージェントです。答えを返すだけのチャットとは別の道具になります。</p>
+<p>公式の説明は短めです。</p>
+<blockquote><p>「Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.」(<a href="https://code.claude.com/docs/en/overview" rel="noopener">Claude Code Docs: Overview</a>)</p></blockquote>
+<p>訳: Claude Codeは、コード全体を読み、ファイルを書き換え、コマンドを実行し、開発ツールとつながる、自分で動くタイプのコーディングツールです。</p>
+<p>違いを表にしました。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude Codeとは何か、通常のClaude(チャットAI)と何が違うのか</caption><thead><tr><th>比べる点</th><th>Claude(claude.aiのチャット)</th><th>Claude Code</th></tr></thead><tbody><tr><td>使う場所</td><td>ブラウザ・スマホアプリ・デスクトップアプリ</td><td>ターミナル・VS Code・JetBrains・デスクトップアプリ(Codeタブ)・Web(<a href="https://code.claude.com/docs/en/overview" rel="noopener">公式</a>)</td></tr><tr><td>ファイル</td><td>自分でアップロードしたものだけ読む</td><td>作業フォルダの中を自分で探して読み、書き換える</td></tr><tr><td>コマンド実行</td><td>しない</td><td>git・テスト・スクリプトなどを実行する(実行前に確認を求める設定にできる)</td></tr><tr><td>無料プラン</td><td>あり</td><td>なし</td></tr><tr><td>向いている作業</td><td>文章・相談・要約・アイデア出し</td><td>プログラムの修正・テスト作成・定型作業の自動化・Git操作</td></tr></tbody></table></div>
+<p>たとえば「この売上CSVを集計するPythonスクリプトを作り、実行し、エラーが出たら直して」と頼むとします。チャットのClaudeはコードを示すところまでで、コピーして実行するのは自分です。Claude Codeはファイルを作るところから実行・修正まで、そのフォルダの中で続けて進めます。</p>
+<p>プログラマーでなくても使えるかが気になると思います。公式ドキュメントにはターミナルを使ったことがない人向けの<a href="https://code.claude.com/docs/en/terminal-guide" rel="noopener">ターミナルガイド</a>があり、入口は用意されています。とはいえ、ファイルやフォルダの場所が分からないと指示もしにくいです。表計算やGoogleのスクリプトで自動化から始めたい人は、<a href="/chatgpt-gas-automation-start/">ChatGPT GAS自動化、始め方の3手順</a>のほうが入りやすいかもしれません。</p>
+<h2 id="claude-codeは無料で使えるのか">Claude Codeは無料で使えるのか</h2>
+<p>いいえ。単独で使える無料プランはなく、有料のClaudeプランかConsole(API)の契約が要ります。</p>
+<p>公式のセットアップページには、使えるアカウントがはっきり書かれています。</p>
+<blockquote><p>「Claude Code requires a Pro, Max, Team, Enterprise, or Console account.」(<a href="https://code.claude.com/docs/en/setup" rel="noopener">Claude Code Docs: Advanced setup</a>)</p></blockquote>
+<p>訳: Claude Codeには、Pro・Max・Team・Enterprise・Consoleのどれかのアカウントが必要です。</p>
+<p>このサイトで数えると、上の1文に載っているClaude Codeを使えるアカウントの種類は5つでした(<a href="https://code.claude.com/docs/en/setup" rel="noopener">Advanced setup</a>・2026-10-20に数えた)。この中にFreeはありません。ほかに、会社がAmazon Bedrock・Google CloudのAgent Platform・Microsoft Foundryを契約していれば、そこ経由でも使えます。</p>
+<p>「無料」でできること・できないことを分けると、次のようになります。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude Codeは無料で使えるのか</caption><thead><tr><th>やりたいこと</th><th>無料でできるか</th><th>補足</th></tr></thead><tbody><tr><td>インストール</td><td>できる</td><td>ソフトの入手にお金はかからない</td></tr><tr><td>ログインして指示を出す</td><td>できない</td><td>Pro以上かConsoleの残高が要る</td></tr><tr><td>VS Code拡張を入れる</td><td>できる</td><td>動かすには同じく契約が要る</td></tr><tr><td>使い方を学ぶ</td><td>できる</td><td><a href="https://academy.claude.com/" rel="noopener">Claude Academy</a>の講座は無料と公式に書かれている</td></tr><tr><td>Maxに付くAPIクレジットでClaude Codeを動かす</td><td>できない</td><td>公式に「Claude Codeには使えない」とある</td></tr></tbody></table></div>
+<p>最後の行はつまずきやすいので補足します。2026年10月時点で、Max 5xには毎月100ドル分、Max 20xには毎月200ドル分、Teamには最大500ドル分のAPIクレジットが付きます。ただ、公式ページには、このクレジットはClaude APIなどに使うもので、Claude Codeには使えないとあります(<a href="https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers" rel="noopener">API credits for Max and Team plans</a>)。</p>
+<p>「新しく作ったConsoleアカウントには無料クレジットが付く」という話を見かけることもあります。ただ、このサイトでは2026-10-20時点の公式ドキュメントでそれを確かめられませんでした。付く前提で計画しないほうが安全です。</p>
+<h2 id="claude-code無料版-使い方の手順">claude code無料版 使い方の手順</h2>
+<p>「無料版」という製品はありません。いちばん安く始める順番は、無料講座で中身を知る→インストールして動作を確かめる→Proに1か月だけ入って試す、です。</p>
+<ol><li><a href="https://academy.claude.com/courses/claude-code-101" rel="noopener">Claude Academy</a>の「Claude Code 101」を開き、何ができるかをつかむ(無料)</li><li>次の見出しの手順でClaude Codeを入れ、<code>claude --version</code> で番号が出るか確かめる(無料)</li><li><a href="https://claude.com/pricing" rel="noopener">料金ページ</a>でProを選び、月払いで申し込む(月20ドル・2026年10月時点)</li><li>作業用のフォルダで <code>claude</code> と打ち、ブラウザの画面に従ってログインする</li><li>1か月使ってみて、上限に何度もかかるならMaxに上げる。ほとんど使わなかったら解約するかConsoleの従量課金に移る</li></ol>
+<p>ここで大事な決まりが1つあります。ProやMaxの使用量は、チャットのClaudeとClaude Codeで共有です。公式ヘルプには、ProにもMaxにも「5時間ごとの上限」と「週ごとの上限」があると書かれています(<a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" rel="noopener">Using Claude Code with your Pro or Max plan</a>)。昼間にチャットでたくさん使うと、夕方にClaude Codeが止まることがあります。</p>
+<p><strong>請求で一番多い落とし穴は、環境変数 <code>ANTHROPIC_API_KEY</code> です。</strong> 公式ヘルプによると、この変数がパソコンに設定されていると、Claude Codeはプランの代わりにそのAPIキーで認証します。そうなると、Proに入っていてもAPIの料金が別にかかります(同じヘルプページ)。直し方は次の2つです。</p>
+<ul><li>Mac・Linuxでは、ターミナルで <code>echo $ANTHROPIC_API_KEY</code> と打ち、何か表示されたら、そのキーを設定している行(<code>~/.zshrc</code> などの設定ファイル)を消す</li><li>Claude Codeの中で <code>/login</code> と打ち、サブスクリプションのアカウントでログインし直す</li></ul>
+<h2 id="claude-codeのインストール方法-mac-windows">Claude Codeのインストール方法(Mac/Windows)</h2>
+<p>公式がすすめるのは「Native Install」で、ターミナルに1行貼るだけで入ります。Node.jsは要りません。</p>
+<p>先に動く環境を確かめておきます。公式の動作条件は、macOS 13.0以上、Windows 10 1809以上かWindows Server 2019以上、Ubuntu 20.04以上、Debian 10以上、Alpine Linux 3.19以上です。メモリは4GB以上、ネット接続も必要です(<a href="https://code.claude.com/docs/en/setup" rel="noopener">Advanced setup</a>・2026年10月時点)。</p>
+<h3 id="macの手順">Macの手順</h3>
+<ol><li>「アプリケーション」→「ユーティリティ」→「ターミナル」を開く</li><li>次の1行を貼って、Enterを押す</li></ol>
+<p><code>curl -fsSL https://claude.ai/install.sh | bash</code></p>
+<ol><li>途中で進み具合は表示されません(公式にもそう書かれています)。終わるまで待ちます</li><li>ターミナルのウィンドウを新しく開き直して、<code>claude --version</code> と打つ</li><li><code>2.1.211 (Claude Code)</code> のように番号が出れば入っています</li></ol>
+<p>Homebrewを使っている人は <code>brew install --cask claude-code</code> でも入ります。ただしこの方法は自動で更新されないので、ときどき <code>brew upgrade claude-code</code> を打ってください。</p>
+<h3 id="windowsの手順">Windowsの手順</h3>
+<p>最初に、開いている画面がPowerShellかCMD(コマンドプロンプト)かを見分けます。行の先頭が <code>PS C:\</code> ならPowerShell、<code>PS</code> が無く <code>C:\</code> ならCMDです。</p>
+<ol><li>スタートメニューで「PowerShell」を検索して開く(管理者として実行しなくてよい)</li><li>PowerShellなら <code>irm https://claude.ai/install.ps1 | iex</code> を貼ってEnter</li><li>CMDなら <code>curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code> を貼ってEnter</li><li>新しいウィンドウを開いて <code>claude --version</code> を打つ</li></ol>
+<p>WinGetを使う人は <code>winget install Anthropic.ClaudeCode</code> でも入ります。こちらも自動では更新されません。</p>
+<p>あわせて<a href="https://git-scm.com/downloads/win" rel="noopener">Git for Windows</a>を入れておくのもおすすめです。入っていないとClaude CodeはPowerShellでコマンドを動かし、入っていればGit Bashを使います。公式では「必須ではない」扱いです。</p>
+<h3 id="入れるときにつまずきやすい所">入れるときにつまずきやすい所</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">入れるときにつまずきやすい所</caption><thead><tr><th>画面に出る言葉</th><th>原因</th><th>直し方</th></tr></thead><tbody><tr><td><code>claude</code> が見つからない(not found / not recognized)</td><td>インストール先がPATHに入っていない</td><td>ウィンドウを開き直す。それでもだめなら<a href="https://code.claude.com/docs/en/troubleshoot-install#command-not-found-claude-after-installation" rel="noopener">Fix your PATH</a>を見る</td></tr><tr><td><code>The token '&amp;&amp;' is not a valid statement separator</code></td><td>CMD用の行をPowerShellに貼った</td><td>PowerShell用の <code>irm ...</code> の行を使う</td></tr><tr><td><code>'irm' is not recognized ...</code></td><td>PowerShell用の行をCMDに貼った</td><td>CMD用の <code>curl ...</code> の行を使う</td></tr><tr><td><code>syntax error near unexpected token '&lt;'</code> や <code>403</code></td><td>ダウンロードがブロックされた・会社のネットワークの制限など</td><td><a href="https://code.claude.com/docs/en/troubleshoot-install#find-your-error" rel="noopener">Troubleshoot installation</a>で、出た言葉から直し方を探す</td></tr></tbody></table></div>
+<p>それでも原因が分からないときは、<code>claude doctor</code> を打ちます。インストールの状態と設定ファイルの誤りを、直し方つきで表示してくれます。</p>
+<p>npmを使い慣れている人は <code>npm install -g @anthropic-ai/claude-code</code> でも入れられます。この方法はNode.js 22以上が必要です。また、公式は <code>sudo npm install -g</code> を使わないよう警告しています(権限とセキュリティの問題が起きるため)。</p>
+<h2 id="claude-code-vscode-使い方-無料">claude code vscode 使い方 無料</h2>
+<p>VS Code拡張は無料で入れられます。ただ、動かすにはターミナル版と同じ有料の契約かConsoleのアカウントが要ります。拡張機能に別料金はかかりません。</p>
+<blockquote><p>「any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account works, and no API key is required.」(<a href="https://code.claude.com/docs/en/vs-code" rel="noopener">Use Claude Code in VS Code</a>)</p></blockquote>
+<p>訳: 有料のClaudeプラン(Pro・Max・Team・Enterprise)かClaude Consoleのアカウントがあれば使えます。APIキーは要りません。</p>
+<h3 id="vs-codeに入れる手順">VS Codeに入れる手順</h3>
+<ol><li>VS Codeが1.94.0以上か確かめる(メニューの「ヘルプ」→「バージョン情報」、Macは「Code」→「Visual Studio Codeについて」)</li><li>拡張機能の画面を開く(Macは <code>Cmd+Shift+X</code>、Windowsは <code>Ctrl+Shift+X</code>)</li><li>検索欄に「Claude Code」と入れ、提供元がAnthropicのものを選んで「Install」を押す</li><li>コマンドパレットを開く(Macは <code>Cmd+Shift+P</code>、Windowsは <code>Ctrl+Shift+P</code>)</li><li>「Claude Code」と入れ、<strong>Open in New Tab</strong> を選ぶ</li><li>初めて開くとログインを求められるので、ProなどのアカウントかConsoleでログインする</li></ol>
+<p>以上の流れは<a href="https://code.claude.com/docs/en/overview" rel="noopener">公式の説明</a>のとおりです。同じ拡張機能はエディタのCursorにも入れられます。</p>
+<p>拡張の良い所は、Claudeが出した変更を差分(どこを足し、どこを消したか)で見ながら受け入れられることです。立てた計画を受け入れる前に直すこともできます。ターミナルが苦手な人にはこちらのほうが向いています。一方で、公式は全部の機能が使えるのはターミナル版(CLI)だとしています。細かい設定やスクリプトからの自動実行は、ターミナル版から触ることになります。</p>
+<p>ログインできないときは、上で書いた <code>ANTHROPIC_API_KEY</code> の設定を疑ってください。VS Codeはパソコンの環境変数を引き継ぐので、そのキーでの請求になることがあります。</p>
+<h2 id="claude-proプランとclaude-codeの料金プランの違い">Claude ProプランとClaude Codeの料金プランの違い</h2>
+<p>Claude Codeだけの料金プランはありません。Claudeのプランに含まれていて、プランによって使える量が変わります。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude ProプランとClaude Codeの料金プランの違い</caption><thead><tr><th>プラン</th><th>月額(2026年10月時点)</th><th>Claude Code</th><th>向いている人</th><th>注意点</th></tr></thead><tbody><tr><td>Free</td><td>0ドル</td><td>使えない</td><td>チャットだけでよい人</td><td>Claude Codeは対象外</td></tr><tr><td>Pro</td><td>月払い20ドル・年払いなら月17ドル</td><td>使える</td><td>まず試す人・週に数回使う人</td><td>5時間ごとと週ごとの上限がある。チャットと共有</td></tr><tr><td>Max 5x</td><td>100ドル</td><td>使える</td><td>毎日数時間使う人</td><td>使える量はProの5倍。月100ドル分のAPIクレジットはClaude Codeには使えない</td></tr><tr><td>Max 20x</td><td>200ドル</td><td>使える</td><td>ほぼ一日中動かす人</td><td>使える量はProの20倍。自分の作業量で元が取れるか見極めが要る</td></tr><tr><td>Team</td><td>1人あたり年払いで月20ドル・月払いで月25ドル(Standard)</td><td>使える</td><td>5人前後からのチーム</td><td>人ごとの枠はチャットやCoworkと共有。StandardとPremiumの2種類の席がある</td></tr><tr><td>Enterprise</td><td>1人あたり年払いで月20ドル+使用量(20席から)</td><td>使える</td><td>大きな会社</td><td>使った分の費用が別にかかる</td></tr></tbody></table></div>
+<p>出典: <a href="https://claude.com/pricing" rel="noopener">料金ページ</a>、<a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">Maxプランの説明</a>、<a href="https://code.claude.com/docs/en/costs" rel="noopener">コスト管理</a>。料金は変わるので、申し込む前に公式で確認してください。</p>
+<p>上限に届いたときの選択肢は2つです。1つは時間を置いて回復を待つこと。もう1つは「usage credits(追加の利用枠)」をオンにして、超えた分を払うことです。Claude Codeの中で <code>/usage-credits</code> と打つと、claude.aiの「Settings &gt; Usage」が開きます。そこで追加の利用枠のオン・オフと、月にいくらまで使うかの上限を決められます(<a href="https://code.claude.com/docs/en/costs" rel="noopener">Manage costs effectively</a>)。追加の利用枠を使うと、知らないうちに費用が増えることもあります。最初は上限額を決めてからオンにしてください。</p>
+<p>ProからMaxに上げるかどうかは、次を目安にすると決めやすいです。</p>
+<ul><li>「You've hit your session limit」(5時間の上限)が週に何度も出て、仕事が止まる → Max 5xを検討</li><li>週の上限(weekly limit)にも当たる → Max 20xか、作業のやり方を見直す</li><li>上限に一度もかからない → Proのままでよい</li></ul>
+<p>上限に当たる回数は、<code>/usage</code> を打つと確かめられます。Pro以上なら、どの機能が使用量を多く食っているかの内訳も、直近24時間と7日で切り替えて見られます。</p>
+<h2 id="claude-codeの料金はどのくらいかかるのか-使用量課金の目安">Claude Codeの料金はどのくらいかかるのか(使用量課金の目安)</h2>
+<p>Console(API)で使う場合は、読み書きした文字量(トークン)に応じた従量課金です。軽い使い方なら1回数十円程度、毎日しっかり使えば月に数万円になることもあります。</p>
+<p>公式の単価は次のとおりです(100万トークンあたり・2026年10月時点)。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude Codeの料金はどのくらいかかるのか(使用量課金の目安)</caption><thead><tr><th>モデル</th><th>入力</th><th>出力</th><th>公式の説明</th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td>4ドル</td><td>20ドル</td><td>長い時間かかるコーディングや知的作業向け</td></tr><tr><td>Claude Sonnet 5.5</td><td>2ドル</td><td>10ドル</td><td>速さと賢さのバランスが一番よい</td></tr><tr><td>Claude Haiku 5.5</td><td>0.10ドルから</td><td>0.50ドルから</td><td>大量・速さ重視の作業向け</td></tr></tbody></table></div>
+<p>出典: <a href="https://platform.claude.com/docs/en/about-claude/models/overview" rel="noopener">Models overview</a>。一括処理(Batch API)は50%引きで、同じ内容を読み直すとき(キャッシュの読み込み)は大きく割り引かれます。</p>
+<p>たとえば、Sonnet 5.5で入力100万トークン・出力10万トークンを使ったとします。キャッシュの割引を考えないと、2ドル+1ドルで3ドルです。これは単価から出したかけ算の例で、実際に測った数字ではありません。Claude Codeはやり取りのたびに会話の履歴とファイルの中身を送り直すので、入力トークンはすぐ増えます。</p>
+<p>会社での実際の平均は、公式のコスト管理ページに出ています。</p>
+<blockquote><p>「the average cost is around $13 per developer per active day and $150-250 per developer per month」(<a href="https://code.claude.com/docs/en/costs" rel="noopener">Manage costs effectively</a>)</p></blockquote>
+<p>訳: 平均の費用は、開発者1人が使った日1日あたり約13ドル、1か月あたり150〜250ドルです。</p>
+<p>同じページには、利用者の90%は1日30ドル未満に収まっているとも書かれています。この数字は企業の開発者が仕事で使った場合です。個人がたまに使うなら、もっと少なくなるはずです。逆に言えば、毎日使うつもりならConsoleよりPro(月20ドル)やMax(月100ドル)のほうが安く上がる場合が多くなります。</p>
+<p>費用を抑える方法は、公式に書かれているものから4つ紹介します。</p>
+<ul><li>別の作業に移るときは <code>/clear</code> で会話をリセットする。古い話を送り続けずに済む</li><li>ふだんはSonnetを使い、難しい設計だけOpusにする(<code>/model</code> で切り替え)</li><li>プロジェクトの説明書 <code>CLAUDE.md</code> は200行以内に収める</li><li>「このコードをよくして」のようなあいまいな頼み方をやめ、ファイル名と直したい所を書く</li></ul>
+<p>何も操作していなくても、裏の処理で少しトークンを使います。公式によれば、ふつうは1セッションあたり0.04ドル未満です。</p>
+<h2 id="claude-codeの基本的な使い方-コマンド-初回タスクの例">Claude Codeの基本的な使い方(コマンド・初回タスクの例)</h2>
+<p>作業したいフォルダに移動して <code>claude</code> と打ち、あとは日本語で頼むだけです。最初は、読むだけの質問から始めると安心です。</p>
+<p>公式クイックスタートは7つのステップでできています(Step 1のインストールからStep 7のいろいろな作業まで。<a href="https://code.claude.com/docs/en/quickstart" rel="noopener">Quickstart</a>・2026-10-20に数えた)。この記事の手順もこの7段に合わせました。</p>
+<ol><li><strong>インストールする</strong>: 上の見出しの手順どおり</li><li><strong>最初のセッションを始める</strong>: <code>cd 作業フォルダの場所</code> で移動して <code>claude</code>。初めてのときはブラウザが開くので、ProかConsoleでログインする</li><li><strong>質問する</strong>: たとえば「このフォルダには何が入っている?」「一番最初に動くファイルはどれ?」</li><li><strong>小さな変更を頼む</strong>: たとえば「README.mdに使い方の段落を足して」。変更の前に確認が出たら、内容を読んで <strong>Yes</strong> を選ぶ</li><li><strong>Gitを使う</strong>: たとえば「変更したファイルを教えて」「わかりやすい説明をつけてコミットして」</li><li><strong>不具合を直す・機能を足す</strong>: たとえば「空のフォームが送れてしまう不具合を直して」</li><li><strong>ほかの作業も試す</strong>: テストを書かせる、説明書を更新させる、変更を見直させる</li></ol>
+<p>公式の例は英語ですが、日本語で頼んでかまいません。</p>
+<h3 id="覚えておくと困らないコマンド">覚えておくと困らないコマンド</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">覚えておくと困らないコマンド</caption><thead><tr><th>どこで打つか</th><th>コマンド</th><th>すること</th></tr></thead><tbody><tr><td>ターミナル</td><td><code>claude</code></td><td>対話を始める</td></tr><tr><td>ターミナル</td><td><code>claude "頼みたいこと"</code></td><td>最初の頼みごとをつけて始める</td></tr><tr><td>ターミナル</td><td><code>claude -p "質問"</code></td><td>1回だけ答えて終わる(スクリプトから呼ぶとき)</td></tr><tr><td>ターミナル</td><td><code>claude -c</code></td><td>このフォルダの直前の会話を続ける</td></tr><tr><td>ターミナル</td><td><code>claude -r</code></td><td>前の会話を選んで再開する</td></tr><tr><td>Claude Codeの中</td><td><code>/help</code></td><td>使えるコマンドの一覧</td></tr><tr><td>Claude Codeの中</td><td><code>/clear</code></td><td>会話をリセットする</td></tr><tr><td>Claude Codeの中</td><td><code>/login</code></td><td>アカウントを切り替える</td></tr><tr><td>Claude Codeの中</td><td><code>/usage</code></td><td>使用量と上限を見る</td></tr><tr><td>Claude Codeの中</td><td><code>/exit</code></td><td>終わる(Ctrl+Dを2回でも終われる)</td></tr></tbody></table></div>
+<p>出典: <a href="https://code.claude.com/docs/en/quickstart" rel="noopener">Quickstart</a>、<a href="https://code.claude.com/docs/en/costs" rel="noopener">Manage costs effectively</a>。</p>
+<p>もう1つ、<code>/init</code> を打つと、プロジェクトの説明書 <code>CLAUDE.md</code> の下書きを作ってくれます。<code>CLAUDE.md</code> は、セッションを始めるたびにClaude Codeが読むファイルです(<a href="https://code.claude.com/docs/en/overview" rel="noopener">公式の説明</a>)。「ファイル名は日付から始める」「出力は日本語」のような決まりごとを書いておくと、毎回同じことを言わずに済みます。</p>
+<h3 id="勝手に書き換えられないか心配なとき">勝手に書き換えられないか心配なとき</h3>
+<p><code>Shift+Tab</code> を押すと、許可のモードが切り替わります。最初は、変更の前に毎回確認が出る状態のまま使うのが安全です。大きな作業の前は、Shift+Tabで「plan mode」にします。するとClaudeは書き換える前に中身を調べて、進め方を提案します。読んで納得してから進めればよいわけです。</p>
+<p>方向がずれたと思ったら、すぐEscで止めてください。Escを2回押すか <code>/rewind</code> を打つと、会話とファイルを前の状態に戻せます(<a href="https://code.claude.com/docs/en/costs" rel="noopener">Manage costs effectively</a>)。</p>
+<p>大事なファイルがあるフォルダで初めて試すのはやめておきましょう。コピーしたフォルダか、Gitで管理しているフォルダで始めるのが無難です。</p>
+<h2 id="次にやること">次にやること</h2>
+<p>今日やるのは、<code>claude --version</code> で番号が出るところまでで十分です。契約するかどうかはその後で決めれば間に合います。</p>
+<p><strong>① 自分でやる人の今日の一歩</strong></p>
+<ol><li>Macはターミナル、WindowsはPowerShellを開き、インストールの1行を貼る</li><li>新しいウィンドウで <code>claude --version</code> と打ち、番号が出るのを確かめる</li><li><a href="https://academy.claude.com/courses/claude-code-101" rel="noopener">Claude Academy</a>の「Claude Code 101」を、最初の数レッスンだけ見る</li></ol>
+<p><strong>② 自分でやるのが大変・早く確実にしたい人へ</strong></p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">次にやること</caption><thead><tr><th>選択肢</th><th>費用(2026年10月時点)</th><th>向いている人</th><th>向いていない人</th></tr></thead><tbody><tr><td>Claude Pro</td><td>月20ドル</td><td>自分で試しながら覚えたい人</td><td>ほとんど使わない月がある人(Consoleのほうが安い場合がある)</td></tr><tr><td>Claude Academyの公式講座</td><td>無料</td><td>順番どおりに学びたい人</td><td>自分の業務での使い方まで相談したい人(講座は一般向けの内容)</td></tr><tr><td>給付金の対象になるAIスクール</td><td>スクールによる</td><td>講師に質問しながら仕事に使うところまで進めたい人</td><td>費用を最小にしたい人</td></tr></tbody></table></div>
+<p>スクールを選ぶときの基準は、<a href="/ai-school-comparison-subsidy/">AIスクール比較、給付金対象で絞る3つの軸</a>にまとめています。無理に申し込む必要はありません。まずはProで1か月試してから決めても遅くないです。</p>
+<p><strong>③ あわせて読みたい記事</strong></p>
+<ul><li><a href="/claude-howto-beginner-3steps/">Claude使い方、初心者がまず押さえる3手順</a>: チャットのClaudeから始めたい人へ</li><li><a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a>: 無料プランの範囲を知りたい人へ</li><li><a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT Claude Copilot使い分けの基準</a>: どのAIを仕事に使うか迷っている人へ</li></ul>
+<h2 id="よくある質問">よくある質問</h2>
+<h3 id="claude-codeはスマホでも使えますか">Claude Codeはスマホでも使えますか?</h3>
+<p>使えます。ただし、パソコンのターミナル版をそのまま動かすわけではありません。公式によると、Web版のClaude Code(<a href="https://claude.ai/code" rel="noopener">claude.ai/code</a>)はiOSとAndroidのClaudeアプリから使え、作業はクラウドで進みます。使うには有料のプランが要ります。</p>
+<h3 id="claude-codeに無料トライアルはありますか">Claude Codeに無料トライアルはありますか?</h3>
+<p>2026-10-20時点の公式ドキュメントでは、Claude Code専用の無料トライアルは確認できませんでした。Freeプランは対象外と、公式にはっきり書かれています。費用を抑えて試すなら、Proを月払いで1か月だけ契約するか、Consoleで少額を前払いするのが現実的です。</p>
+<h3 id="claude-codeを使うのにapiキーは必須ですか">Claude Codeを使うのにAPIキーは必須ですか?</h3>
+<p>必須ではありません。ProやMaxのアカウントでブラウザからログインすれば、APIキーは要りません。むしろ <code>ANTHROPIC_API_KEY</code> が設定されていると、プランではなくAPIの料金で請求されることがあるので気をつけてください。</p>
+<h3 id="claude-codeとgithub-copilotはどちらを選ぶべきですか">Claude CodeとGitHub Copilotはどちらを選ぶべきですか?</h3>
+<p>エディタで書いている途中の補完がほしいならCopilot、フォルダ全体の調査や、複数のファイルの修正・テスト・コミットまでまとめて任せたいならClaude Codeが合います。会社ですでにどちらかを契約しているなら、まずそれを使い切るのが近道です。選ぶ基準は<a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT Claude Copilot使い分けの基準</a>で詳しく比べています。</p>
+<h3 id="proとmaxで使えるclaude-codeの機能は違いますか">ProとMaxで使えるClaude Codeの機能は違いますか?</h3>
+<p>公式ヘルプで分かる違いは、主に使える量です。Max 5xはProの5倍、Max 20xは20倍使えます。さらにMaxは毎月のAPIクレジットが付きますが、Claude Codeには使えません。</p>
+<h2 id="出典">出典</h2>
+<ul><li><a href="https://claude.com/pricing" rel="noopener">Plans &amp; pricing(Claude)</a></li><li><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">What is the Max plan?(Claude Help Center)</a></li><li><a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" rel="noopener">Using Claude Code with your Pro or Max plan(Claude Help Center)</a></li><li><a href="https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers" rel="noopener">API credits for Max and Team plans(Claude Platform Docs)</a></li><li><a href="https://code.claude.com/docs/en/overview" rel="noopener">Overview(Claude Code Docs)</a></li><li><a href="https://code.claude.com/docs/en/quickstart" rel="noopener">Quickstart(Claude Code Docs)</a></li><li><a href="https://code.claude.com/docs/en/setup" rel="noopener">Advanced setup(Claude Code Docs)</a></li><li><a href="https://code.claude.com/docs/en/troubleshoot-install" rel="noopener">Troubleshoot installation(Claude Code Docs)</a></li><li><a href="https://code.claude.com/docs/en/vs-code" rel="noopener">Use Claude Code in VS Code(Claude Code Docs)</a></li><li><a href="https://code.claude.com/docs/en/costs" rel="noopener">Manage costs effectively(Claude Code Docs)</a></li><li><a href="https://platform.claude.com/docs/en/about-claude/models/overview" rel="noopener">Models overview(Claude Platform Docs)</a></li><li><a href="https://academy.claude.com/courses/claude-code-101" rel="noopener">Claude Code 101(Claude Academy)</a></li><li><a href="https://code.claude.com/docs/en/terminal-guide" rel="noopener">Terminal guide(Claude Code Docs)</a></li></ul>
+<p>---</p>
+<p><strong>確認してほしいこと</strong></p>
+<ul><li><strong>APIの単価:</strong> モデル一覧のページで確かめました(Opus 5.5は入力4ドル・出力20ドル、Sonnet 5.5は2ドル・10ドル、Haiku 5.5は0.10ドル・0.50ドルから)。くわしい料金ページは開ききれませんでした。数字が気になるときは、<a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener">料金ページ</a>も見てください。</li><li><strong>無料トライアル:</strong> 新しいConsoleアカウントに無料クレジットが付くという話がありますが、公式のページでは確かめられませんでした。そのため本文では、付く前提にしないよう書いています。</li><li><strong>TeamのPremium席:</strong> 料金ページではPremium席の値段が読み取れなかったので、本文にはStandard席の料金だけ書きました。</li></ul>
+<p><strong>検索上位の構成:</strong> 上位の記事では「無料で使えるか」「料金プランの違い」「インストールと始め方」が共通して扱われていたので、この記事でもすべて答えました。そのうえで、上位が書いていなかった3点を足しています。</p>
+<ul><li>無料でできることとお金が要ることを分けた表</li><li><code>ANTHROPIC_API_KEY</code> の設定でAPI料金に請求が変わる落とし穴</li><li>Maxに付くAPIクレジットがClaude Codeには使えないこと</li></ul>
+<p><strong>参照した検索上位の記事:</strong></p>
+<ul><li><a href="https://www.qes.co.jp/media/claudecode/a925" rel="noopener">Claude Code 料金・無料枠完全ガイド(QES)</a></li><li><a href="https://bizroad-svc.com/blog/claude-code/" rel="noopener">Claude Codeは無料で使える?(bizroad)</a></li><li><a href="https://japan-ai.co.jp/media/7343/" rel="noopener">Claude Codeとは?(JAPAN AI)</a></li></ul><aside class="credit" aria-label="この記事の作り方"><p><strong>この記事の作り方</strong>: 各サービスの公式ページ・ヘルプなどの公開情報を、AI の助けを借りて調べてまとめ、出典・誇張・PR 表示の自動の点検を通してから公開しています。体験談や試した結果は書いていません(<a href="/about/">編集方針</a>)。</p><p>公式の情報で確かめた日: <time datetime="2026-10-20">2026年10月20日</time></p></aside><p class="note">内容の誤りや古くなった情報に気づいたら、<a href="mailto:shigoto.ai.note@gmail.com">shigoto.ai.note@gmail.com</a> までお知らせください。記事は順番に公式の情報で確かめ直しています。</p></article><section class="related"><h2>関連記事</h2><ul class="list"><li><p class="d"><time datetime="2026-10-14">2026年10月14日</time> · 22分で読めます</p><h3><a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT Claude Copilot使い分けの基準</a></h3><p>ChatGPT Claude Copilot 使い分けに迷う人へ。資料作成はChatGPT、社内データ参照はMicrosoft 365 Copilot、長文コード生成はClaudeと、シーン別に1つに絞って公式情報から理由・料金・注意点を解説します。</p></li><li><p class="d"><time datetime="2026-10-17">2026年10月17日</time> · 15分で読めます</p><h3><a href="/claude-howto-beginner-3steps/">Claude使い方、初心者がまず押さえる3手順</a></h3><p>Claudeの使い方を初心者向けに3手順で解説。無料登録と最初に見る設定、最初に入れる文章のひな形、返答の直させ方まで、画面の言葉どおりに紹介します。つまずきやすい所の直し方と料金の目安ものせています。</p></li><li><p class="d"><time datetime="2026-10-19">2026年10月19日</time> · 16分で読めます</p><h3><a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a></h3><p>「claude 使い方 無料」で調べた人向けに、無料プランでできることと始め方の4手順を説明します。公式ヘルプをもとに、5時間ごとの利用制限、使える量が減りやすい使い方、Proに替える目安も表にしました。</p></li></ul></section></main><footer><p><strong>AIツール比較</strong> — AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p>
+<p><a href="/">記事一覧</a> · <a href="/about/">このサイトについて・編集方針</a> · <a href="/privacy/">プライバシーポリシー</a> · <a href="/feed.xml">RSS</a></p><p>© 2026 AIツール比較</p></footer><script src="/ui.js" defer></script></body></html>
