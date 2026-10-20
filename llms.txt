@@ -5,6 +5,7 @@
 記事は各サービスの公式情報を調べてまとめ、出典を示し、定期的に見直しています。
 
 ## 記事
+- [Claudeプロジェクト使い方|作成から共有まで5手順と比較表](https://shigoto.aobaworks.com/claude-project-usage-guide/): claude プロジェクト 使い方を、公式ヘルプをもとに作成・ナレッジ登録・指示の保存・チーム共有の5手順で解説。無料プランの上限、Claude CodeやCoworkのプロジェクトとの違いも比較表で整理しています。
 - [Claude Code使い方|無料の範囲と料金表・導入7手順](https://shigoto.aobaworks.com/claude-code-how-to-use-free/): claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。
 - [Claudeの使い方|無料で始める4手順とProに替える判断表](https://shigoto.aobaworks.com/claude-shikata-muryou-hani/): 「claude 使い方 無料」で調べた人向けに、無料プランでできることと始め方の4手順を説明します。公式ヘルプをもとに、5時間ごとの利用制限、使える量が減りやすい使い方、Proに替える目安も表にしました。
 - [Claude使い方、初心者がまず押さえる3手順](https://shigoto.aobaworks.com/claude-howto-beginner-3steps/): Claudeの使い方を初心者向けに3手順で解説。無料登録と最初に見る設定、最初に入れる文章のひな形、返答の直させ方まで、画面の言葉どおりに紹介します。つまずきやすい所の直し方と料金の目安ものせています。
