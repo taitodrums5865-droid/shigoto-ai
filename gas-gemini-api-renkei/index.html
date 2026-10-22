@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GAS Gemini API連携の使い方|最初にやる3つとコード | AIツール比較</title><meta name="description" content="GASとGemini APIの連携のやり方を3つの手順にまとめました。Google AI StudioでのAPIキー取得、スクリプトプロパティへの保存、スプレッドシートへの書き込みまでコード付きで説明し、無料枠とChatGPT連携との違いも表にしています。"><link rel="canonical" href="https://shigoto.aobaworks.com/gas-gemini-api-renkei/">
+<meta property="og:type" content="article"><meta property="og:title" content="GAS Gemini API連携の使い方|最初にやる3つとコード | AIツール比較"><meta property="og:description" content="GASとGemini APIの連携のやり方を3つの手順にまとめました。Google AI StudioでのAPIキー取得、スクリプトプロパティへの保存、スプレッドシートへの書き込みまでコード付きで説明し、無料枠とChatGPT連携との違いも表にしています。">
+<meta property="og:url" content="https://shigoto.aobaworks.com/gas-gemini-api-renkei/"><meta property="og:site_name" content="AIツール比較"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://shigoto.aobaworks.com/og/gas-gemini-api-renkei.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta property="article:published_time" content="2026-10-23">
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#151719" media="(prefers-color-scheme: dark)"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='8' fill='%23fbfaf6' stroke='%231d2329' stroke-width='5'/%3E%3Ctext x='32' y='45' font-size='36' font-weight='700' text-anchor='middle' fill='%231d2329' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AIツール比較" href="/feed.xml"><style>:root{--ink:#1d2329;--sub:#5a6470;--line:#e2dfd6;--bg:#fbfaf6;--card:#fff;--accent:#1f6f5c;--code:#f1efe8;--mark:#7a5c1e;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--ink:#e6e5df;--sub:#a5abb1;--line:#363a3e;--bg:#151719;--card:#1c1f22;--accent:#72c6ac;--code:#24282b;--mark:#d8b56c}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.9 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;overflow-wrap:break-word;line-break:strict}
+a{color:var(--accent);text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header,main,footer{max-width:740px;margin:0 auto;padding:0 20px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 18px;padding-top:18px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.brand{font-weight:800;font-size:1.1875rem;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.gnav{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:0.875rem}.gnav a{color:var(--sub);text-decoration:none}.gnav a:hover{color:var(--accent)}
+.tag{color:var(--sub);font-size:0.875rem;margin:0;flex-basis:100%;line-height:1.6}
+h1{font-size:clamp(25px,5.6vw,33px);line-height:1.4;margin:22px 0 10px;letter-spacing:.01em}
+h2{font-size:clamp(21px,4.4vw,24px);line-height:1.45;margin:44px 0 12px;padding-top:14px;border-top:2px solid var(--ink)}
+h3{font-size:1.1875rem;line-height:1.5;margin:30px 0 8px;padding-left:10px;border-left:4px solid var(--mark)}h4{font-size:1.0625rem;margin:22px 0 6px}
+p{margin:0 0 1.05em}li{margin:.25em 0}ul,ol{padding-left:1.4em}strong{font-weight:700}
+.crumbs{font-size:0.8438rem;color:var(--sub);margin:16px 0 0;line-height:1.6}.crumbs a{color:var(--sub)}.crumbs span{margin:0 6px}
+.meta{color:var(--sub);font-size:0.875rem;margin:4px 0 10px}.meta time{font-variant-numeric:tabular-nums}
+.hero{display:block;width:100%;height:auto;aspect-ratio:1200/630;border:1px solid var(--line);border-radius:6px;margin:10px 0 6px}
+.tags{margin:8px 0 14px;line-height:2}.tags a{display:inline-block;font-size:0.8125rem;line-height:1.7;padding:0 10px;margin:0 6px 4px 0;border:1px solid var(--line);border-radius:999px;color:var(--sub);text-decoration:none;background:var(--card)}
+.tags a:hover{border-color:var(--accent);color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 20px 10px;margin:20px 0 28px}.toc p{margin:0 0 4px;font-size:0.9375rem}
+.toc ol{margin:0;padding-left:1.4em;font-size:0.9375rem;line-height:1.7}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{color:var(--accent);text-decoration:underline}
+.note{font-size:0.875rem;color:var(--sub);background:var(--code);border-radius:6px;padding:8px 12px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.88em}
+pre{background:var(--code);border:1px solid var(--line);padding:14px 16px;border-radius:6px;overflow:auto;font-size:0.875rem;line-height:1.6}pre code{background:none;padding:0;font-size:inherit}
+blockquote{margin:18px 0;padding:6px 16px;border-left:3px solid var(--accent);color:var(--sub);background:var(--card)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 22px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:0.9375rem;line-height:1.65}.tbl table{margin:0}main>table{display:block;overflow-x:auto;margin:18px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;min-width:6.5em}th{background:var(--code);font-weight:700}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(127,127,127,.05)}
+.tbl th:first-child,.tbl td:first-child,main>table th:first-child,main>table td:first-child{position:sticky;left:0;z-index:1;background:var(--card);box-shadow:inset -1px 0 0 var(--line)}.tbl thead th:first-child,main>table thead th:first-child{z-index:2;background:var(--s2,var(--code))}
+img{max-width:100%;height:auto;border-radius:4px}
+.list{list-style:none;padding:0;margin:8px 0}.list li{padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+.list a{font-size:1.1875rem;font-weight:700;line-height:1.5;text-decoration:none;color:var(--ink)}.list a:hover{color:var(--accent);text-decoration:underline}
+.list p{margin:6px 0 0;color:var(--sub);font-size:0.9375rem;line-height:1.75}.list .d{font-size:0.8125rem;color:var(--sub);margin:0 0 2px}
+.lead{color:var(--sub);font-size:1rem}.hubs{margin:10px 0 24px}
+.related{margin-top:44px;padding-top:6px;border-top:1px solid var(--line)}.related h2{margin-top:26px}
+.list h2,.list h3{margin:2px 0 6px;font-size:1.1875rem;line-height:1.5}.list h2 a,.list h3 a{color:var(--ink);text-decoration:none}
+.toc-h{font-weight:700;margin:0 0 6px}
+.brand-sub{font-weight:400;font-size:0.875rem;color:var(--sub);margin-left:10px}
+.site-foot p,body>footer p{margin:0 0 6px}
+.credit{margin-top:32px;padding-top:12px;border-top:1px solid var(--line);font-size:0.8438rem;color:var(--sub)}
+footer{color:var(--sub);font-size:0.8438rem;padding:28px 20px 40px;margin-top:56px;border-top:2px solid var(--ink);line-height:2}footer a{color:var(--sub)}
+td:first-child{min-width:8.5em}
+@media (max-width:600px){body{font-size:1.0312rem;line-height:1.85}header{padding-top:14px;padding-bottom:10px}header .tag{display:none}.list a{font-size:1.0938rem}th,td{padding:8px 10px;font-size:0.9062rem}}/* ui.py(共通の動く部品) */
+/* デザインの決まり v2(2026-10-17 design-harness/docs/デザインシステムの研究.md: 押す場所44px・見えるフォーカス枠) */
+button,.btn,.ui-menu-btn,.ui-fab button,.ui-fab a,.ui-tablist button{min-height:44px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.pills a,.tags a{min-height:32px;display:inline-flex;align-items:center}
+body > header{position:relative;padding-right:120px}body > header .ui-menu-btn{position:absolute;right:16px;top:14px}
+@media (max-width:700px){.site-nav,body > header .gnav{display:none}body > header{padding-right:100px}}
+.ui-bar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--accent);z-index:30}
+.ui-menu-btn{margin-left:auto;align-self:center;font:inherit;font-size:.9375rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.ui-menu-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ui-scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.ui-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);background:var(--card);border-left:1px solid var(--line);
+  transform:translateX(100%);transition:transform .22s ease;z-index:41;overflow-y:auto;padding:18px 20px 40px}
+.ui-open .ui-scrim{opacity:1;pointer-events:auto}.ui-open .ui-drawer{transform:none}
+.ui-drawer h2{font-size:.8125rem;letter-spacing:.02em;color:var(--sub);margin:22px 0 8px;font-weight:700}
+.ui-drawer .ui-x{float:right;font:inherit;font-size:.875rem;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--sub)}
+.ui-drawer ul,.ui-drawer ol{list-style:none;padding:0;margin:0}.ui-drawer li{margin:0;border-bottom:1px solid var(--line)}
+.ui-drawer li a{display:block;padding:10px 4px;text-decoration:none;color:var(--ink);font-size:.96875rem;line-height:1.45}
+.ui-drawer li a:hover,.ui-drawer li a.on{color:var(--accent)}.ui-drawer li a.on{font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
+.ui-fab{position:fixed;right:16px;bottom:18px;z-index:25;display:flex;gap:8px}
+.ui-fab button,.ui-fab a{font:inherit;font-size:.90625rem;background:var(--card);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none}
+.ui-fab .ui-next{background:var(--accent);border-color:var(--accent);color:var(--card);display:none}.ui-fab .ui-next.show{display:inline-block}
+.ui-fab .ui-top{display:none}.ui-fab .ui-top.show{display:inline-block}
+.ui-tabs{margin:8px 0 26px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.ui-tablist{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.ui-tablist button{flex:none;font:inherit;font-size:.9375rem;background:none;border:0;border-bottom:3px solid transparent;color:var(--sub);padding:12px 16px;cursor:pointer;white-space:nowrap}
+.ui-tablist button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+.ui-panel{padding:6px 18px 4px}.ui-panel[hidden]{display:none}.ui-panel>h3:first-child{margin-top:12px}
+.ui-faq details{border-bottom:1px solid var(--line)}.ui-faq details:first-of-type{border-top:1px solid var(--line)}
+.ui-faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 2px;font-weight:700;position:relative;line-height:1.45}
+.ui-faq summary::-webkit-details-marker{display:none}
+.ui-faq summary::after{content:"+";position:absolute;right:6px;top:12px;font-weight:400;font-size:1.25rem;color:var(--sub)}
+.ui-faq details[open] summary::after{content:"−"}.ui-faq .ui-a{padding:0 2px 8px}
+.ui-sum{border:2px solid var(--ink);border-radius:10px;background:var(--card);padding:14px 18px 10px;margin:4px 0 26px}
+.ui-sum-h{font-weight:800;font-size:.9375rem;margin:0 0 6px}.ui-sum ul{margin:0 0 8px;padding-left:20px}.ui-sum li{margin:4px 0;font-size:1.03125rem;line-height:1.55}
+.ui-sum-who{font-size:.9375rem;color:var(--sub);margin:0 0 4px;border-top:1px solid var(--line);padding-top:8px}
+.table-wrap{max-height:80vh;overflow:auto}.table-wrap thead th{position:sticky;top:0;z-index:1}
+.table-wrap td:first-child,.table-wrap th:first-child{position:sticky;left:0;background:var(--card);z-index:1}.table-wrap thead th:first-child{z-index:2;background:var(--pre,var(--card))}
+.ui-kicker{margin:28px 0 4px;font-weight:700;color:var(--accent);font-size:.9375rem}.ui-hero{font-size:2.125rem;line-height:1.35;margin:0 0 22px;max-width:22em;text-wrap:balance;word-break:auto-phrase}
+@media (max-width:600px){.ui-hero{font-size:1.625rem}}
+.ui-cards{display:grid;grid-template-columns:1fr;gap:18px;list-style:none;padding:0}
+.ui-cards>li{display:grid;grid-template-columns:200px 1fr;gap:4px 18px;align-items:start;border:1px solid var(--line)!important;border-radius:12px;background:var(--card);padding:14px!important;margin:0}
+.ui-cards>li>*{grid-column:2}.ui-cards .ui-thumb-a{grid-column:1;grid-row:1 / span 4}
+.ui-cards .ui-thumb{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.ui-cards>li.ui-noimg{grid-template-columns:1fr}.ui-cards>li.ui-noimg>*{grid-column:1}
+.ui-cards>li:hover{border-color:var(--accent)!important}
+@media (max-width:600px){.ui-cards>li{grid-template-columns:1fr}.ui-cards>li>*,.ui-cards .ui-thumb-a{grid-column:1}.ui-cards .ui-thumb-a{grid-row:auto}}
+.ui-side{display:none}
+@media (min-width:1240px){.ui-side{display:block;position:fixed;top:96px;left:calc(50% + 400px);width:260px;max-height:calc(100vh - 140px);overflow-y:auto;font-size:.875rem;border-left:1px solid var(--line);padding-left:14px}
+.ui-side p{font-weight:700;color:var(--sub);margin:0 0 6px;font-size:.8125rem}.ui-side ol{list-style:none;padding:0;margin:0}.ui-side li{margin:0}
+.ui-side a{display:block;padding:5px 0;color:var(--sub);text-decoration:none;line-height:1.4}.ui-side a:hover,.ui-side a.on{color:var(--accent)}.ui-side a.on{font-weight:700}
+.ui-fab button{display:none}}
+@media (prefers-reduced-motion:reduce){.ui-drawer,.ui-scrim{transition:none}html{scroll-behavior:auto}}
+@media print{.ui-bar,.ui-fab,.ui-drawer,.ui-scrim,.ui-menu-btn{display:none}}
+:root{--font-body:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","BIZ UDPGothic",Meiryo,system-ui,sans-serif;--font-head:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","BIZ UDPMincho",serif;--font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;--mark-ch:"AI";--mark-fs:.75rem;--fs-body:1.0625rem;--lh-body:1.85;--ls-body:.02em;--ls-head:.02em;--measure:40em;--page:1120px;--col:44rem;--danger-bg:#faf3e8;--danger-tx:#6e4a12;--danger-bd:#c8a46e;--warn-bg:#faf3e8;--warn-tx:#6e4a12;--warn-bd:#c8a46e;--ok-bg:#f5f6f8;--ok-tx:#1b1f24;--code-bg:var(--s2);--code-ink:var(--ink);--code-sub:var(--sub);--code-line:var(--line);--bg:#ffffff;--card:#ffffff;--surface:#ffffff;--s2:#f5f6f8;--pre:#f5f6f8;--ink:#1b1f24;--sub:#4f5964;--line:#e3e6ea;--border:#8a939d;--accent:#1f4f7a;--link:#1f4f7a;--on-accent:#ffffff;--due-bg:#faf3e8;--due-tx:#6e4a12;--focus:#1f4f7a;--head-bg:#ffffff;--head-ink:#1b1f24;--head-sub:#4f5964;--hover:#f6f7f9;}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}}
+:root[data-theme=dark]{--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}
+
+/* ===== 見た目 v3(ui.py theme_css)。古い CSS のあとに読み込み、上書きする ===== */
+html{scroll-padding-top:16px}
+body{font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-body);background:var(--bg);color:var(--ink);
+  font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+html[lang=ja] body{line-break:strict;overflow-wrap:anywhere;text-autospace:ideograph-alpha;text-spacing-trim:normal}
+h1,h2,h3,h4{font-family:var(--font-head);letter-spacing:var(--ls-head);color:var(--ink);text-wrap:balance}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3{font-feature-settings:"palt";word-break:auto-phrase}
+h1,.ui-hero{font-size:clamp(1.75rem,1.35rem + 1.7vw,2.5rem);line-height:1.25;font-weight:750;margin:.5rem 0 1rem}
+html[lang=ja] h1,html[lang=ja] .ui-hero{line-height:1.45;font-weight:700}
+h2{font-size:clamp(1.375rem,1.2rem + .7vw,1.75rem);line-height:1.3;font-weight:700;margin:3rem 0 .75rem;padding-top:0;border-top:0}
+html[lang=ja] h2{line-height:1.5}
+h3{font-size:clamp(1.125rem,1.06rem + .3vw,1.25rem);line-height:1.4;font-weight:700;margin:2rem 0 .5rem;padding-left:0;border-left:0}
+h4{font-size:1.0625rem;margin:1.5rem 0 .4rem}
+p,ul,ol{margin:0 0 1.1em}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+strong{font-weight:700}
+html[lang=ja] em,html[lang=ja] i{font-style:normal;font-weight:700}
+.lede,.lead{font-size:1.1875rem;line-height:1.6;color:var(--sub);max-width:var(--measure)}
+html[lang=ja] .lede,html[lang=ja] .lead{font-size:1.0625rem;line-height:1.85}
+.meta,.crumbs{font-size:.875rem;color:var(--sub)}
+.crumbs{margin:1.25rem 0 0;white-space:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;text-overflow:ellipsis}.crumbs a{color:var(--sub)}
+.ui-kicker{display:none}
+main>h1:first-of-type,.ui-hero{margin-top:2.5rem}main>.crumbs+h1{margin-top:.75rem}
+
+/* ヘッダー: 全幅の帯・中は --page の幅。データのサイトは濃い帯(信頼・公的データの読み物の型: USWDS/GOV.UK の考え方。色は自分のもの) */
+body>header,body>header.site-head{max-width:none;margin:0;background:var(--head-bg);color:var(--head-ink);border-bottom:1px solid var(--line);padding:0}
+body>header:not(.site-head){display:flex;flex-wrap:wrap;align-items:center;gap:4px 20px;padding:12px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head .wrap{max-width:var(--page);display:flex;align-items:center;gap:8px 20px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--head-ink);text-decoration:none;font-family:var(--font-head);font-weight:750;font-size:1.25rem;letter-spacing:-.01em;line-height:1.2;min-height:44px}
+html[lang=ja] .brand{letter-spacing:.04em;font-weight:700}
+.brand svg{display:none}
+.brand::before{content:var(--mark-ch);flex:none;display:inline-grid;place-items:center;width:32px;height:32px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font:700 var(--mark-fs)/1 var(--font-body);letter-spacing:0}
+.brand-sub{font-family:var(--font-body);font-weight:400;font-size:.875rem;color:var(--head-sub);letter-spacing:0;margin-left:4px}
+.site-nav,.gnav{display:flex;gap:4px;margin-left:auto;font-size:.9375rem}
+.site-nav a,.gnav a{color:var(--head-sub);text-decoration:none;padding:10px 12px;margin:0;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.site-nav a:hover,.gnav a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+body>header .tag{order:5;flex-basis:100%;font-size:.875rem;color:var(--head-sub);margin:-4px 0 0;line-height:1.5}
+body>header .ui-menu-btn{position:static;order:4;margin-left:8px;background:transparent;color:var(--head-ink);border:1px solid var(--border);border-radius:6px;font-size:.9375rem;padding:8px 14px}
+body>header:not(.site-head){padding-right:max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head{padding-right:0}
+@media (max-width:700px){body>header .ui-menu-btn{margin-left:auto}.brand-sub{display:none}body>header .site-nav,body>header .gnav{display:none}}
+.brand{white-space:nowrap}
+
+/* 本文の列。データのサイトは広い面(表)+読む文は --measure まで(GOV.UK の 2/3 の列の考え方) */
+main{padding-bottom:3rem}
+.disclaimer{margin:20px 0 0;padding:10px 16px;border:0;border-left:4px solid var(--border);background:var(--s2);color:var(--sub);font-size:.875rem;line-height:1.55;border-radius:0 6px 6px 0;max-width:var(--measure)}
+.intro{padding:2.5rem 0 .5rem}
+blockquote{border-left:4px solid var(--border);background:transparent;color:var(--ink);padding:.25rem 0 .25rem 1rem;border-radius:0;margin:1.5rem 0}
+
+/* ボタン・チップ(押す場所 44px: Apple HIG / Material 3 は 48dp) */
+.ui-cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:1.5rem 0}
+.ui-btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid var(--border);border-radius:6px;background:var(--card);
+  color:var(--ink);font-weight:600;text-decoration:none;line-height:1.25}
+.ui-btn:hover{border-color:var(--ink);text-decoration:none}
+.ui-btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ui-btn-primary:hover{filter:brightness(1.08);border-color:var(--accent);color:var(--on-accent)}
+.ui-cta-note{color:var(--sub);font-size:.875rem}
+.ui-group{margin:1.25rem 0}
+.ui-group-h{font-weight:700;font-size:.9375rem;margin:0 0 .5rem;color:var(--ink)}
+.ui-chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.ui-chips li{margin:0}
+.ui-chips a{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);text-decoration:none;font-size:.9375rem;line-height:1.3}
+.ui-chips a:hover{border-color:var(--accent);color:var(--accent)}
+@media (pointer:coarse){.ui-chips a{min-height:44px}}
+.pills a,.tags a{border-radius:6px;border-color:var(--line);color:var(--ink);background:var(--card);font-size:.875rem;padding:4px 12px}
+.pills a:hover,.tags a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ホームの「いまの数字」と期限が近い表(USWDS の summary box と collection の考え方) */
+.ui-dash{margin:2rem 0 1rem}
+.ui-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;border:1px solid var(--line);border-radius:8px;background:var(--line);margin:0 0 .5rem;overflow:hidden}
+.ui-stats>div{padding:14px 18px;background:var(--card)}
+.ui-stats b{display:block;font-size:1.75rem;line-height:1.2;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--ink)}
+.ui-stats span{display:block;font-size:.875rem;color:var(--sub);line-height:1.45;margin-top:2px}
+.ui-src{font-size:.8125rem;color:var(--sub);margin:0 0 1.5rem}
+.ui-dash-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2rem 0 .75rem}
+.ui-dash-h h2{margin:0}
+.ui-dash-h a{font-weight:600}
+@media (max-width:600px){.ui-stats{grid-template-columns:1fr 1fr}.ui-stats>div:last-child:nth-child(odd){grid-column:1/-1}.ui-stats b{font-size:1.375rem}.ui-stats>div{padding:12px 14px}.lede,.lead{font-size:1.0625rem}h1,.ui-hero{font-size:1.75rem}
+  .ui-cta .ui-btn{flex:1 1 100%;justify-content:center}.disclaimer{font-size:.8125rem;padding:8px 12px}}
+
+/* 表(デジタル庁: 数字は右よせ・見出しは太字・スマホは表の中だけ動かす / Carbon: 行の高さをそろえる) */
+.table-wrap,.tbl{border:1px solid var(--line);border-radius:8px;background:var(--card);margin:0 0 1.5rem;overflow:auto}
+table{font-size:.9375rem;line-height:1.5;font-variant-numeric:tabular-nums;border-collapse:collapse;width:100%}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--s2);color:var(--ink);font-weight:700;font-size:.875rem;border-bottom:2px solid var(--border);white-space:nowrap}
+tbody tr:nth-child(even) td{background:transparent}
+tbody tr:hover td{background:var(--hover)}
+td:first-child a{font-weight:600}
+td.ui-num,th.ui-num{text-align:right;white-space:nowrap}
+td.ui-date{white-space:nowrap}
+button[data-sort]{font:inherit;font-size:.875rem;min-height:44px;padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button[data-sort][aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* 見出しの行がない表 = 項目と値(GOV.UK の summary list の型) */
+main table:not(:has(thead)){border-top:1px solid var(--line);margin:1rem 0 2rem;font-size:1rem;max-width:52rem}
+main table:not(:has(thead)) th{background:transparent;width:32%;font-weight:700;color:var(--ink);padding:14px 16px 14px 0;white-space:normal}
+main table:not(:has(thead)) td{padding:14px 0}
+main table:not(:has(thead)) tr:hover td{background:transparent}
+/* スマホ: 3列以上の表は1件ずつの箱に積む(USWDS の stacked table。ui.js が data-label をつける) */
+@media (max-width:640px){
+  table.ui-stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.ui-stack,table.ui-stack tbody,table.ui-stack tr,table.ui-stack td{display:block;width:auto}
+  table.ui-stack tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.ui-stack td{border:0;padding:2px 0;min-width:0;position:static;background:transparent!important;display:grid;grid-template-columns:7.5em 1fr;gap:8px;font-size:.9375rem}
+  table.ui-stack td::before{content:attr(data-label);color:var(--sub);font-size:.8125rem;font-weight:600;padding-top:2px}
+  table.ui-stack td:first-child{display:block;font-size:1rem;margin-bottom:4px}
+  table.ui-stack td:first-child::before{content:none}
+  table.ui-stack caption{display:block;width:auto;text-align:left}
+  table.ui-stack td.ui-num{text-align:left}
+  .table-wrap:has(table.ui-stack),.tbl:has(table.ui-stack){max-height:none;overflow:visible}
+}
+/* 期限の札(色だけにせず「あと3日」と文字で) */
+.ui-due{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:4px;font-size:.8125rem;font-weight:700;line-height:1.5;white-space:nowrap;border:1px solid transparent;vertical-align:1px}
+.ui-due-now{background:var(--due-bg);color:var(--due-tx)}
+.ui-due-soon{background:var(--danger-bg);color:var(--danger-tx);border-color:var(--danger-bd)}
+.ui-due-week{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+
+/* 記事の一覧 */
+.list .when,.list .d{font-size:.875rem;color:var(--sub)}
+.ui-cards{gap:16px}
+.ui-cards>li{border-radius:8px;padding:16px!important;border-color:var(--line)!important;background:var(--card)}
+.ui-cards h2,.ui-cards h3{font-size:1.1875rem;line-height:1.4;margin:2px 0 6px}
+.ui-cards h2 a,.ui-cards h3 a,.ui-cards>li>a{color:var(--ink);text-decoration:none}
+.ui-cards>li:hover h2 a,.ui-cards>li:hover h3 a{color:var(--accent);text-decoration:underline}
+.ui-cards p{font-size:.9375rem;line-height:1.65;color:var(--sub)}
+
+/* 目次・要点・注意書き */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:8px}
+.toc-h{text-transform:none;letter-spacing:0;font-size:.9375rem;color:var(--ink)}
+.ui-sum{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--card)}
+.note{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:1rem 0 0;font-size:.875rem;color:var(--sub)}
+.pr-note,.ai-note{font-size:.875rem}
+
+/* コード(Stripe・Linear の文書の型: 暗い面・言語のラベル・コピーのボタン) */
+code{font-family:var(--font-mono);font-size:.875em;background:var(--s2);border:1px solid var(--line);border-radius:4px;padding:.05em .35em}
+pre{position:relative;background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-line);border-radius:8px;padding:16px 18px;font-size:.875rem;line-height:1.65;overflow-x:auto;margin:1.25rem 0 1.75rem;letter-spacing:0;tab-size:2}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+pre[data-lang]{padding-top:44px}
+pre[data-lang]::before{position:absolute;left:0;right:0;top:0;padding:8px 18px;margin:0;border-bottom:1px solid rgba(127,127,127,.25);font:600 .75rem/1.4 var(--font-mono);color:var(--code-sub);text-transform:none;letter-spacing:0}
+.ui-copy{position:absolute;top:5px;right:6px;min-height:30px!important;font:600 .75rem/1 var(--font-body);color:var(--code-sub);background:transparent;border:1px solid rgba(127,127,127,.35);border-radius:5px;padding:6px 10px;cursor:pointer}
+.ui-copy:hover{color:var(--code-ink);border-color:var(--code-sub)}
+pre:not([data-lang]) .ui-copy{top:8px}
+
+/* フッター */
+body>footer,.site-foot{max-width:none;margin:4rem 0 0;padding:0;background:var(--s2);border-top:1px solid var(--line);color:var(--sub);font-size:.875rem;line-height:1.8}
+body>footer:not(.site-foot){padding:28px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px)) 40px}
+.site-foot .wrap{max-width:var(--page);padding-top:28px;padding-bottom:40px}
+body>footer a,.site-foot a{color:var(--sub)}
+.sisters{margin-top:.75rem}
+@media print{body>header,body>footer{background:none;color:#000}}
+
+caption.ui-cap{caption-side:top;text-align:left;font-size:.875rem;line-height:1.5;color:var(--sub);padding:10px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+main table:not(:has(thead)) caption.ui-cap{padding:0 0 10px;border:0;background:transparent}
+.table-wrap table:not(:has(thead)),.tbl table:not(:has(thead)){border-top:0;margin:0;max-width:none}
+.table-wrap table:not(:has(thead)) :is(th,caption.ui-cap),.tbl table:not(:has(thead)) :is(th,caption.ui-cap){padding-left:16px}
+.table-wrap table:not(:has(thead)) td,.tbl table:not(:has(thead)) td{padding-right:16px}
+caption.ui-cap-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;padding:0;border:0}
+time{font-variant-numeric:tabular-nums}
+
+body>header,body>header.site-head{background:var(--head-bg);border-bottom:1px solid var(--line)}
+.brand::before{content:none;display:none}
+.brand{font-size:1.1875rem}
+body>header .tag{display:none}
+.ui-due-now,.ui-due-soon{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+.ui-due-week{background:transparent;color:var(--sub);border-color:var(--line)}
+.ui-find{border:1px solid var(--line);border-radius:8px;background:var(--s2);padding:20px 24px;margin:1.25rem 0 2rem}
+.ui-find>h2{font-size:1.125rem;margin:0 0 12px;line-height:1.4}
+.ui-jump{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0}
+.ui-jump label{flex-basis:100%;font-weight:600;font-size:.875rem;color:var(--sub);margin:0}
+.ui-jump select{font:inherit;font-size:1rem;min-height:48px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);flex:1 1 260px;max-width:420px;min-width:0;text-overflow:ellipsis}
+.ui-jump .ui-btn{min-height:48px;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+.ui-find .ui-group{margin:18px 0 0}
+.ui-find .ui-group-h{font-size:.875rem;color:var(--sub)}
+html[lang=ja] .brand{letter-spacing:.02em}
+@media (max-width:600px){.ui-find .ui-same{display:none}.ui-find{padding:16px}.ui-jump select{max-width:100%;width:100%;min-width:0;flex-basis:100%;box-sizing:border-box}.ui-jump .ui-btn{flex:1 1 100%;justify-content:center}}
+.ui-lede{font-size:1.125rem;line-height:1.75;color:var(--sub);max-width:var(--measure);margin:-.25rem 0 1.75rem}
+html[lang=en] .ui-lede{line-height:1.6}
+.ui-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;list-style:none;padding:0;margin:0 0 1rem}
+.ui-topics li{margin:0}
+.ui-topics a{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);text-decoration:none}
+.ui-topics a b{font-size:1rem;font-weight:700;line-height:1.35}
+.ui-topics a span{font-size:.8125rem;color:var(--sub)}
+.ui-topics a:hover{border-color:var(--accent)}.ui-topics a:hover b{color:var(--accent)}
+
+.ui-lang{display:flex;align-items:center;gap:2px;font-size:.875rem;margin-left:4px;flex:none}
+.ui-lang a{color:var(--head-sub);text-decoration:none;padding:10px 10px;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.ui-lang a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+.ui-lang span[aria-current]{color:var(--head-ink);font-weight:650;padding:10px 6px}
+@media (max-width:700px){body>header .ui-lang{margin-left:auto}body>header .ui-lang~.ui-menu-btn{margin-left:4px}.ui-lang span[aria-current]{display:none}.ui-lang a{padding:10px 8px}}
+.ui-l-short{display:none}
+@media (max-width:480px){.ui-l-long{display:none}.ui-l-short{display:inline}}
+@media print{.ui-lang{display:none}}
+
+/* 記事のサイト: 読む列は狭く、トップだけ広く(カードを並べる) */
+.wrap{max-width:var(--page)}
+main.wrap,body>main{max-width:calc(var(--col) + 48px)}
+main.wrap:has(>.intro),body>main:has(.ui-hero){max-width:var(--page)}
+main:has(>.intro) .ui-cards,main:has(.ui-hero) .ui-cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+main:has(>.intro) .ui-cards>li,main:has(.ui-hero) .ui-cards>li{grid-template-columns:1fr}
+main:has(>.intro) .ui-cards>li>*,main:has(.ui-hero) .ui-cards>li>*{grid-column:1}
+main:has(>.intro) .ui-cards .ui-thumb-a,main:has(.ui-hero) .ui-cards .ui-thumb-a{grid-row:auto;grid-column:1;margin-bottom:8px}
+main:has(>.intro) .intro>:is(p,h1),main:has(.ui-hero)>:is(p,h1){max-width:var(--measure)}
+body>header,body>header.site-head{background:var(--bg)}
+article p,article li{max-width:var(--col)}
+.ui-side{left:calc(50% + 24px + var(--col) / 2)}
+
+/* 先頭の記事を大きく(トップだけ・広い画面) */
+@media (min-width:860px){
+main:has(.ui-hero) .ui-cards>li:first-child,main:has(>.intro) .ui-cards>li:first-child{grid-column:1/-1;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6px 32px;padding:20px!important;align-items:center}
+main:has(.ui-hero) .ui-cards>li:first-child>*,main:has(>.intro) .ui-cards>li:first-child>*{grid-column:2}
+main:has(.ui-hero) .ui-cards>li:first-child .ui-thumb-a,main:has(>.intro) .ui-cards>li:first-child .ui-thumb-a{grid-column:1;grid-row:1 / span 6;margin:0}
+main:has(.ui-hero) .ui-cards>li:first-child>a:not(.ui-thumb-a),main:has(.ui-hero) .ui-cards>li:first-child h3,main:has(>.intro) .ui-cards>li:first-child h3{font-size:1.5rem;line-height:1.4}
+main:has(.ui-hero) .ui-cards>li:first-child p:not(.d):not(.when),main:has(>.intro) .ui-cards>li:first-child p:not(.d):not(.when){font-size:1rem}
+}
+.ui-cards>li>a:not(.ui-thumb-a){font-weight:700;font-size:1.125rem;line-height:1.45;display:block;margin:2px 0 6px;color:var(--ink);text-decoration:none}
+.ui-cards>li:hover>a:not(.ui-thumb-a){color:var(--accent);text-decoration:underline}
+h1,h2,h3,.brand{font-weight:600}h3{font-family:var(--font-body);font-weight:700}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "GAS Gemini API連携の使い方|最初にやる3つとコード", "image": ["https://shigoto.aobaworks.com/og/gas-gemini-api-renkei.png"], "description": "GASとGemini APIの連携のやり方を3つの手順にまとめました。Google AI StudioでのAPIキー取得、スクリプトプロパティへの保存、スプレッドシートへの書き込みまでコード付きで説明し、無料枠とChatGPT連携との違いも表にしています。", "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://shigoto.aobaworks.com/gas-gemini-api-renkei/", "url": "https://shigoto.aobaworks.com/gas-gemini-api-renkei/", "inLanguage": "ja", "keywords": "GAS, Gemini API, Google Apps Script, スプレッドシート, Google AI Studio, 自動化", "isPartOf": {"@type": "WebSite", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/"}, "author": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/about/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}}, "publisher": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}, "publishingPrinciples": "https://shigoto.aobaworks.com/about/", "logo": "https://shigoto.aobaworks.com/og/_site-5808b969.png", "contactPoint": {"@type": "ContactPoint", "contactType": "editorial", "email": "shigoto.ai.note@gmail.com"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://shigoto.aobaworks.com/"}, {"@type": "ListItem", "position": 2, "name": "GAS", "item": "https://shigoto.aobaworks.com/tag/gas/"}, {"@type": "ListItem", "position": 3, "name": "GAS Gemini API連携の使い方|最初にやる3つとコード", "item": "https://shigoto.aobaworks.com/gas-gemini-api-renkei/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "GASでGemini APIを使うのにクレジットカードは必要?", "acceptedAnswer": {"@type": "Answer", "text": "無料枠だけで使うなら要りません。Google AI StudioでAPIキーを作れば、無料枠のあるモデルを呼び出せます。カードが必要になるのは、請求先アカウントを紐付けて有料枠(Tier 1以上)に上げるときです。"}}, {"@type": "Question", "name": "無料枠で会社のデータを送っても大丈夫?", "acceptedAnswer": {"@type": "Answer", "text": "おすすめしません。料金ページには、無料枠のデータが製品改善に使われると書かれています。顧客情報や社内の数字を扱うなら有料枠に切り替え、あわせて社内のルールも確認してください。"}}, {"@type": "Question", "name": "モデル名は何を書けばいい?", "acceptedAnswer": {"@type": "Answer", "text": "モデル一覧 に載っている現行のモデル名を書き、料金ページ で無料枠の有無と単価を確かめてください。この記事のコードの gemini-2.5-flash は書き方の例です。モデルは入れ替わりが早く、提供が終わると404エラーになります。半年に1回ほど見直すと安心です。"}}, {"@type": "Question", "name": "セルに =GEMINI(A2) と書いて使えますか?", "acceptedAnswer": {"@type": "Answer", "text": "カスタム関数として作れば使えます。ただし1回30秒の上限があり、再計算のたびにAPIが呼ばれて回数を使いやすくなります。最初はこの記事の summarizeRows のように、実行ボタンやトリガーから動かす形にしてください。"}}]}</script>
+<style id="ui-motion" data-m="M1+M2+M3">@media (prefers-reduced-motion:no-preference){.m-w{opacity:0;transform:translateY(8px)}.m-in{transition:opacity .55s ease-out,transform .55s ease-out}}@media print{.m-w{opacity:1;transform:none}}@media (prefers-reduced-motion:no-preference){.ui-cards>li{transition:transform .2s ease,border-color .2s ease,opacity .55s ease-out}.ui-cards>li:hover{transform:translateY(-3px)}.ui-cards>li:active{transform:translateY(-1px)}main tbody tr{transition:background-color .2s ease}main tbody tr:hover{background-color:color-mix(in srgb,var(--accent) 7%,transparent)}main a{transition:text-underline-offset .2s ease,color .2s ease}main a:hover{text-underline-offset:.32em}}.ui-bar{width:100%;transform:scaleX(0);transform-origin:0 50%}@media (prefers-reduced-motion:no-preference){.ui-bar{transition:transform .12s linear}.ui-sum{position:relative;overflow:hidden}.ui-sum::before{content:"";position:absolute;inset:0;background:var(--accent);opacity:0;transform:scaleX(0);transform-origin:0 50%;pointer-events:none;animation:m-sweep 1.6s .5s ease-out both}@keyframes m-sweep{0%{opacity:.1;transform:scaleX(0)}55%{opacity:.1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}}</style></head><body><header><a class="brand" href="/">AIツール比較</a><nav class="gnav" aria-label="メニュー"><a href="/">記事一覧</a><a href="/tag/">テーマ</a><a href="/about/">このサイトについて</a></nav><p class="tag">AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p></header>
+<main><nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span>›</span><a href="/tag/gas/">GAS</a><span>›</span>GAS Gemini API連携の使い方|最初にやる3つとコード</nav><article><h1>GAS Gemini API連携の使い方|最初にやる3つとコード</h1><p class="meta">運営 <a href="/about/">Aoba Works</a> · 公開 <time datetime="2026-10-23">2026年10月23日</time> · 28分で読めます</p><p class="meta src-note">調べ方: <time datetime="2026-10-23">2026-10-23</time> に、各サービスの公式ページ・ヘルプなどで事実を確かめて書きました(出典 13 件・5 サイト・<a href="#出典">一覧</a>)。公開の前に、出典の無い事実・作り話の体験・誇張が無いかを自動で点検しています。<a href="/about/">編集方針</a></p><p class="tags"><a href="/tag/gas/">#GAS</a> <a href="/tag/google-apps-script/">#Google Apps Script</a> <a href="/tag/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/">#スプレッドシート</a></p><p class="note">※この記事にはアフィリエイト広告(PR)が含まれます。紹介したサービスへの申し込みなどで、運営者に報酬が入ることがあります。</p>
+<p>GASとGemini APIは、①Google AI StudioでAPIキーを作る、②キーをGASの「スクリプトプロパティ」に保存する、③UrlFetchAppでGemini APIを呼び、返ってきた文章をSpreadsheetAppでセルに書き込む、の3手順でつながります。Gemini APIには無料枠があり、一部のモデルは無料でも呼び出せます。ただし無料枠に送った内容はGoogleの製品改善に使われます。仕事のデータを流すなら、有料枠に切り替えるかどうかを先に決めておきましょう(<a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API 料金</a>・2026年10月時点・最新は公式で確認)。</p>
+<aside class="ui-sum" aria-label="要点"><p class="ui-sum-h">この記事の要点</p><ul><li>手順はキー取得・プロパティ保存・コードとシート出力の3つ</li><li>無料枠のデータは製品改善に使われる。社外秘は有料枠で</li><li>モデル名は入れ替わるので公式のモデル一覧で確認して書く</li></ul><p class="ui-sum-who"><b>向いている人: </b>GASでスプレッドシート作業をAIに任せたい会社員・個人事業主</p></aside><nav class="toc" aria-label="目次"><p class="toc-h">目次</p><ol><li><a href="#あなたに合うのはどれ">あなたに合うのはどれ?</a></li><li><a href="#gasでgemini-apiを使うにはどんな準備が必要">GASでGemini APIを使うにはどんな準備が必要?</a></li><li><a href="#gemini-apiキーの取得手順は">Gemini APIキーの取得手順は?</a></li><li><a href="#gasのスクリプトプロパティにapiキーを安全に保存する方法は">GASのスクリプトプロパティにAPIキーを安全に保存する方法は?</a></li><li><a href="#gasからgemini-apiを呼び出すコードの書き方は">GASからGemini APIを呼び出すコードの書き方は?</a></li><li><a href="#geminiの回答をスプレッドシートに出力する手順は">Geminiの回答をスプレッドシートに出力する手順は?</a></li><li><a href="#gas-gemini-apiとgas-chatgpt-apiの違いは">GAS×Gemini APIとGAS×ChatGPT APIの違いは?</a></li><li><a href="#gemini-apiの無料利用枠はどこまで">Gemini APIの無料利用枠はどこまで?</a></li><li><a href="#連携時によく出るエラーとその対処法は">連携時によく出るエラーとその対処法は?</a></li><li><a href="#次にやること">次にやること</a></li><li><a href="#よくある質問">よくある質問</a></li><li><a href="#出典">出典</a></li><li><a href="#次に検討するなら-pr">次に検討するなら(PR)</a></li></ol></nav><h2 id="あなたに合うのはどれ">あなたに合うのはどれ?</h2>
+<p>コードを書けるか、送るデータが社外秘かどうか。この2点で、選ぶものが変わります。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">あなたに合うのはどれ?</caption><thead><tr><th>状況</th><th>まず選ぶもの</th><th>最初に開くページ</th></tr></thead><tbody><tr><td>初心者で、まず無料で動くところを見たい</td><td>Gemini API の無料枠+この記事のコード</td><td><a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio の APIキー画面</a></td></tr><tr><td>仕事で毎日使い、顧客情報や社内文書も送る</td><td>Gemini API の有料枠(請求先アカウントを紐付ける)</td><td><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API 料金</a></td></tr><tr><td>コードは書きたくない。会社でWorkspaceの対象プランを契約している</td><td>スプレッドシートの AI 関数(<code>=AI()</code>)</td><td><a href="https://support.google.com/docs/answer/15877199?hl=ja" rel="noopener">AI 関数のヘルプ</a></td></tr><tr><td>社内で ChatGPT の GAS 連携をすでに使っている</td><td>今のコードの「URL・認証・返り値」の3か所を書き換える</td><td>この記事の「ChatGPT連携との違い」の表</td></tr></tbody></table></div>
+<p>無料枠はクレジットカードなしで始められるので、動作を確かめる段階に合っています。有料枠は「送ったデータを製品改善に使わない」と料金ページに書かれていて、業務データ向けです。AI 関数はコードが要りませんが、対象プランの契約が必要で、生成できるのは最初の350セルまでという制限があります(<a href="https://support.google.com/docs/answer/15877199?hl=ja" rel="noopener">AI 関数のヘルプ</a>)。</p>
+<h2 id="gasでgemini-apiを使うにはどんな準備が必要">GASでGemini APIを使うにはどんな準備が必要?</h2>
+<p>必要なのは、Googleアカウント・Gemini APIキー・GASのプロジェクトの3つです。</p>
+<p>Gemini APIキーは、裏側で必ずGoogle Cloudのプロジェクトにひもづきます。</p>
+<blockquote><p>「Every Gemini API key is associated with a Google Cloud project」(<a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener">Gemini API キーの使い方</a>)</p></blockquote>
+<p>訳すと「Gemini APIキーはすべて、どれかのGoogle Cloudプロジェクトにひもづいている」。料金の請求も使える回数の上限も、このプロジェクトの単位で管理されます。とはいえ、Google Cloudのコンソールを自分で操作しなくても、Google AI Studio側でキーを作ればプロジェクトは用意されます。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">GASでGemini APIを使うにはどんな準備が必要?</caption><thead><tr><th>準備するもの</th><th>どこで用意するか</th><th>費用</th></tr></thead><tbody><tr><td>Googleアカウント</td><td>個人の Gmail でも Workspace のアカウントでもよい</td><td>無料</td></tr><tr><td>Gemini APIキー</td><td><a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio</a></td><td>無料枠あり</td></tr><tr><td>GASのプロジェクト</td><td>スプレッドシートの「拡張機能」→「Apps Script」</td><td>無料</td></tr><tr><td>請求先アカウント(有料枠を使う場合だけ)</td><td>Google AI Studio または Google Cloud</td><td>使った分だけ</td></tr></tbody></table></div>
+<p>会社のWorkspaceアカウントで作業する場合は、管理者の設定によってGoogle AI StudioやApps Scriptが使えないことがあります。開けないときは、情報システム担当に「Google AI Studio と Apps Script の利用が許可されているか」を聞いてください。</p>
+<p>GASそのものが初めてなら、ChatGPTとつなぐ版の <a href="/chatgpt-gas-automation-start/">ChatGPT GAS自動化、始め方の3手順</a> にエディタの開き方を書いています。どちらのAIでも、GAS側の操作は同じです。</p>
+<h2 id="gemini-apiキーの取得手順は">Gemini APIキーの取得手順は?</h2>
+<p>Google AI Studioの「API Keys」画面で「Create API key」を押せば、キーが発行されます。</p>
+<p>表記は2026年10月時点の公式ドキュメントのものです。画面の言語が日本語なら訳された表記になります。</p>
+<ol><li><a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio の API Keys ページ</a> を開き、Googleアカウントでログインする</li><li>初めてのときは利用規約が表示されるので、確認して同意する</li><li>「<strong>Create API key</strong>」を押す</li><li>キーを入れるプロジェクトを選ぶ。既存のGoogle Cloudプロジェクトを使うときは「Import projects」で読み込む</li><li>表示されたキーをコピーし、次の手順でGASに貼るまで手元のメモ帳などに一時的に置いておく</li></ol>
+<p>キーの扱いについては、公式に3つの注意があります(<a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener">Gemini API キーの使い方</a>)。キーはパスワードと同じように人に見せないこと。本番ではブラウザ側(クライアント側)に埋め込まないこと。本番運用ではGoogle Cloudの Secret Manager の利用を検討すること、の3つです。キーの画面には「Add restrictions」があり、使えるAPIを絞る制限もかけられます。</p>
+<h3 id="つまずきやすい所">つまずきやすい所</h3>
+<ul><li><strong>キーをチャットやメールに貼ってしまった</strong>:API Keys の画面からそのキーを削除し、作り直してください。漏れたキーで他人に使われると、有料枠では請求があなたに来ます。</li><li><strong>会社アカウントで「Create API key」が押せない</strong>:組織のポリシーで止められている場合があります。個人アカウントで試すか、管理者に相談しましょう。</li><li><strong>プロジェクトを複数作ってしまった</strong>:無料枠の上限はプロジェクトごとに決まります。どのキーがどのプロジェクトのものか、名前で見分けられるようにしておくと後で困りません。</li></ul>
+<h2 id="gasのスクリプトプロパティにapiキーを安全に保存する方法は">GASのスクリプトプロパティにAPIキーを安全に保存する方法は?</h2>
+<p>キーはコードに直接書かず、「プロジェクトの設定」の「スクリプト プロパティ」に保存します。</p>
+<p>コードにキーを書くと、スプレッドシートを共有した相手やコードをコピーした人にもキーが見えてしまいます。スクリプトプロパティならコードの外に置けて、<code>PropertiesService</code> で読み込めます。公式の手順は次の5段です(<a href="https://developers.google.com/apps-script/guides/properties" rel="noopener">Properties Service ガイド</a>)。</p>
+<ol><li>Apps Script のプロジェクトを開く</li><li>左の歯車アイコン「<strong>プロジェクトの設定</strong>」(Project Settings)を押す</li><li>「スクリプト プロパティ」の欄で「スクリプト プロパティを追加」(Add script property)を押す。2つ目からは「スクリプト プロパティを編集」</li><li>「プロパティ」に <code>GEMINI_API_KEY</code>、「値」にコピーしたキーを貼る</li><li>「スクリプト プロパティを保存」(Save script properties)を押す</li></ol>
+<p>コードからはこう読み込みます。</p>
+<pre data-lang="javascript"><code class="language-javascript">const apiKey = PropertiesService.getScriptProperties().getProperty(&#x27;GEMINI_API_KEY&#x27;);</code></pre>
+<p>画面から手で足せるプロパティは50個まで。値1つは9KBまでで、1つの保存先の合計は500KBまでです(<a href="https://developers.google.com/apps-script/guides/services/quotas" rel="noopener">Apps Script の割り当て</a>・2026年10月時点)。APIキーなら1つで十分に収まります。</p>
+<h3 id="つまずきやすい所-2">つまずきやすい所</h3>
+<ul><li><strong><code>getProperty</code> が null を返す</strong>:プロパティ名の打ち間違いが一番多い原因です。<code>GEMINI_API_KEY</code> と <code>GEMINI_APIKEY</code> のように1文字違うだけで読めません。前後に空白が入っていないかも見てください。</li><li><strong>スクリプトプロパティは編集者全員に見える</strong>:スプレッドシートの編集権限がある人は、Apps Scriptを開けばキーを見られます。共有範囲が広いシートでは、キー専用のスクリプトを分けるか、有料枠のキーに利用上限をかけておくと安心です。</li></ul>
+<h2 id="gasからgemini-apiを呼び出すコードの書き方は">GASからGemini APIを呼び出すコードの書き方は?</h2>
+<p><code>UrlFetchApp.fetch</code> でGemini APIの <code>generateContent</code> のURLにPOSTし、返ってきたJSONから文章を取り出します。</p>
+<p>URL・送るJSON・返り値の形は <a href="https://ai.google.dev/api/generate-content" rel="noopener">generateContent リファレンス</a> と <a href="https://ai.google.dev/gemini-api/docs/text-generation" rel="noopener">テキスト生成のガイド</a> に沿っています。コード先頭の <code>MODEL</code> には、<a href="https://ai.google.dev/gemini-api/docs/models" rel="noopener">モデル一覧</a> で今提供されているモデル名を入れてください。モデルは入れ替わりが早く、提供が終わった名前を書くと404エラーになります。下のコードの <code>gemini-2.5-flash</code> は書き方の例です。</p>
+<h3 id="手順-コードを貼って動かす">手順:コードを貼って動かす</h3>
+<ol><li>スプレッドシートの「拡張機能」→「Apps Script」を開く</li><li>最初からある <code>function myFunction() {}</code> を消して、下のコードを貼る</li><li><code>MODEL</code> の値を、モデル一覧と料金ページで確かめたモデル名に書き換える</li><li>フロッピーのアイコン(プロジェクトを保存)を押す</li><li>上の関数の選択欄で <code>testGemini</code> を選び、「実行」を押す</li><li>初回は「承認が必要です」と出るので「権限を確認」→ 自分のアカウントを選ぶ。「このアプリは Google で確認されていません」と出たら「詳細」→「(プロジェクト名)(安全ではないページ)に移動」→「許可」</li><li>下の「実行ログ」にGeminiの回答が出れば成功です</li></ol>
+<pre data-lang="javascript"><code class="language-javascript">// 使うモデル(例)。モデル一覧で現行の名前を、料金ページで無料枠の有無を確認してから決める
+const MODEL = &#x27;gemini-2.5-flash&#x27;;
+
+function callGemini(prompt) {
+  const apiKey = PropertiesService.getScriptProperties().getProperty(&#x27;GEMINI_API_KEY&#x27;);
+  if (!apiKey) {
+    throw new Error(&#x27;スクリプトプロパティ GEMINI_API_KEY が設定されていません&#x27;);
+  }
+
+  const url = &#x27;https://generativelanguage.googleapis.com/v1beta/models/&#x27;
+    + MODEL + &#x27;:generateContent&#x27;;
+
+  const options = {
+    method: &#x27;post&#x27;,
+    contentType: &#x27;application/json&#x27;,
+    headers: { &#x27;x-goog-api-key&#x27;: apiKey },
+    payload: JSON.stringify({
+      contents: [{ parts: [{ text: prompt }] }]
+    }),
+    muteHttpExceptions: true
+  };
+
+  const res = UrlFetchApp.fetch(url, options);
+  const code = res.getResponseCode();
+  const body = JSON.parse(res.getContentText());
+
+  if (code !== 200) {
+    const msg = body.error ? body.error.message : res.getContentText();
+    throw new Error(&#x27;Gemini API エラー &#x27; + code + &#x27;: &#x27; + msg);
+  }
+
+  const cand = body.candidates &amp;&amp; body.candidates[0];
+  if (!cand || !cand.content) {
+    const reason = body.promptFeedback ? body.promptFeedback.blockReason : &#x27;不明&#x27;;
+    throw new Error(&#x27;回答が返りませんでした(blockReason: &#x27; + reason + &#x27;)&#x27;);
+  }
+  return cand.content.parts.map(p =&gt; p.text || &#x27;&#x27;).join(&#x27;&#x27;);
+}
+
+function testGemini() {
+  Logger.log(callGemini(&#x27;GASとは何かを1文で説明してください。&#x27;));
+}</code></pre>
+<p>キーはURLに付けず、<code>x-goog-api-key</code> というヘッダーで送っています。公式の例もこの形です(<a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener">Gemini API キーの使い方</a>)。<code>muteHttpExceptions: true</code> を付けたのは、失敗したときにGASがすぐ止まらず、エラーの中身を受け取れるようにするためです(<a href="https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app" rel="noopener">UrlFetchApp リファレンス</a>)。この指定がないと、エラーになってもGoogle側が返した理由の文章が見えません。</p>
+<p>回答が返ってこなかったときは <code>promptFeedback.blockReason</code> を読みます。安全フィルタで止められた場合には、ここに <code>SAFETY</code> などの理由が入る仕様です(<a href="https://ai.google.dev/api/generate-content" rel="noopener">generateContent リファレンス</a>)。</p>
+<h2 id="geminiの回答をスプレッドシートに出力する手順は">Geminiの回答をスプレッドシートに出力する手順は?</h2>
+<p>A列の文章を1行ずつGeminiに送り、返ってきた答えをB列に書き込む関数を足せば完成です。</p>
+<p>たとえば「A列に問い合わせ文、B列に3行の要約」というシートを考えてみます。1行目は見出し行とします。</p>
+<ol><li>シートの名前を「シート1」にする(下のコードの名前と合わせる)</li><li>A1に「問い合わせ」、B1に「要約」と入れ、A2から下に文章を入れる</li><li>前の見出しのコードの下に、次の <code>summarizeRows</code> を貼って保存する</li><li>関数の選択欄で <code>summarizeRows</code> を選んで「実行」</li></ol>
+<pre data-lang="javascript"><code class="language-javascript">function summarizeRows() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&#x27;シート1&#x27;);
+  const lastRow = sheet.getLastRow();
+  if (lastRow &lt; 2) return;
+
+  const values = sheet.getRange(2, 1, lastRow - 1, 2).getValues();
+  values.forEach((row, i) =&gt; {
+    const text = row[0];
+    const done = row[1];
+    if (text &amp;&amp; !done) {   // B列が空の行だけ処理する
+      const answer = callGemini(&#x27;次の問い合わせを3行で要約してください。\n\n&#x27; + text);
+      sheet.getRange(i + 2, 2).setValue(answer);
+      Utilities.sleep(1000); // 1分あたりの回数制限に当たりにくくする
+    }
+  });
+}</code></pre>
+<p>「B列が空の行だけ」に絞ったのは、途中で止まっても、もう一度実行すれば続きから処理できるようにするためです。同じ行を何度も送らずに済むので、無料枠の回数も料金も節約できます。</p>
+<h3 id="自分のシートに合わせて変える所">自分のシートに合わせて変える所</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">自分のシートに合わせて変える所</caption><thead><tr><th>変えたいこと</th><th>直す場所</th></tr></thead><tbody><tr><td>シート名が違う</td><td><code>getSheetByName('シート1')</code> の中</td></tr><tr><td>要約ではなく分類・翻訳にしたい</td><td><code>callGemini(</code> に渡す指示文</td></tr><tr><td>結果をC列に出したい</td><td><code>getRange(2, 1, lastRow - 1, 2)</code> の最後を <code>3</code> に、<code>getRange(i + 2, 2)</code> を <code>3</code> に、<code>row[1]</code> を <code>row[2]</code> に</td></tr><tr><td>毎朝自動で動かしたい</td><td>左の時計アイコン「トリガー」→「トリガーを追加」で、時間主導型を選ぶ</td></tr></tbody></table></div>
+<h3 id="つまずきやすい所-3">つまずきやすい所</h3>
+<p>GASには時間の上限があります。1回の実行は6分まで。セルに <code>=関数名()</code> と書いて呼ぶ「カスタム関数」は30秒までです(<a href="https://developers.google.com/apps-script/guides/services/quotas" rel="noopener">Apps Script の割り当て</a>・2026年10月時点)。</p>
+<p>何百行もあるシートを一度に回すと、6分で「実行時間の上限を超えました」となって止まります。上のコードはB列が空の行だけを処理するので、止まったらもう一度実行してください。毎回止まるほど行数が多いなら、トリガーで10分おきに動かすのが手軽です。</p>
+<p>セルに <code>=GEMINI(A2)</code> のように書くカスタム関数も作れます。ただ、30秒の上限に加えて、シートを開くたびや再計算のたびにAPIが呼ばれやすい。回数がかさみやすいので、最初はボタンやメニューから実行する形をおすすめします。</p>
+<h2 id="gas-gemini-apiとgas-chatgpt-apiの違いは">GAS×Gemini APIとGAS×ChatGPT APIの違いは?</h2>
+<p>GAS側の書き方はほぼ同じです。違うのはURL・キーの渡し方・返ってくるJSONの形の3つで、そこだけ書き換えればつながります。</p>
+<p><a href="/chatgpt-gas-automation-start/">ChatGPT GAS自動化、始め方の3手順</a> のコードを持っている人は、下の表と見比べてください。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">GAS×Gemini APIとGAS×ChatGPT APIの違いは?</caption><thead><tr><th>比べる所</th><th>Gemini API(generateContent)</th><th>OpenAI API(Responses)</th></tr></thead><tbody><tr><td>キーを作る場所</td><td>Google AI Studio</td><td>OpenAI の管理画面</td></tr><tr><td>URL</td><td><code>https://generativelanguage.googleapis.com/v1beta/models/モデル名:generateContent</code></td><td><code>https://api.openai.com/v1/responses</code></td></tr><tr><td>キーの渡し方</td><td>ヘッダー <code>x-goog-api-key: キー</code></td><td>ヘッダー <code>Authorization: Bearer キー</code></td></tr><tr><td>モデル名を書く場所</td><td>URLの中</td><td>送るJSONの <code>model</code></td></tr><tr><td>送るJSON</td><td><code>{"contents":[{"parts":[{"text":"…"}]}]}</code></td><td><code>{"model":"…","input":"…"}</code></td></tr><tr><td>文章がある場所</td><td><code>candidates[0].content.parts[].text</code></td><td><code>output[].content[].text</code></td></tr><tr><td>無料で試せる枠</td><td>料金ページに Free Tier あり</td><td>料金は公式で確認</td></tr></tbody></table></div>
+<p>出典は <a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener">Gemini API キーの使い方</a>、<a href="https://ai.google.dev/api/generate-content" rel="noopener">generateContent リファレンス</a>、<a href="https://platform.openai.com/docs/api-reference/responses/create" rel="noopener">OpenAI Responses API リファレンス</a>(いずれも2026年10月時点)。</p>
+<p>書き換えで一番間違えやすいのは「モデル名を書く場所」です。OpenAI版はJSONの中に <code>model</code> を書きますが、Gemini版はURLの中に入ります。ChatGPT版のpayloadから <code>model</code> を消し忘れても動くことはありますが、URL側のモデル名を入れ忘れると404になります。</p>
+<ul><li><strong>Geminiが向いている人</strong>:Googleのサービスだけで完結させたい人。無料枠で動作確認から始めたい人</li><li><strong>Geminiが向いていない人</strong>:社内で使うAIがChatGPTに決まっていて、ほかの部署とプロンプトや結果を共有したい人</li><li><strong>注意点</strong>:Gemini APIのキーと、Geminiアプリやスプレッドシートの AI 関数の契約は別物です。Google AI Pro などの契約があっても、APIの料金は別に請求されます</li></ul>
+<p>チャットで使うAIの選び方は <a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT Claude Copilot使い分けの基準</a> にまとめています。</p>
+<h2 id="gemini-apiの無料利用枠はどこまで">Gemini APIの無料利用枠はどこまで?</h2>
+<p>無料枠で使えるのは一部のモデルだけで、回数に上限があり、送った内容はGoogleの製品改善に使われます。</p>
+<p>どのモデルが無料枠の対象かは、<a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">料金ページ</a> の各モデルの「Free Tier」の欄で確認できます。上位のモデルや画像生成などは無料枠の対象外のことがあり、対象や単価は改定されることがあります。GASで使う前に、<code>MODEL</code> に書くモデルの欄を必ず見てください。単価は100万トークンあたりのドル建てで、入力と出力で別々に書かれています。</p>
+<h3 id="無料枠と有料枠の違い">無料枠と有料枠の違い</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">無料枠と有料枠の違い</caption><thead><tr><th>比べる所</th><th>無料枠(Free)</th><th>有料枠(Paid)</th></tr></thead><tbody><tr><td>始め方</td><td>キーを作るだけ</td><td>請求先アカウントをプロジェクトに紐付ける</td></tr><tr><td>送った内容の扱い</td><td>製品改善に使われる</td><td>製品改善に使われない</td></tr><tr><td>回数の上限</td><td>低め。値は AI Studio で確認</td><td>高い。支払い額に応じて上がる</td></tr><tr><td>Batch API(50%割引)</td><td>なし</td><td>あり</td></tr></tbody></table></div>
+<p>出典:<a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API 料金</a>。</p>
+<p>回数の上限は、1分あたりの回数(RPM)、1分あたりの入力トークン数(TPM)、1日あたりの回数(RPD)の3種類で決まります。1日の回数は太平洋時間の0時にリセットされます。日本時間なら夏時間の間は16時、それ以外は17時です。無料枠の具体的な数字は公式ドキュメントには書かれておらず、「AI Studio で確認できる」と案内されています(<a href="https://ai.google.dev/gemini-api/docs/rate-limits" rel="noopener">レート制限</a>・2026年10月時点)。</p>
+<p>有料枠は4段階あります。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">無料枠と有料枠の違い</caption><thead><tr><th>段階</th><th>条件</th></tr></thead><tbody><tr><td>Free</td><td>有効なプロジェクトがある</td></tr><tr><td>Tier 1</td><td>請求先アカウントを設定して紐付ける</td></tr><tr><td>Tier 2</td><td>合計100ドル以上を支払い、最初の支払いから3日たつ</td></tr><tr><td>Tier 3</td><td>合計1,000ドル以上を支払い、最初の支払いから30日たつ</td></tr></tbody></table></div>
+<p>出典:<a href="https://ai.google.dev/gemini-api/docs/rate-limits" rel="noopener">レート制限</a>(2026年10月時点)。</p>
+<p>GAS側にも上限があります。外部へのアクセス(URL Fetch)は、個人のGoogleアカウントで1日20,000回、Workspaceで1日100,000回までです(<a href="https://developers.google.com/apps-script/guides/services/quotas" rel="noopener">Apps Script の割り当て</a>)。たいていの場合、先にGemini側の上限に当たります。</p>
+<p>顧客名・社員の情報・未公開の数字を送るなら、最初から有料枠にしてください。公開済みの文章の要約や練習用のデータなら、無料枠で十分です。</p>
+<h2 id="連携時によく出るエラーとその対処法は">連携時によく出るエラーとその対処法は?</h2>
+<p>エラーの多くは、キーの設定ミス(403)・モデル名の誤り(404)・回数の上限(429)の3つです。</p>
+<p>実行ログに出る数字を見て、下の表で原因を探してください。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">連携時によく出るエラーとその対処法は?</caption><thead><tr><th>ログの数字</th><th>意味</th><th>直し方</th></tr></thead><tbody><tr><td>400 INVALID_ARGUMENT</td><td>送ったJSONの形や設定値がおかしい</td><td><code>contents</code> の綴り、temperature などの値の範囲、URLの <code>v1beta</code> を確認</td></tr><tr><td>400 FAILED_PRECONDITION</td><td>前提条件を満たしていない</td><td>無料枠の対象か、請求先の設定を確認</td></tr><tr><td>403 PERMISSION_DENIED</td><td>キーが無効、または権限がない</td><td>キーをコピーし直してスクリプトプロパティを上書き。キーの制限設定も確認</td></tr><tr><td>404 NOT_FOUND</td><td>モデル名が存在しない・提供が終わった</td><td><code>MODEL</code> の値をモデル一覧と見比べる</td></tr><tr><td>429 RESOURCE_EXHAUSTED</td><td>回数の上限に達した</td><td>時間をおく。<code>Utilities.sleep</code> の秒数を増やす。有料枠を検討</td></tr><tr><td>500 / 503 / 504</td><td>Google側の一時的な不具合や混雑</td><td>少し待ってから再実行</td></tr></tbody></table></div>
+<p>出典:<a href="https://ai.google.dev/gemini-api/docs/troubleshooting" rel="noopener">Gemini API トラブルシューティング</a>(2026年10月時点)。</p>
+<p>公式は、429に対して「指数バックオフ」を勧めています。待ち時間を1秒、2秒、4秒と倍にしながら再試行するやり方です。GASなら、<code>callGemini</code> を呼ぶ所を次のように包めば実現できます。</p>
+<pre data-lang="javascript"><code class="language-javascript">function callGeminiWithRetry(prompt) {
+  let wait = 1000;
+  for (let i = 0; i &lt; 4; i++) {
+    try {
+      return callGemini(prompt);
+    } catch (e) {
+      if (!/エラー (429|500|503|504)/.test(e.message) || i === 3) throw e;
+      Utilities.sleep(wait);
+      wait *= 2;
+    }
+  }
+}</code></pre>
+<h3 id="数字が出ないエラー">数字が出ないエラー</h3>
+<ul><li><strong>「Exception: 次のアクションを実行する権限がありません」</strong>:初回の承認をしていないか、途中で取り消しています。もう一度「実行」して、承認の画面で「許可」を押してください。</li><li><strong>「回答が返りませんでした(blockReason: SAFETY)」</strong>:この記事のコードが出すメッセージで、安全フィルタに止められたという意味です。指示文の言い方を変えるか、送る文章から問題になりそうな部分を外します。<code>OTHER</code> の場合は利用規約に触れている可能性がある、と公式は説明しています。</li><li><strong>「SyntaxError: Unexpected token」</strong>:JSONではない返事(HTMLのエラー画面など)を <code>JSON.parse</code> しようとして起きます。URLの打ち間違いを疑ってください。</li></ul>
+<p>エラーの意味をAIに聞くのも手です。ログの文章をそのままGeminiやClaudeに貼って「GASでこのエラーが出た。原因と直し方は?」と聞けば、どこを見ればよいか見当がつきます。コードを書く作業をAIに手伝わせる流れは、<a href="/claude-code-how-to-use-free/">Claude Code使い方|無料の範囲と料金表・導入7手順</a> でも説明しています。</p>
+<h2 id="次にやること">次にやること</h2>
+<p>今日やるのは2つだけ。Google AI StudioでAPIキーを1つ作ることと、<code>testGemini</code> を実行してログに回答が出るのを見ることです。</p>
+<h3 id="自分でやる人の今日の一歩">自分でやる人の今日の一歩</h3>
+<ol><li><a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio の API Keys ページ</a> で「Create API key」を押す</li><li>練習用のスプレッドシートを新しく作り、この記事のコードを貼って <code>MODEL</code> を確認し、<code>testGemini</code> を実行する</li><li>動いたら、A列に公開済みの文章を5行ほど入れて <code>summarizeRows</code> を試す。社外秘のデータはまだ入れない</li></ol>
+<h3 id="自分でやるのが大変-早く確実にしたい人">自分でやるのが大変・早く確実にしたい人</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">自分でやるのが大変・早く確実にしたい人</caption><thead><tr><th>選択肢</th><th>費用(2026年10月時点・最新は公式で確認)</th><th>向いている人</th><th>向いていない人</th></tr></thead><tbody><tr><td>Gemini API の有料枠</td><td>使った分だけ。モデルごとの単価は<a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">料金ページ</a>で確認</td><td>業務データを送る人。回数の上限に何度も当たる人</td><td>月に数回しか動かさない人</td></tr><tr><td>スプレッドシートの AI 関数</td><td>対象の Workspace / Google AI のプラン料金(<a href="https://support.google.com/docs/answer/15877199?hl=ja" rel="noopener">ヘルプ</a>)</td><td>コードを書かずにセルで要約・分類したい人</td><td>350セルを超える量を一度に処理したい人</td></tr><tr><td>AIやプログラミングの講座</td><td>講座による</td><td>GASを体系的に学び、仕事の仕組みづくりまでやりたい人</td><td>今すぐ1つの作業を自動化したいだけの人</td></tr></tbody></table></div>
+<p>有料枠のデメリットは、使った分だけ請求が来ることです。トリガーの設定ミスで同じ処理が繰り返されると、気づかないうちに回数が増えます。有料枠に切り替えたら、Google Cloudの予算アラートを設定しておくと安心です。講座を選ぶなら、給付金の対象かどうかで絞る方法を <a href="/ai-school-comparison-subsidy/">AIスクール比較、給付金対象で絞る3つの軸</a> に書いています。</p>
+<h3 id="このサイトの関連記事">このサイトの関連記事</h3>
+<ul><li><a href="/chatgpt-gas-automation-start/">ChatGPT GAS自動化、始め方の3手順</a>:同じ自動化をChatGPTで組む場合</li><li><a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT Claude Copilot使い分けの基準</a>:仕事で使うAIの決め方</li><li><a href="/claude-code-how-to-use-free/">Claude Code使い方|無料の範囲と料金表・導入7手順</a>:コードをAIに書かせる方法</li><li><a href="/ai-school-comparison-subsidy/">AIスクール比較、給付金対象で絞る3つの軸</a>:学んで仕事にしたい人向け</li></ul>
+<h2 id="よくある質問">よくある質問</h2>
+<h3 id="gasでgemini-apiを使うのにクレジットカードは必要">GASでGemini APIを使うのにクレジットカードは必要?</h3>
+<p>無料枠だけで使うなら要りません。Google AI StudioでAPIキーを作れば、無料枠のあるモデルを呼び出せます。カードが必要になるのは、請求先アカウントを紐付けて有料枠(Tier 1以上)に上げるときです。</p>
+<h3 id="無料枠で会社のデータを送っても大丈夫">無料枠で会社のデータを送っても大丈夫?</h3>
+<p>おすすめしません。料金ページには、無料枠のデータが製品改善に使われると書かれています。顧客情報や社内の数字を扱うなら有料枠に切り替え、あわせて社内のルールも確認してください。</p>
+<h3 id="モデル名は何を書けばいい">モデル名は何を書けばいい?</h3>
+<p><a href="https://ai.google.dev/gemini-api/docs/models" rel="noopener">モデル一覧</a> に載っている現行のモデル名を書き、<a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">料金ページ</a> で無料枠の有無と単価を確かめてください。この記事のコードの <code>gemini-2.5-flash</code> は書き方の例です。モデルは入れ替わりが早く、提供が終わると404エラーになります。半年に1回ほど見直すと安心です。</p>
+<h3 id="セルに-gemini-a2-と書いて使えますか">セルに =GEMINI(A2) と書いて使えますか?</h3>
+<p>カスタム関数として作れば使えます。ただし1回30秒の上限があり、再計算のたびにAPIが呼ばれて回数を使いやすくなります。最初はこの記事の <code>summarizeRows</code> のように、実行ボタンやトリガーから動かす形にしてください。</p>
+<h2 id="出典">出典</h2>
+<ul><li><a href="https://ai.google.dev/gemini-api/docs/api-key" rel="noopener">Gemini API キーの使い方(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/gemini-api/docs/pricing" rel="noopener">Gemini API 料金(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/gemini-api/docs/rate-limits" rel="noopener">Gemini API レート制限(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/gemini-api/docs/models" rel="noopener">Gemini モデル一覧(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/gemini-api/docs/text-generation" rel="noopener">テキスト生成(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/api/generate-content" rel="noopener">generateContent リファレンス(Google AI for Developers)</a></li><li><a href="https://ai.google.dev/gemini-api/docs/troubleshooting" rel="noopener">Gemini API トラブルシューティング(Google AI for Developers)</a></li><li><a href="https://developers.google.com/apps-script/guides/properties" rel="noopener">Properties Service ガイド(Google Apps Script)</a></li><li><a href="https://developers.google.com/apps-script/guides/services/quotas" rel="noopener">Apps Script の割り当て(Google Apps Script)</a></li><li><a href="https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app" rel="noopener">UrlFetchApp リファレンス(Google Apps Script)</a></li><li><a href="https://support.google.com/docs/answer/15877199?hl=ja" rel="noopener">Google スプレッドシートの AI 関数(Google ドキュメント エディタ ヘルプ)</a></li><li><a href="https://platform.openai.com/docs/api-reference/responses/create" rel="noopener">Responses API リファレンス(OpenAI)</a></li><li><a href="https://aistudio.google.com/apikey" rel="noopener">Google AI Studio API Keys</a></li></ul>
+<h2 id="次に検討するなら-pr">次に検討するなら(PR)</h2>
+<ul><li><a href="https://af.moshimo.com/af/c/click?a_id=5857977&amp;p_id=6298&amp;pc_id=17753&amp;pl_id=81511" rel="sponsored nofollow noopener">バイテック生成AI(生成AIのオンラインスクール・無料説明会)</a> — 生成AIを仕事で使う力を学ぶオンラインスクール。説明会で内容を確かめられます</li><li><a href="https://af.moshimo.com/af/c/click?a_id=5857980&amp;p_id=7629&amp;pc_id=22069&amp;pl_id=95321" rel="sponsored nofollow noopener">バイテックGEEK(Claude Code 特化のオンラインAIプログラミングスクール・無料説明会)</a> — Claude Code を使った開発を学ぶオンラインスクール。説明会で内容を確かめられます</li></ul><aside class="credit" aria-label="この記事の作り方"><p><strong>この記事の作り方</strong>: 各サービスの公式ページ・ヘルプなどの公開情報を、AI の助けを借りて調べてまとめ、出典・誇張・PR 表示の自動の点検を通してから公開しています。体験談や試した結果は書いていません(<a href="/about/">編集方針</a>)。</p><p>公式の情報で確かめた日: <time datetime="2026-10-23">2026年10月23日</time></p></aside><p class="note">内容の誤りや古くなった情報に気づいたら、<a href="mailto:shigoto.ai.note@gmail.com">shigoto.ai.note@gmail.com</a> までお知らせください。記事は順番に公式の情報で確かめ直しています。</p></article><section class="related"><h2>関連記事</h2><ul class="list"><li><p class="d"><time datetime="2026-10-15">2026年10月15日</time> · 24分で読めます</p><h3><a href="/chatgpt-gas-automation-start/">ChatGPT GAS自動化、始め方の3手順</a></h3><p>ChatGPTでGAS(Google Apps Script)の自動化を始めるやり方を3手順で解説。コードの頼み方、権限の承認、試しモードでの確認、社内承認、OpenAI APIのキー管理と料金まで公式情報で整理。テンプレートつき。</p></li><li><p class="d"><time datetime="2026-10-21">2026年10月21日</time> · 28分で読めます</p><h3><a href="/claude-project-usage-guide/">Claudeプロジェクト使い方|作成から共有まで5手順と比較表</a></h3><p>claude プロジェクト 使い方を、公式ヘルプをもとに作成・ナレッジ登録・指示の保存・チーム共有の5手順で解説。無料プランの上限、Claude CodeやCoworkのプロジェクトとの違いも比較表で整理しています。</p></li><li><p class="d"><time datetime="2026-10-20">2026年10月20日</time> · 29分で読めます</p><h3><a href="/claude-code-how-to-use-free/">Claude Code使い方|無料の範囲と料金表・導入7手順</a></h3><p>claude code 使い方 無料で調べた人向け。Freeプランで使えない理由、ProとMaxとAPIの料金の違い、Mac・Windows・VS Codeへの入れ方、最初のコマンドまで、公式の情報をもとに説明します。</p></li></ul></section></main><footer><p><strong>AIツール比較</strong> — AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p>
+<p><a href="/">記事一覧</a> · <a href="/about/">このサイトについて・編集方針</a> · <a href="/privacy/">プライバシーポリシー</a> · <a href="/feed.xml">RSS</a></p><p>© 2026 AIツール比較</p></footer><script src="/ui.js" defer></script><script id="ui-motion-js">(function(){if(!window.IntersectionObserver||matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var h=innerHeight,io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);e.target.classList.remove('m-w')}})},{rootMargin:'0px 0px -6% 0px'});[].forEach.call(d.querySelectorAll('article>*:not(.ui-cards),main>*:not(article):not(.ui-cards):not(.crumbs),.ui-cards>li'),function(el){if(el.getBoundingClientRect().top>h){el.classList.add('m-w','m-in');io.observe(el)}})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();document.addEventListener('touchstart',function(){},{passive:true});(function(){function go(){var a=d.querySelector('article');if(!a)return;var b=d.querySelector('.ui-bar'),t=0;if(!b){b=d.createElement('div');b.className='ui-bar';b.setAttribute('aria-hidden','true');d.body.appendChild(b)}function u(){t=0;var h=a.offsetHeight-innerHeight;b.style.transform='scaleX('+Math.min(1,Math.max(0,-a.getBoundingClientRect().top/(h>0?h:1)))+')'}addEventListener('scroll',function(){if(!t){t=1;requestAnimationFrame(u)}},{passive:true});u()}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();</script></body></html>
