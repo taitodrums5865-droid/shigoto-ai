@@ -5,6 +5,7 @@
 記事は各サービスの公式情報を調べてまとめ、出典を示し、定期的に見直しています。
 
 ## 記事
+- [ChatGPT有料プランの違い|仕事用はどれか料金表で比較](https://shigoto.aobaworks.com/chatgpt-yuryo-plan-chigai-hikaku/): ChatGPT 有料 プランの違いを公式の料金表の数字で比べます。Go・Plus・Pro・Business(旧Team)の月額、席数、年払い、データの扱いの差を表にしました。個人と仕事用のどちらで選べばいいかも分かります。
 - [Claude Pro料金|日本円の実額を月払い・年払い別に表で](https://shigoto.aobaworks.com/claude-pro-price-jpy/): claude pro 料金 日本円の答えです。公式はドル表記だけで、Webで払うと円の額は為替レート・消費税10%・カード会社の手数料で決まります。月払いと年払いの差額、App Storeの円価格(2026年10月時点)を表にしました。
 - [GAS Gemini API連携の使い方|最初にやる3つとコード](https://shigoto.aobaworks.com/gas-gemini-api-renkei/): GASとGemini APIの連携のやり方を3つの手順にまとめました。Google AI StudioでのAPIキー取得、スクリプトプロパティへの保存、スプレッドシートへの書き込みまでコード付きで説明し、無料枠とChatGPT連携との違いも表にしています。
 - [Claudeプロジェクト使い方|作成から共有まで5手順と比較表](https://shigoto.aobaworks.com/claude-project-usage-guide/): claude プロジェクト 使い方を、公式ヘルプをもとに作成・ナレッジ登録・指示の保存・チーム共有の5手順で解説。無料プランの上限、Claude CodeやCoworkのプロジェクトとの違いも比較表で整理しています。
