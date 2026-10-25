@@ -5,6 +5,7 @@
 記事は各サービスの公式情報を調べてまとめ、出典を示し、定期的に見直しています。
 
 ## 記事
+- [Copilot無料版と有料版の違い|3種類の料金と回数上限表](https://shigoto.aobaworks.com/copilot-free-paid-difference/): Copilot無料版と有料版の違いを、個人向けCopilot・Microsoft 365 Copilot・GitHub Copilotの3種類に分けて表で比べます。2026年10月時点の料金と回数制限、Copilot Pro販売終了後の選び方、契約手順まで。
 - [ChatGPT有料プランの違い|仕事用はどれか料金表で比較](https://shigoto.aobaworks.com/chatgpt-yuryo-plan-chigai-hikaku/): ChatGPT 有料 プランの違いを公式の料金表の数字で比べます。Go・Plus・Pro・Business(旧Team)の月額、席数、年払い、データの扱いの差を表にしました。個人と仕事用のどちらで選べばいいかも分かります。
 - [Claude Pro料金|日本円の実額を月払い・年払い別に表で](https://shigoto.aobaworks.com/claude-pro-price-jpy/): claude pro 料金 日本円の答えです。公式はドル表記だけで、Webで払うと円の額は為替レート・消費税10%・カード会社の手数料で決まります。月払いと年払いの差額、App Storeの円価格(2026年10月時点)を表にしました。
 - [GAS Gemini API連携の使い方|最初にやる3つとコード](https://shigoto.aobaworks.com/gas-gemini-api-renkei/): GASとGemini APIの連携のやり方を3つの手順にまとめました。Google AI StudioでのAPIキー取得、スクリプトプロパティへの保存、スプレッドシートへの書き込みまでコード付きで説明し、無料枠とChatGPT連携との違いも表にしています。
