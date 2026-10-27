@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude無料の制限時間|5時間リセットとPro切替の判断表</title><meta name="description" content="Claude無料の制限時間は「5時間ごとにリセットされるセッション上限」です。回数は公表されていません。上限に達したときの表示、Proとの差（少なくとも5倍）、Proに切り替える判断の目安を公式情報をもとに表で整理しました。"><meta name="googlebot" content="max-image-preview:large"><link rel="canonical" href="https://shigoto.aobaworks.com/claude-free-limit-time/">
+<meta property="og:type" content="article"><meta property="og:title" content="Claude無料の制限時間|5時間リセットとPro切替の判断表"><meta property="og:description" content="Claude無料の制限時間は「5時間ごとにリセットされるセッション上限」です。回数は公表されていません。上限に達したときの表示、Proとの差（少なくとも5倍）、Proに切り替える判断の目安を公式情報をもとに表で整理しました。">
+<meta property="og:url" content="https://shigoto.aobaworks.com/claude-free-limit-time/"><meta property="og:site_name" content="AIツール比較"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://shigoto.aobaworks.com/og/claude-free-limit-time.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta property="article:published_time" content="2026-10-28"><style id="ui-money">.ui-tbtns{display:flex;flex-direction:column;gap:6px;min-width:9.5em}.ui-tbtns .ui-btn{min-height:44px;padding:8px 12px;font-size:.875rem;white-space:nowrap;justify-content:center}.ui-pick{margin:32px 0;padding:24px;border:0;border-radius:16px;background:var(--r-fill,var(--s2,var(--code)))}.ui-pick>p{margin:0 0 8px}.ui-pick .ui-pick-k{font-size:.875rem;font-weight:700;color:var(--sub)}.ui-pick .ui-pick-h{font-size:1.25rem;font-weight:750;line-height:1.45;color:var(--ink)}.ui-pick .ui-cta{margin:16px 0 8px}.ui-pick .ui-pick-n{font-size:.875rem;color:var(--sub);margin:0}.ui-also{margin:16px 0 24px;font-size:.9375rem;line-height:1.8}.ui-also strong{margin-right:6px}</style>
+<meta name="theme-color" content="#fbfaf6" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#151719" media="(prefers-color-scheme: dark)"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='3' y='3' width='58' height='58' rx='8' fill='%23fbfaf6' stroke='%231d2329' stroke-width='5'/%3E%3Ctext x='32' y='45' font-size='36' font-weight='700' text-anchor='middle' fill='%231d2329' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="alternate" type="application/rss+xml" title="AIツール比較" href="/feed.xml"><style>:root{--ink:#1d2329;--sub:#5a6470;--line:#e2dfd6;--bg:#fbfaf6;--card:#fff;--accent:#1f6f5c;--code:#f1efe8;--mark:#7a5c1e;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--ink:#e6e5df;--sub:#a5abb1;--line:#363a3e;--bg:#151719;--card:#1c1f22;--accent:#72c6ac;--code:#24282b;--mark:#d8b56c}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.9 -apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;overflow-wrap:break-word;line-break:strict}
+a{color:var(--accent);text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+header,main,footer{max-width:740px;margin:0 auto;padding:0 20px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 18px;padding-top:18px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.brand{font-weight:800;font-size:1.1875rem;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.gnav{display:flex;flex-wrap:wrap;gap:2px 16px;font-size:0.875rem}.gnav a{color:var(--sub);text-decoration:none}.gnav a:hover{color:var(--accent)}
+.tag{color:var(--sub);font-size:0.875rem;margin:0;flex-basis:100%;line-height:1.6}
+h1{font-size:clamp(25px,5.6vw,33px);line-height:1.4;margin:22px 0 10px;letter-spacing:.01em}
+h2{font-size:clamp(21px,4.4vw,24px);line-height:1.45;margin:44px 0 12px;padding-top:14px;border-top:2px solid var(--ink)}
+h3{font-size:1.1875rem;line-height:1.5;margin:30px 0 8px;padding-left:10px;border-left:4px solid var(--mark)}h4{font-size:1.0625rem;margin:22px 0 6px}
+p{margin:0 0 1.05em}li{margin:.25em 0}ul,ol{padding-left:1.4em}strong{font-weight:700}
+.crumbs{font-size:0.8438rem;color:var(--sub);margin:16px 0 0;line-height:1.6}.crumbs a{color:var(--sub)}.crumbs span{margin:0 6px}
+.meta{color:var(--sub);font-size:0.875rem;margin:4px 0 10px}.meta time{font-variant-numeric:tabular-nums}
+.hero{display:block;width:100%;height:auto;aspect-ratio:1200/630;border:1px solid var(--line);border-radius:6px;margin:10px 0 6px}
+.tags{margin:8px 0 14px;line-height:2}.tags a{display:inline-block;font-size:0.8125rem;line-height:1.7;padding:0 10px;margin:0 6px 4px 0;border:1px solid var(--line);border-radius:999px;color:var(--sub);text-decoration:none;background:var(--card)}
+.tags a:hover{border-color:var(--accent);color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:12px 20px 10px;margin:20px 0 28px}.toc p{margin:0 0 4px;font-size:0.9375rem}
+.toc ol{margin:0;padding-left:1.4em;font-size:0.9375rem;line-height:1.7}.toc a{color:var(--ink);text-decoration:none}.toc a:hover{color:var(--accent);text-decoration:underline}
+.note{font-size:0.875rem;color:var(--sub);background:var(--code);border-radius:6px;padding:8px 12px}
+code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:.88em}
+pre{background:var(--code);border:1px solid var(--line);padding:14px 16px;border-radius:6px;overflow:auto;font-size:0.875rem;line-height:1.6}pre code{background:none;padding:0;font-size:inherit}
+blockquote{margin:18px 0;padding:6px 16px;border-left:3px solid var(--accent);color:var(--sub);background:var(--card)}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:18px 0 22px;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:0.9375rem;line-height:1.65}.tbl table{margin:0}main>table{display:block;overflow-x:auto;margin:18px 0}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top;min-width:6.5em}th{background:var(--code);font-weight:700}
+tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}tbody tr:nth-child(even) td{background:rgba(127,127,127,.05)}
+.tbl th:first-child,.tbl td:first-child,main>table th:first-child,main>table td:first-child{position:sticky;left:0;z-index:1;background:var(--card);box-shadow:inset -1px 0 0 var(--line)}.tbl thead th:first-child,main>table thead th:first-child{z-index:2;background:var(--s2,var(--code))}
+img{max-width:100%;height:auto;border-radius:4px}
+.list{list-style:none;padding:0;margin:8px 0}.list li{padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+.list a{font-size:1.1875rem;font-weight:700;line-height:1.5;text-decoration:none;color:var(--ink)}.list a:hover{color:var(--accent);text-decoration:underline}
+.list p{margin:6px 0 0;color:var(--sub);font-size:0.9375rem;line-height:1.75}.list .d{font-size:0.8125rem;color:var(--sub);margin:0 0 2px}
+.lead{color:var(--sub);font-size:1rem}.hubs{margin:10px 0 24px}
+.related{margin-top:44px;padding-top:6px;border-top:1px solid var(--line)}.related h2{margin-top:26px}
+.list h2,.list h3{margin:2px 0 6px;font-size:1.1875rem;line-height:1.5}.list h2 a,.list h3 a{color:var(--ink);text-decoration:none}
+.toc-h{font-weight:700;margin:0 0 6px}
+.brand-sub{font-weight:400;font-size:0.875rem;color:var(--sub);margin-left:10px}
+.site-foot p,body>footer p{margin:0 0 6px}
+.credit{margin-top:32px;padding-top:12px;border-top:1px solid var(--line);font-size:0.8438rem;color:var(--sub)}
+footer{color:var(--sub);font-size:0.8438rem;padding:28px 20px 40px;margin-top:56px;border-top:2px solid var(--ink);line-height:2}footer a{color:var(--sub)}
+td:first-child{min-width:8.5em}
+@media (max-width:600px){body{font-size:1.0312rem;line-height:1.85}header{padding-top:14px;padding-bottom:10px}header .tag{display:none}.list a{font-size:1.0938rem}th,td{padding:8px 10px;font-size:0.9062rem}}/* ui.py(共通の動く部品) */
+/* デザインの決まり v2(2026-10-17 design-harness/docs/デザインシステムの研究.md: 押す場所44px・見えるフォーカス枠) */
+button,.btn,.ui-menu-btn,.ui-fab button,.ui-fab a,.ui-tablist button{min-height:44px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.pills a,.tags a{min-height:32px;display:inline-flex;align-items:center}
+body > header{position:relative;padding-right:120px}body > header .ui-menu-btn{position:absolute;right:16px;top:14px}
+@media (max-width:700px){.site-nav,body > header .gnav{display:none}body > header{padding-right:100px}}
+.ui-bar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--accent);z-index:30}
+.ui-menu-btn{margin-left:auto;align-self:center;font:inherit;font-size:.9375rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+.ui-menu-btn:hover{border-color:var(--accent);color:var(--accent)}
+.ui-scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s;z-index:40}
+.ui-drawer{position:fixed;top:0;right:0;bottom:0;width:min(360px,88vw);background:var(--card);border-left:1px solid var(--line);
+  transform:translateX(100%);transition:transform .22s ease;z-index:41;overflow-y:auto;padding:18px 20px 40px}
+.ui-open .ui-scrim{opacity:1;pointer-events:auto}.ui-open .ui-drawer{transform:none}
+.ui-drawer h2{font-size:.8125rem;letter-spacing:.02em;color:var(--sub);margin:22px 0 8px;font-weight:700}
+.ui-drawer .ui-x{float:right;font:inherit;font-size:.875rem;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--sub)}
+.ui-drawer ul,.ui-drawer ol{list-style:none;padding:0;margin:0}.ui-drawer li{margin:0;border-bottom:1px solid var(--line)}
+.ui-drawer li a{display:block;padding:10px 4px;text-decoration:none;color:var(--ink);font-size:.96875rem;line-height:1.45}
+.ui-drawer li a:hover,.ui-drawer li a.on{color:var(--accent)}.ui-drawer li a.on{font-weight:700;border-left:3px solid var(--accent);padding-left:9px}
+.ui-fab{position:fixed;right:16px;bottom:18px;z-index:25;display:flex;gap:8px}
+.ui-fab button,.ui-fab a{font:inherit;font-size:.90625rem;background:var(--card);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none}
+.ui-fab .ui-next{background:var(--accent);border-color:var(--accent);color:var(--card);display:none}.ui-fab .ui-next.show{display:inline-block}
+.ui-fab .ui-top{display:none}.ui-fab .ui-top.show{display:inline-block}
+.ui-tabs{margin:8px 0 26px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+.ui-tablist{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.ui-tablist button{flex:none;font:inherit;font-size:.9375rem;background:none;border:0;border-bottom:3px solid transparent;color:var(--sub);padding:12px 16px;cursor:pointer;white-space:nowrap}
+.ui-tablist button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+.ui-panel{padding:6px 18px 4px}.ui-panel[hidden]{display:none}.ui-panel>h3:first-child{margin-top:12px}
+.ui-faq details{border-bottom:1px solid var(--line)}.ui-faq details:first-of-type{border-top:1px solid var(--line)}
+.ui-faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 2px;font-weight:700;position:relative;line-height:1.45}
+.ui-faq summary::-webkit-details-marker{display:none}
+.ui-faq{--ic-p:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E");--ic-m:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E")}
+.ui-faq summary::after{content:"";position:absolute;right:6px;top:16px;width:18px;height:18px;background:var(--sub);-webkit-mask:var(--ic-p) center/contain no-repeat;mask:var(--ic-p) center/contain no-repeat}
+.ui-faq details[open] summary::after{-webkit-mask-image:var(--ic-m);mask-image:var(--ic-m)}.ui-faq .ui-a{padding:0 2px 8px}
+.ui-sum{border:2px solid var(--ink);border-radius:10px;background:var(--card);padding:14px 18px 10px;margin:4px 0 26px}
+.ui-sum-h{font-weight:800;font-size:.9375rem;margin:0 0 6px}.ui-sum ul{margin:0 0 8px;padding-left:20px}.ui-sum li{margin:4px 0;font-size:1.03125rem;line-height:1.55}
+.ui-sum-who{font-size:.9375rem;color:var(--sub);margin:0 0 4px;border-top:1px solid var(--line);padding-top:8px}
+.table-wrap{max-height:80vh;overflow:auto}.table-wrap thead th{position:sticky;top:0;z-index:1}
+.table-wrap td:first-child,.table-wrap th:first-child{position:sticky;left:0;background:var(--card);z-index:1}.table-wrap thead th:first-child{z-index:2;background:var(--pre,var(--card))}
+.ui-kicker{margin:28px 0 4px;font-weight:700;color:var(--accent);font-size:.9375rem}.ui-hero{font-size:2.125rem;line-height:1.35;margin:0 0 22px;max-width:22em;text-wrap:balance;word-break:auto-phrase}
+@media (max-width:600px){.ui-hero{font-size:1.625rem}}
+.ui-cards{display:grid;grid-template-columns:1fr;gap:18px;list-style:none;padding:0}
+.ui-cards>li{display:grid;grid-template-columns:200px 1fr;gap:4px 18px;align-items:start;border:1px solid var(--line)!important;border-radius:12px;background:var(--card);padding:14px!important;margin:0}
+.ui-cards>li>*{grid-column:2}.ui-cards .ui-thumb-a{grid-column:1;grid-row:1 / span 4}
+.ui-cards .ui-thumb{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.ui-cards>li.ui-noimg{grid-template-columns:1fr}.ui-cards>li.ui-noimg>*{grid-column:1}
+.ui-cards>li:hover{border-color:var(--accent)!important}
+@media (max-width:600px){.ui-cards>li{grid-template-columns:1fr}.ui-cards>li>*,.ui-cards .ui-thumb-a{grid-column:1}.ui-cards .ui-thumb-a{grid-row:auto}}
+.ui-side{display:none}
+@media (min-width:1240px){.ui-side{display:block;position:fixed;top:96px;left:calc(50% + 400px);width:260px;max-height:calc(100vh - 140px);overflow-y:auto;font-size:.875rem;border-left:1px solid var(--line);padding-left:14px}
+.ui-side p{font-weight:700;color:var(--sub);margin:0 0 6px;font-size:.8125rem}.ui-side ol{list-style:none;padding:0;margin:0}.ui-side li{margin:0}
+.ui-side a{display:block;padding:5px 0;color:var(--sub);text-decoration:none;line-height:1.4}.ui-side a:hover,.ui-side a.on{color:var(--accent)}.ui-side a.on{font-weight:700}
+.ui-fab button{display:none}}
+@media (prefers-reduced-motion:reduce){.ui-drawer,.ui-scrim{transition:none}html{scroll-behavior:auto}}
+@media print{.ui-bar,.ui-fab,.ui-drawer,.ui-scrim,.ui-menu-btn{display:none}}
+:root{--font-body:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","BIZ UDPGothic",Meiryo,system-ui,sans-serif;--font-head:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","BIZ UDPMincho",serif;--font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;--mark-ch:"AI";--mark-fs:.75rem;--fs-body:1.0625rem;--lh-body:1.85;--ls-body:.02em;--ls-head:.02em;--measure:40em;--page:1120px;--col:44rem;--danger-bg:#faf3e8;--danger-tx:#6e4a12;--danger-bd:#c8a46e;--warn-bg:#faf3e8;--warn-tx:#6e4a12;--warn-bd:#c8a46e;--ok-bg:#f5f6f8;--ok-tx:#1b1f24;--code-bg:var(--s2);--code-ink:var(--ink);--code-sub:var(--sub);--code-line:var(--line);--bg:#ffffff;--card:#ffffff;--surface:#ffffff;--s2:#f5f6f8;--pre:#f5f6f8;--ink:#1b1f24;--sub:#4f5964;--line:#e3e6ea;--border:#8a939d;--accent:#1f4f7a;--link:#1f4f7a;--on-accent:#ffffff;--due-bg:#faf3e8;--due-tx:#6e4a12;--focus:#1f4f7a;--head-bg:#ffffff;--head-ink:#1b1f24;--head-sub:#4f5964;--hover:#f6f7f9;}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}}
+:root[data-theme=dark]{--bg:#14151a;--card:#1b1d23;--surface:#1b1d23;--s2:#202229;--pre:#202229;--ink:#e6e9ec;--sub:#a9b2bc;--line:#2f363e;--border:#6b7681;--accent:#9dbbdc;--link:#9dbbdc;--on-accent:#111418;--due-bg:#2e2617;--due-tx:#e8cfa3;--focus:#9dbbdc;--head-bg:#14151a;--head-ink:#e6e9ec;--head-sub:#a9b2bc;--hover:#1f252c;--danger-bg:#2e2617;--danger-tx:#e8cfa3;--danger-bd:#a88552;--warn-bg:#2e2617;--warn-tx:#e8cfa3;--warn-bd:#a88552;--ok-bg:#1d2228;--ok-tx:#e6e9ec;}
+
+/* ===== 見た目 v3(ui.py theme_css)。古い CSS のあとに読み込み、上書きする ===== */
+html{scroll-padding-top:16px}
+body{font-family:var(--font-body);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-body);background:var(--bg);color:var(--ink);
+  font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+html[lang=ja] body{line-break:strict;overflow-wrap:anywhere;text-autospace:ideograph-alpha;text-spacing-trim:normal}
+h1,h2,h3,h4{font-family:var(--font-head);letter-spacing:var(--ls-head);color:var(--ink);text-wrap:balance}
+html[lang=ja] h1,html[lang=ja] h2,html[lang=ja] h3{font-feature-settings:"palt";word-break:auto-phrase}
+h1,.ui-hero{font-size:clamp(1.75rem,1.35rem + 1.7vw,2.5rem);line-height:1.25;font-weight:750;margin:.5rem 0 1rem}
+html[lang=ja] h1,html[lang=ja] .ui-hero{line-height:1.45;font-weight:700}
+h2{font-size:clamp(1.375rem,1.2rem + .7vw,1.75rem);line-height:1.3;font-weight:700;margin:3rem 0 .75rem;padding-top:0;border-top:0}
+html[lang=ja] h2{line-height:1.5}
+h3{font-size:clamp(1.125rem,1.06rem + .3vw,1.25rem);line-height:1.4;font-weight:700;margin:2rem 0 .5rem;padding-left:0;border-left:0}
+h4{font-size:1.0625rem;margin:1.5rem 0 .4rem}
+p,ul,ol{margin:0 0 1.1em}
+a{color:var(--link);text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:2px}
+strong{font-weight:700}
+html[lang=ja] em,html[lang=ja] i{font-style:normal;font-weight:700}
+.lede,.lead{font-size:1.1875rem;line-height:1.6;color:var(--sub);max-width:var(--measure)}
+html[lang=ja] .lede,html[lang=ja] .lead{font-size:1.0625rem;line-height:1.85}
+.meta,.crumbs{font-size:.875rem;color:var(--sub)}
+.crumbs{margin:1.25rem 0 0;white-space:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;text-overflow:ellipsis}.crumbs a{color:var(--sub)}
+.ui-kicker{display:none}
+main>h1:first-of-type,.ui-hero{margin-top:2.5rem}main>.crumbs+h1{margin-top:.75rem}
+
+/* ヘッダー: 全幅の帯・中は --page の幅。データのサイトは濃い帯(信頼・公的データの読み物の型: USWDS/GOV.UK の考え方。色は自分のもの) */
+body>header,body>header.site-head{max-width:none;margin:0;background:var(--head-bg);color:var(--head-ink);border-bottom:1px solid var(--line);padding:0}
+body>header:not(.site-head){display:flex;flex-wrap:wrap;align-items:center;gap:4px 20px;padding:12px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head .wrap{max-width:var(--page);display:flex;align-items:center;gap:8px 20px;flex-wrap:nowrap;padding-top:12px;padding-bottom:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--head-ink);text-decoration:none;font-family:var(--font-head);font-weight:750;font-size:1.25rem;letter-spacing:-.01em;line-height:1.2;min-height:44px}
+html[lang=ja] .brand{letter-spacing:.04em;font-weight:700}
+.brand svg{display:none}
+.brand::before{content:var(--mark-ch);flex:none;display:inline-grid;place-items:center;width:32px;height:32px;border-radius:6px;background:var(--accent);color:var(--on-accent);
+  font:700 var(--mark-fs)/1 var(--font-body);letter-spacing:0}
+.brand-sub{font-family:var(--font-body);font-weight:400;font-size:.875rem;color:var(--head-sub);letter-spacing:0;margin-left:4px}
+.site-nav,.gnav{display:flex;gap:4px;margin-left:auto;font-size:.9375rem}
+.site-nav a,.gnav a{color:var(--head-sub);text-decoration:none;padding:10px 12px;margin:0;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.site-nav a:hover,.gnav a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+body>header .tag{order:5;flex-basis:100%;font-size:.875rem;color:var(--head-sub);margin:-4px 0 0;line-height:1.5}
+body>header .ui-menu-btn{position:static;order:4;margin-left:8px;background:transparent;color:var(--head-ink);border:1px solid var(--border);border-radius:6px;font-size:.9375rem;padding:8px 14px}
+body>header:not(.site-head){padding-right:max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px))}
+.site-head{padding-right:0}
+@media (max-width:700px){body>header .ui-menu-btn{margin-left:auto}.brand-sub{display:none}body>header .site-nav,body>header .gnav{display:none}}
+.brand{white-space:nowrap}
+
+/* 本文の列。データのサイトは広い面(表)+読む文は --measure まで(GOV.UK の 2/3 の列の考え方) */
+main{padding-bottom:3rem}
+.disclaimer{margin:20px 0 0;padding:10px 16px;border:0;border-left:4px solid var(--border);background:var(--s2);color:var(--sub);font-size:.875rem;line-height:1.55;border-radius:0 6px 6px 0;max-width:var(--measure)}
+.intro{padding:2.5rem 0 .5rem}
+blockquote{border-left:4px solid var(--border);background:transparent;color:var(--ink);padding:.25rem 0 .25rem 1rem;border-radius:0;margin:1.5rem 0}
+
+/* ボタン・チップ(押す場所 44px: Apple HIG / Material 3 は 48dp) */
+.ui-cta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:1.5rem 0}
+.ui-btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border:1px solid var(--border);border-radius:6px;background:var(--card);
+  color:var(--ink);font-weight:600;text-decoration:none;line-height:1.25}
+.ui-btn:hover{border-color:var(--ink);text-decoration:none}
+.ui-btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ui-btn-primary:hover{filter:brightness(1.08);border-color:var(--accent);color:var(--on-accent)}
+.ui-cta-note{color:var(--sub);font-size:.875rem}
+.ui-group{margin:1.25rem 0}
+.ui-group-h{font-weight:700;font-size:.9375rem;margin:0 0 .5rem;color:var(--ink)}
+.ui-chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.ui-chips li{margin:0}
+.ui-chips a{display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);text-decoration:none;font-size:.9375rem;line-height:1.3}
+.ui-chips a:hover{border-color:var(--accent);color:var(--accent)}
+@media (pointer:coarse){.ui-chips a{min-height:44px}}
+.pills a,.tags a{border-radius:6px;border-color:var(--line);color:var(--ink);background:var(--card);font-size:.875rem;padding:4px 12px}
+.pills a:hover,.tags a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ホームの「いまの数字」と期限が近い表(USWDS の summary box と collection の考え方) */
+.ui-dash{margin:2rem 0 1rem}
+.ui-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;border:1px solid var(--line);border-radius:8px;background:var(--line);margin:0 0 .5rem;overflow:hidden}
+.ui-stats>div{padding:14px 18px;background:var(--card)}
+.ui-stats b{display:block;font-size:1.75rem;line-height:1.2;font-weight:750;font-variant-numeric:tabular-nums;letter-spacing:-.01em;color:var(--ink)}
+.ui-stats span{display:block;font-size:.875rem;color:var(--sub);line-height:1.45;margin-top:2px}
+.ui-src{font-size:.8125rem;color:var(--sub);margin:0 0 1.5rem}
+.ui-dash-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:2rem 0 .75rem}
+.ui-dash-h h2{margin:0}
+.ui-dash-h a{font-weight:600}
+@media (max-width:600px){.ui-stats{grid-template-columns:1fr 1fr}.ui-stats>div:last-child:nth-child(odd){grid-column:1/-1}.ui-stats b{font-size:1.375rem}.ui-stats>div{padding:12px 14px}.lede,.lead{font-size:1.0625rem}h1,.ui-hero{font-size:1.75rem}
+  .ui-cta .ui-btn{flex:1 1 100%;justify-content:center}.disclaimer{font-size:.8125rem;padding:8px 12px}}
+
+/* 表(デジタル庁: 数字は右よせ・見出しは太字・スマホは表の中だけ動かす / Carbon: 行の高さをそろえる) */
+.table-wrap,.tbl{border:1px solid var(--line);border-radius:8px;background:var(--card);margin:0 0 1.5rem;overflow:auto}
+table{font-size:.9375rem;line-height:1.5;font-variant-numeric:tabular-nums;border-collapse:collapse;width:100%}
+th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--s2);color:var(--ink);font-weight:700;font-size:.875rem;border-bottom:2px solid var(--border);white-space:nowrap}
+tbody tr:nth-child(even) td{background:transparent}
+tbody tr:hover td{background:var(--hover)}
+td:first-child a{font-weight:600}
+td.ui-num,th.ui-num{text-align:right;white-space:nowrap}
+td.ui-date{white-space:nowrap}
+button[data-sort]{font:inherit;font-size:.875rem;min-height:44px;padding:6px 14px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);cursor:pointer}
+button[data-sort][aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+/* 見出しの行がない表 = 項目と値(GOV.UK の summary list の型) */
+main table:not(:has(thead)){border-top:1px solid var(--line);margin:1rem 0 2rem;font-size:1rem;max-width:52rem}
+main table:not(:has(thead)) th{background:transparent;width:32%;font-weight:700;color:var(--ink);padding:14px 16px 14px 0;white-space:normal}
+main table:not(:has(thead)) td{padding:14px 0}
+main table:not(:has(thead)) tr:hover td{background:transparent}
+/* スマホ: 3列以上の表は1件ずつの箱に積む(USWDS の stacked table。ui.js が data-label をつける) */
+@media (max-width:640px){
+  table.ui-stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  table.ui-stack,table.ui-stack tbody,table.ui-stack tr,table.ui-stack td{display:block;width:auto}
+  table.ui-stack tr{padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.ui-stack td{border:0;padding:2px 0;min-width:0;position:static;background:transparent!important;display:grid;grid-template-columns:7.5em 1fr;gap:8px;font-size:.9375rem}
+  table.ui-stack td::before{content:attr(data-label);color:var(--sub);font-size:.8125rem;font-weight:600;padding-top:2px}
+  table.ui-stack td:first-child{display:block;font-size:1rem;margin-bottom:4px}
+  table.ui-stack td:first-child::before{content:none}
+  table.ui-stack caption{display:block;width:auto;text-align:left}
+  table.ui-stack td.ui-num{text-align:left}
+  .table-wrap:has(table.ui-stack),.tbl:has(table.ui-stack){max-height:none;overflow:visible}
+}
+/* 期限の札(色だけにせず「あと3日」と文字で) */
+.ui-due{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:4px;font-size:.8125rem;font-weight:700;line-height:1.5;white-space:nowrap;border:1px solid transparent;vertical-align:1px}
+.ui-due-now{background:var(--due-bg);color:var(--due-tx)}
+.ui-due-soon{background:var(--danger-bg);color:var(--danger-tx);border-color:var(--danger-bd)}
+.ui-due-week{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+
+/* 記事の一覧 */
+.list .when,.list .d{font-size:.875rem;color:var(--sub)}
+.ui-cards{gap:16px}
+.ui-cards>li{border-radius:8px;padding:16px!important;border-color:var(--line)!important;background:var(--card)}
+.ui-cards h2,.ui-cards h3{font-size:1.1875rem;line-height:1.4;margin:2px 0 6px}
+.ui-cards h2 a,.ui-cards h3 a,.ui-cards>li>a{color:var(--ink);text-decoration:none}
+.ui-cards>li:hover h2 a,.ui-cards>li:hover h3 a{color:var(--accent);text-decoration:underline}
+.ui-cards p{font-size:.9375rem;line-height:1.65;color:var(--sub)}
+
+/* 目次・要点・注意書き */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:8px}
+.toc-h{text-transform:none;letter-spacing:0;font-size:.9375rem;color:var(--ink)}
+.ui-sum{border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;background:var(--card)}
+.note{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:1rem 0 0;font-size:.875rem;color:var(--sub)}
+.pr-note,.ai-note{font-size:.875rem}
+
+/* コード(Stripe・Linear の文書の型: 暗い面・言語のラベル・コピーのボタン) */
+code{font-family:var(--font-mono);font-size:.875em;background:var(--s2);border:1px solid var(--line);border-radius:4px;padding:.05em .35em}
+pre{position:relative;background:var(--code-bg);color:var(--code-ink);border:1px solid var(--code-line);border-radius:8px;padding:16px 18px;font-size:.875rem;line-height:1.65;overflow-x:auto;margin:1.25rem 0 1.75rem;letter-spacing:0;tab-size:2}
+pre code{background:none;border:0;padding:0;color:inherit;font-size:inherit}
+pre[data-lang]{padding-top:44px}
+pre[data-lang]::before{position:absolute;left:0;right:0;top:0;padding:8px 18px;margin:0;border-bottom:1px solid rgba(127,127,127,.25);font:600 .75rem/1.4 var(--font-mono);color:var(--code-sub);text-transform:none;letter-spacing:0}
+.ui-copy{position:absolute;top:5px;right:6px;min-height:30px!important;font:600 .75rem/1 var(--font-body);color:var(--code-sub);background:transparent;border:1px solid rgba(127,127,127,.35);border-radius:5px;padding:6px 10px;cursor:pointer}
+.ui-copy:hover{color:var(--code-ink);border-color:var(--code-sub)}
+pre:not([data-lang]) .ui-copy{top:8px}
+
+/* フッター */
+body>footer,.site-foot{max-width:none;margin:4rem 0 0;padding:0;background:var(--s2);border-top:1px solid var(--line);color:var(--sub);font-size:.875rem;line-height:1.8}
+body>footer:not(.site-foot){padding:28px max(var(--gutter,16px),calc((100% - var(--page))/2 + 24px)) 40px}
+.site-foot .wrap{max-width:var(--page);padding-top:28px;padding-bottom:40px}
+body>footer a,.site-foot a{color:var(--sub)}
+.sisters{margin-top:.75rem}
+@media print{body>header,body>footer{background:none;color:#000}}
+
+caption.ui-cap{caption-side:top;text-align:left;font-size:.875rem;line-height:1.5;color:var(--sub);padding:10px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+main table:not(:has(thead)) caption.ui-cap{padding:0 0 10px;border:0;background:transparent}
+.table-wrap table:not(:has(thead)),.tbl table:not(:has(thead)){border-top:0;margin:0;max-width:none}
+.table-wrap table:not(:has(thead)) :is(th,caption.ui-cap),.tbl table:not(:has(thead)) :is(th,caption.ui-cap){padding-left:16px}
+.table-wrap table:not(:has(thead)) td,.tbl table:not(:has(thead)) td{padding-right:16px}
+caption.ui-cap-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;padding:0;border:0}
+time{font-variant-numeric:tabular-nums}
+
+body>header,body>header.site-head{background:var(--head-bg);border-bottom:1px solid var(--line)}
+.brand::before{content:none;display:none}
+.brand{font-size:1.1875rem}
+body>header .tag{display:none}
+.ui-due-now,.ui-due-soon{background:var(--warn-bg);color:var(--warn-tx);border-color:var(--warn-bd)}
+.ui-due-week{background:transparent;color:var(--sub);border-color:var(--line)}
+.ui-find{border:1px solid var(--line);border-radius:8px;background:var(--s2);padding:20px 24px;margin:1.25rem 0 2rem}
+.ui-find>h2{font-size:1.125rem;margin:0 0 12px;line-height:1.4}
+.ui-jump{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0}
+.ui-jump label{flex-basis:100%;font-weight:600;font-size:.875rem;color:var(--sub);margin:0}
+.ui-jump select{font:inherit;font-size:1rem;min-height:48px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);color:var(--ink);flex:1 1 260px;max-width:420px;min-width:0;text-overflow:ellipsis}
+.ui-jump .ui-btn{min-height:48px;font:inherit;font-weight:700;font-size:1rem;cursor:pointer}
+.ui-find .ui-group{margin:18px 0 0}
+.ui-find .ui-group-h{font-size:.875rem;color:var(--sub)}
+html[lang=ja] .brand{letter-spacing:.02em}
+@media (max-width:600px){.ui-find .ui-same{display:none}.ui-find{padding:16px}.ui-jump select{max-width:100%;width:100%;min-width:0;flex-basis:100%;box-sizing:border-box}.ui-jump .ui-btn{flex:1 1 100%;justify-content:center}}
+.ui-lede{font-size:1.125rem;line-height:1.75;color:var(--sub);max-width:var(--measure);margin:-.25rem 0 1.75rem}
+html[lang=en] .ui-lede{line-height:1.6}
+.ui-topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;list-style:none;padding:0;margin:0 0 1rem}
+.ui-topics li{margin:0}
+.ui-topics a{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:64px;padding:12px 16px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);text-decoration:none}
+.ui-topics a b{font-size:1rem;font-weight:700;line-height:1.35}
+.ui-topics a span{font-size:.8125rem;color:var(--sub)}
+.ui-topics a:hover{border-color:var(--accent)}.ui-topics a:hover b{color:var(--accent)}
+
+.ui-lang{display:flex;align-items:center;gap:2px;font-size:.875rem;margin-left:4px;flex:none}
+.ui-lang a{color:var(--head-sub);text-decoration:none;padding:10px 10px;border-radius:6px;min-height:44px;display:inline-flex;align-items:center}
+.ui-lang a:hover{color:var(--head-ink);background:rgba(127,127,127,.14)}
+.ui-lang span[aria-current]{color:var(--head-ink);font-weight:650;padding:10px 6px}
+@media (max-width:700px){body>header .ui-lang{margin-left:auto}body>header .ui-lang~.ui-menu-btn{margin-left:4px}.ui-lang span[aria-current]{display:none}.ui-lang a{padding:10px 8px}}
+.ui-l-short{display:none}
+@media (max-width:480px){.ui-l-long{display:none}.ui-l-short{display:inline}}
+@media print{.ui-lang{display:none}}
+
+/* 記事のサイト: 読む列は狭く、トップだけ広く(カードを並べる) */
+.wrap{max-width:var(--page)}
+main.wrap,body>main{max-width:calc(var(--col) + 48px)}
+main.wrap:has(>.intro),body>main:has(.ui-hero){max-width:var(--page)}
+main:has(>.intro) .ui-cards,main:has(.ui-hero) .ui-cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+main:has(>.intro) .ui-cards>li,main:has(.ui-hero) .ui-cards>li{grid-template-columns:1fr}
+main:has(>.intro) .ui-cards>li>*,main:has(.ui-hero) .ui-cards>li>*{grid-column:1}
+main:has(>.intro) .ui-cards .ui-thumb-a,main:has(.ui-hero) .ui-cards .ui-thumb-a{grid-row:auto;grid-column:1;margin-bottom:8px}
+main:has(>.intro) .intro>:is(p,h1),main:has(.ui-hero)>:is(p,h1){max-width:var(--measure)}
+body>header,body>header.site-head{background:var(--bg)}
+article p,article li{max-width:var(--col)}
+.ui-side{left:calc(50% + 24px + var(--col) / 2)}
+
+/* 先頭の記事を大きく(トップだけ・広い画面) */
+@media (min-width:860px){
+main:has(.ui-hero) .ui-cards>li:first-child,main:has(>.intro) .ui-cards>li:first-child{grid-column:1/-1;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6px 32px;padding:20px!important;align-items:center}
+main:has(.ui-hero) .ui-cards>li:first-child>*,main:has(>.intro) .ui-cards>li:first-child>*{grid-column:2}
+main:has(.ui-hero) .ui-cards>li:first-child .ui-thumb-a,main:has(>.intro) .ui-cards>li:first-child .ui-thumb-a{grid-column:1;grid-row:1 / span 6;margin:0}
+main:has(.ui-hero) .ui-cards>li:first-child>a:not(.ui-thumb-a),main:has(.ui-hero) .ui-cards>li:first-child h3,main:has(>.intro) .ui-cards>li:first-child h3{font-size:1.5rem;line-height:1.4}
+main:has(.ui-hero) .ui-cards>li:first-child p:not(.d):not(.when),main:has(>.intro) .ui-cards>li:first-child p:not(.d):not(.when){font-size:1rem}
+}
+.ui-cards>li>a:not(.ui-thumb-a){font-weight:700;font-size:1.125rem;line-height:1.45;display:block;margin:2px 0 6px;color:var(--ink);text-decoration:none}
+.ui-cards>li:hover>a:not(.ui-thumb-a){color:var(--accent);text-decoration:underline}
+h1,h2,h3,.brand{font-weight:600}h3{font-family:var(--font-body);font-weight:700}
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude無料の制限時間|5時間リセットとPro切替の判断表", "image": ["https://shigoto.aobaworks.com/og/claude-free-limit-time.png"], "description": "Claude無料の制限時間は「5時間ごとにリセットされるセッション上限」です。回数は公表されていません。上限に達したときの表示、Proとの差（少なくとも5倍）、Proに切り替える判断の目安を公式情報をもとに表で整理しました。", "datePublished": "2026-10-28", "dateModified": "2026-10-28", "mainEntityOfPage": "https://shigoto.aobaworks.com/claude-free-limit-time/", "url": "https://shigoto.aobaworks.com/claude-free-limit-time/", "inLanguage": "ja", "keywords": "Claude, 無料プラン, 利用制限, Claude Pro, 料金比較, 生成AI", "isPartOf": {"@type": "WebSite", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/"}, "author": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/about/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}}, "publisher": {"@type": "Organization", "name": "AIツール比較", "url": "https://shigoto.aobaworks.com/", "parentOrganization": {"@type": "Organization", "name": "Aoba Works", "url": "https://aobaworks.com/"}, "publishingPrinciples": "https://shigoto.aobaworks.com/about/", "logo": "https://shigoto.aobaworks.com/og/_site-5808b969.png", "contactPoint": {"@type": "ContactPoint", "contactType": "editorial", "email": "shigoto.ai.note@gmail.com"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://shigoto.aobaworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Claude", "item": "https://shigoto.aobaworks.com/tag/claude/"}, {"@type": "ListItem", "position": 3, "name": "Claude無料の制限時間|5時間リセットとPro切替の判断表", "item": "https://shigoto.aobaworks.com/claude-free-limit-time/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Claude無料版は1日何回まで使えますか?", "acceptedAnswer": {"@type": "Answer", "text": "公式は「1日○回」という数字を出していません。無料プランの上限は5時間ごとにリセットされ、送れるメッセージ数は混み具合で変わる、と説明されています（Get started with Claude）。短い質問なら多く送れますし、長いファイルを読ませると少なくなります。"}}, {"@type": "Question", "name": "制限は夜中の0時にリセットされますか?", "acceptedAnswer": {"@type": "Answer", "text": "されません。無料プランの上限は5時間単位のセッションで、日付とは関係なく戻ります。正確な時刻は、上限に届いたときの「resets [time]」の表示で確かめてください。"}}, {"@type": "Question", "name": "無料プランでOpusは使えますか?", "acceptedAnswer": {"@type": "Answer", "text": "2026年10月時点の公式の料金ページでは、無料で使えるのはSonnetとHaikuです。Opusは Pro以上で使えます（料金）。"}}, {"@type": "Question", "name": "Proにすれば制限は無くなりますか?", "acceptedAnswer": {"@type": "Answer", "text": "無くなりません。Proは5時間あたり無料の少なくとも5倍使えますが、5時間の上限と週の上限があります（What is the Pro plan?）。上限を超えて使いたいときは、利用クレジットを有効にすると続けられます。"}}, {"@type": "Question", "name": "Web検索をオンにすると早く上限に届きますか?", "acceptedAnswer": {"@type": "Answer", "text": "届きやすくなります。公式ヘルプは、Web検索とWebページの読み込みは、どちらも無料プランの上限に数えられると書いています（Enable and use web search）。検索が要らない作業ではオフにしておくのが無難です。"}}]}</script>
+<style id="ui-motion" data-m="M1+M2+M3+M4+M5+M6+M7+M8">@media (prefers-reduced-motion:no-preference){.m-w{opacity:0;transform:translateY(8px)}.m-in{transition:opacity .55s ease-out,transform .55s ease-out}}@media print{.m-w{opacity:1;transform:none}}@media (prefers-reduced-motion:no-preference){.ui-cards>li{transition:transform .2s ease,border-color .2s ease,opacity .55s ease-out}.ui-cards>li:hover{transform:translateY(-3px)}.ui-cards>li:active{transform:translateY(-1px)}main tbody tr{transition:background-color .2s ease}main tbody tr:hover{background-color:color-mix(in srgb,var(--accent) 7%,transparent)}main a{transition:text-underline-offset .2s ease,color .2s ease}main a:hover{text-underline-offset:.32em}}.ui-bar{width:100%;transform:scaleX(0);transform-origin:0 50%}@media (prefers-reduced-motion:no-preference){.ui-bar{transition:transform .12s linear}.ui-sum{position:relative;overflow:hidden}.ui-sum::before{content:"";position:absolute;inset:0;background:var(--accent);opacity:0;transform:scaleX(0);transform-origin:0 50%;pointer-events:none;animation:m-sweep 1.6s .5s ease-out both}@keyframes m-sweep{0%{opacity:.1;transform:scaleX(0)}55%{opacity:.1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}}.mx-btn{display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:1px solid currentColor;border-radius:50%;background:transparent;color:inherit;cursor:pointer}.mx-btn:hover{color:var(--pr,currentColor)}.mx-btn:focus-visible{outline:3px solid var(--pr,currentColor);outline-offset:2px}.mx-dots i{display:block;width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.3;transform:scale(.7)}.mx-dots i.on{opacity:1;transform:none;background:var(--pr,currentColor)}@media (prefers-reduced-motion:no-preference){.mx-dots i{transition:opacity .3s ease-out,transform .3s ease-out}.mx-btn svg{transition:transform .2s ease-out}.mx-btn:hover svg{transform:translateX(2px)}.mx-btn:first-child:hover svg{transform:translateX(-2px)}}[data-mx]{scroll-snap-type:x mandatory}[data-mx]>li{scroll-snap-stop:always}@media (prefers-reduced-motion:no-preference){.mx-bar i{transition:transform .3s ease-out}}@media (prefers-reduced-motion:no-preference){.m-l{position:relative}.m-l::before{content:"";position:absolute;left:0;top:-14px;width:48px;height:2px;background:var(--accent);opacity:0;transform:scaleX(0);transform-origin:0 50%}.tbl.m-l::before,.table-wrap.m-l::before{top:0;width:100%;z-index:3}.m-ld::before{animation:m-ln 1.6s ease-out both}.m-w{opacity:0;transform:translateY(8px)}.m-c{transition:opacity .5s ease-out .6s,transform .5s ease-out .6s}.m-ld+.m-c,.m-ld .m-c{opacity:1;transform:none}@keyframes m-ln{0%{opacity:1;transform:scaleX(0)}38%{opacity:1;transform:none}70%{opacity:1;transform:none}100%{opacity:0;transform:none}}}.od{display:inline-block;height:1.1em;line-height:1.1em;overflow:hidden;vertical-align:top}.od-s{display:block;transform:translateY(calc(var(--y,0) * -1.1em))}.od-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}@media (prefers-reduced-motion:no-preference){.od-s{transition:transform .6s cubic-bezier(.2,.7,.2,1)}}@media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}::view-transition-old(root){animation:m-vo .3s ease-out both}::view-transition-new(root){animation:m-vi .3s ease-out both}@keyframes m-vo{100%{opacity:0;transform:translateX(-24px)}}@keyframes m-vi{0%{opacity:0}}}</style><style id="ui-font" data-f="F1">@font-face{font-family:"aoba-body";src:url(/fonts/F1/ja-body-400.woff2) format("woff2");font-weight:300 500;font-style:normal;font-display:swap}@font-face{font-family:"aoba-body";src:url(/fonts/F1/ja-body-700.woff2) format("woff2");font-weight:600 900;font-style:normal;font-display:swap}@font-face{font-family:"aoba-head";src:url(/fonts/F1/ja-head-600.woff2) format("woff2");font-weight:500 900;font-style:normal;font-display:swap}:root{--font-body:"aoba-body","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","BIZ UDPGothic",Meiryo,system-ui,sans-serif;--font-head:"aoba-head","Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","BIZ UDPMincho",serif}</style><style id="ui-look" data-l="R1025">:root{--r-fill:#f2f2f0;--r-btn:#111111;--r-bink:#ffffff;--rn-bg:#101828;--rn-ink:#f5f5f2;--rn-sub:#b9c1cd;--r-circ:#e6e1d8}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--r-fill:var(--s2);--r-btn:#f5f5f2;--r-bink:#111111;--rn-bg:#0b1322;--r-circ:#2b2925}}:root[data-theme=dark]{--r-fill:var(--s2);--r-btn:#f5f5f2;--r-bink:#111111;--rn-bg:#0b1322;--r-circ:#2b2925}article>h2,main>h2{margin-top:56px}.related{border-top:0}:root .ui-sum{border:0;border-radius:16px;background:var(--r-fill);padding:20px 24px 14px}:root .ui-find{border:0;border-radius:16px;background:var(--r-fill)}:root .ui-btn-primary,:root .hx a.hx-go{min-height:48px;border-radius:4px;border-color:var(--r-btn);background:var(--r-btn);color:var(--r-bink)}:root .ui-btn-primary:hover,:root .hx a.hx-go:hover{filter:none;border-color:var(--r-btn);color:var(--r-bink);text-decoration:underline}:root .hx a.hx-go{padding:12px 28px;gap:12px}:root .hx-go .hx-arw{width:auto;height:auto;border:0}:root .hx-more .hx-arw{width:40px;height:40px;border:1px solid currentColor}.hx-tick,.h4-band{display:none}:root .ui-cards.ui-rows.ui-rows{display:block;max-width:48rem;margin:0 0 2rem;padding:0;border-top:1px solid var(--line)}:root .ui-cards.ui-rows.ui-rows>li{display:grid;grid-template-columns:minmax(0,1fr) 120px;grid-template-rows:auto 1fr;gap:6px 20px;align-items:start;margin:0;padding:18px 0!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0;background:none}:root .ui-cards.ui-rows.ui-rows>li.ui-noimg{grid-template-columns:minmax(0,1fr)}:root .ui-cards.ui-rows.ui-rows>li>*{grid-column:1;margin:0}:root .ui-cards.ui-rows.ui-rows .ui-thumb-a{grid-column:2;grid-row:1/span 2}:root .ui-cards.ui-rows.ui-rows .ui-thumb{width:120px;height:68px;aspect-ratio:auto;border-radius:8px}:root .ui-cards.ui-rows.ui-rows h2,:root .ui-cards.ui-rows.ui-rows h3{grid-row:1;margin:0;font-size:1rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}:root .ui-cards.ui-rows.ui-rows .d,:root .ui-cards.ui-rows.ui-rows .when{grid-row:2;font-size:.8125rem}:root .ui-cards.ui-rows.ui-rows>li>p:not(.d):not(.when){display:none}:root .ui-cards.ui-rows.ui-rows>li:hover{border-color:var(--line)!important}.ui-br{font-weight:700}:root .toc.ui-tocx{margin:16px 0 28px;padding:0;border:0;border-radius:0;background:none}.ui-tocx .toc-h{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}.ui-tocx ol{display:flex;gap:8px;margin:0;padding:2px 2px 10px;list-style:none;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}.ui-tocx li{flex:none;margin:0;scroll-snap-align:start}.ui-tocx a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;background:var(--r-fill);color:var(--ink);font-size:.875rem;line-height:1.3;white-space:nowrap;text-decoration:none}.ui-tocx a:hover{color:var(--accent);text-decoration:none}.ui-nxh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:56px 0 16px}.ui-nxh h2{margin:0}:root .ui-nxr{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:16px;margin:0;padding:4px 2px 12px;list-style:none;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}:root .ui-nxr>li{display:flex;flex-direction:column;gap:6px;max-width:none;margin:0;padding:22px;border:0;border-radius:16px;background:var(--r-fill);scroll-snap-align:start;scroll-snap-stop:always}:root .ui-nxr h3{margin:0;font-size:1.0625rem;line-height:1.5}:root .ui-nxr p{margin:0;font-size:.875rem;line-height:1.65;color:var(--sub)}:root .ui-nxr>li>p:not(.d):not(.when){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.ui-nx .mx-ctl{display:flex;gap:8px;min-height:44px;flex:none}.mx-foot{display:flex;align-items:center;gap:16px;margin-top:8px}.mx-count{margin:0;font-size:.8125rem;font-weight:700;color:var(--sub);white-space:nowrap;font-variant-numeric:tabular-nums}.mx-bar{flex:1;max-width:240px;height:2px;background:var(--line)}.mx-bar i{display:block;height:100%;background:var(--accent);transform:scaleX(var(--p,0));transform-origin:0 50%}:root body>footer,:root .site-foot{border-top:0;background:var(--rn-bg);color:var(--rn-sub)}:root body>footer a,:root .site-foot a,:root body>footer strong{color:var(--rn-ink)}main tr[hidden]{display:none!important}.ui-qn{margin:0 0 12px;font-weight:700}.ui-qn a{margin-left:8px;font-weight:400}@media (prefers-reduced-motion:no-preference){:root .hx-arw svg{transition:transform .3s ease-out}:root .hx-more:hover .hx-arw,:root .hx-go:hover .hx-arw{transform:none}:root .hx-more:hover .hx-arw svg{transform:translateX(4px)}}</style></head><body><header><a class="brand" href="/">AIツール比較</a><nav class="gnav" aria-label="メニュー"><a href="/">記事一覧</a><a href="/tag/">テーマ</a><a href="/about/">このサイトについて</a></nav><p class="tag">AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p></header>
+<main><nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span>›</span><a href="/tag/claude/">Claude</a><span>›</span>Claude無料の制限時間|5時間リセットとPro切替の判断表</nav><article><h1>Claude無料の制限時間|5時間リセットとPro切替の判断表</h1><p class="meta">運営 <a href="/about/">Aoba Works</a> · 公開 <time datetime="2026-10-28">2026年10月28日</time> · 公式情報で確認 <time datetime="2026-10-28">2026年10月28日</time> · 28分で読めます</p><p class="meta src-note">調べ方: <time datetime="2026-10-28">2026年10月28日</time> に、各サービスの公式ページ・ヘルプなどで事実を確かめて書きました(出典 17 件・6 サイト・<a href="#出典">一覧</a>)。公開の前に、出典の無い事実・作り話の体験・誇張が無いかを自動で点検しています。<a href="/about/">編集方針</a></p><p class="meta upd-link">ChatGPT・Claude などの最近の障害とリリース: <a href="/updates/">AIツールの更新・障害まとめ</a>(公式の情報を週1回集めた表)</p><p class="tags"><a href="/tag/claude/">#Claude</a> <a href="/tag/%E7%84%A1%E6%96%99%E3%83%97%E3%83%A9%E3%83%B3/">#無料プラン</a> <a href="/tag/%E5%88%A9%E7%94%A8%E5%88%B6%E9%99%90/">#利用制限</a> <a href="/tag/claude-pro/">#Claude Pro</a></p><p class="note">※この記事にはアフィリエイト広告(PR)が含まれます。紹介したサービスへの申し込みなどで、運営者に報酬が入ることがあります。</p><nav class="toc ui-tocx" aria-label="目次"><p class="toc-h">目次</p><ol><li><a href="#あなたに合うのはどれ">あなたに合うのはどれ?</a></li><li><a href="#claude無料プランのメッセージ制限は何回まで">Claude無料プランのメッセージ制限は何回まで?</a></li><li><a href="#claude無料の制限は何時間でリセットされる">Claude無料の制限は何時間でリセットされる?</a></li><li><a href="#claude無料で制限に達するとどうなる">Claude無料で制限に達するとどうなる?</a></li><li><a href="#claude無料とproの制限はどう違う">Claude無料とProの制限はどう違う?</a></li><li><a href="#claude無料の制限は何を基準に決まる">Claude無料の制限は何を基準に決まる?</a></li><li><a href="#claude無料の制限時間を増やす方法はある">Claude無料の制限時間を増やす方法はある?</a></li><li><a href="#claude無料からproに切替える判断基準は">Claude無料からProに切替える判断基準は?</a></li><li><a href="#claude無料の制限はアプリとweb版で違う">Claude無料の制限はアプリとWeb版で違う?</a></li><li><a href="#次にやること">次にやること</a></li><li><a href="#よくある質問">よくある質問</a></li><li><a href="#出典">出典</a></li><li><a href="#次に検討するなら-pr">次に検討するなら(PR)</a></li></ol></nav>
+<p>Claudeの無料プランには、<strong>5時間ごとにリセットされる「セッション上限」</strong>があります。「1日○回まで」という決まった回数はありません。Anthropicは、送れるメッセージ数は混み具合で変わると説明しています（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>・2026年10月時点）。上限に届いたら、次のリセットまで待つか、Pro（月20ドル）に切り替えるかを選びます。</p>
+<blockquote><p>「While using the free Claude plan, there is a session-based usage limit that will reset every five hours.」（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>）</p></blockquote>
+<p>訳: 無料のClaudeプランには、5時間ごとにリセットされるセッション単位の利用上限があります。</p>
+<aside class="ui-sum" aria-label="要点"><p class="ui-sum-h">この記事の要点</p><ul><li>無料の上限は5時間ごとにリセット。回数は非公開</li><li>Proは5時間あたり無料の少なくとも5倍使える</li><li>上限が週2回以上ならPro、月1回以下なら無料のまま</li></ul><p class="ui-sum-who"><b>向いている人: </b>Claudeを無料で使っていて上限に困り始めた人</p></aside><h2 id="あなたに合うのはどれ">あなたに合うのはどれ?</h2>
+<p>上限に届く回数と、待たされたときに困るかどうかで決めます。ここでの「週2回」などの数字は、このサイトが判断のために置いた目安です。Anthropicの公式な基準ではありません。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">あなたに合うのはどれ?</caption><thead><tr><th>状況</th><th>まず選ぶもの</th><th>最初に開くページ</th></tr></thead><tbody><tr><td>初めて使う。上限にはまだ届いたことがない</td><td>無料プランのまま</td><td><a href="https://claude.ai" rel="noopener">claude.ai</a></td></tr><tr><td>上限に届くのは月1回以下。待っても困らない</td><td>無料プラン＋節約のコツ</td><td><a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" rel="noopener">Usage limit best practices</a></td></tr><tr><td>仕事で毎日使い、上限に週2回以上届く</td><td>Pro（月20ドル・年払いなら月17ドル相当）</td><td><a href="https://claude.ai/upgrade" rel="noopener">claude.ai/upgrade</a></td></tr><tr><td>Proでも毎日のように上限に届く</td><td>Max（月100ドルから）</td><td><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">What is the Max plan?</a></td></tr><tr><td>会社で複数人で使う。請求をまとめたい</td><td>Team（Standardシート 月20〜25ドル）</td><td><a href="https://support.claude.com/en/articles/9266767-what-is-the-team-plan" rel="noopener">What is the Team plan?</a></td></tr></tbody></table></div>
+<p>理由は1行ずつです。</p>
+<ul><li><strong>初めての人</strong>: 無料でもWeb検索・ファイル作成・Artifacts・プロジェクト5個まで使えるので、まず上限を体感してからで遅くありません（<a href="https://claude.com/pricing" rel="noopener">料金</a>）。</li><li><strong>月1回以下の人</strong>: 5時間待てば元に戻るため、月20ドルを払う理由がまだ弱い状態です。</li><li><strong>週2回以上の人</strong>: 待ち時間が仕事の段取りを崩し始めるので、1日あたり約1ドル（20ドル÷20営業日）なら元が取れやすくなります。</li><li><strong>Proでも足りない人</strong>: MaxはProの5倍か20倍の量を5時間ごとに使えます（<a href="https://claude.com/pricing" rel="noopener">料金</a>）。</li></ul>
+<p>料金はすべて2026年10月時点のものです。最新の金額は公式で確かめてください。日本円でいくら引き落とされるかは <a href="/claude-pro-price-jpy/">Claude Pro料金|日本円の実額を月払い・年払い別に表で</a> にまとめています。</p>
+<h2 id="claude無料プランのメッセージ制限は何回まで">Claude無料プランのメッセージ制限は何回まで?</h2>
+<p>決まった回数はありません。公式は「混み具合によって変わる」とだけ説明しています。</p>
+<p>Anthropicのヘルプの原文はこうです。</p>
+<blockquote><p>「The number of messages you can send will vary based on demand」（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>）</p></blockquote>
+<p>訳: 送れるメッセージの数は、需要（混み具合）によって変わります。</p>
+<p>同じヘルプには、すべての人が公平に使えるように「ほかの種類の利用上限を設けることがある」とも書かれています。数字は公表されていません。ネット上で見かける「15〜40回」「数十回」といった数字は、各サイトが独自に出した目安です。Anthropicの数字ではない点に気をつけてください。</p>
+<p>回数が決まらないのは、1通ごとの「重さ」が違うからです。たとえば「この一文を丁寧語にして」という短い依頼と、「添付した30ページのPDFを要約して、表にまとめて」という依頼は、どちらも1通として数えられます。それでも、使う量はまったく違います。何が重くなるかは、下の「## Claude無料の制限は何を基準に決まる?」で詳しく説明します。</p>
+<h3 id="つまずきやすい所-昨日は30回送れたのに今日は少ない">つまずきやすい所: 「昨日は30回送れたのに今日は少ない」</h3>
+<p>これは故障ではありません。混んでいる時間帯は送れる量が減ることがある、と公式に書かれています。長い会話を続けた日や、ファイルをたくさん添付した日も、早く上限に届きます。昨日と今日を回数で比べるより、「1回の上限に届くまでにどんな作業をしたか」を見るほうが、Proに切り替えるかどうかを決めやすくなります。</p>
+<h2 id="claude無料の制限は何時間でリセットされる">Claude無料の制限は何時間でリセットされる?</h2>
+<p>5時間です。無料プランのセッション上限は、5時間ごとに元に戻ります（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>）。</p>
+<p>Web検索のヘルプにも、同じ内容がはっきり書かれています。</p>
+<blockquote><p>「As a free user, you have usage limits that reset every five hours.」（<a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener">Enable and use web search</a>）</p></blockquote>
+<p>訳: 無料ユーザーの利用上限は、5時間ごとにリセットされます。</p>
+<h3 id="毎日0時にリセット-ではない">「毎日0時にリセット」ではない</h3>
+<p>ここがいちばん誤解されやすい所です。公式の言い方は「session-based（セッション単位）」で、日付が変わったときに戻る仕組みではありません。上限に届くと「5-hour limit reached - resets [time]」という表示が出て、[time]の部分に次に使える時刻が入ります（<a href="https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages" rel="noopener">Troubleshoot Claude error messages</a>）。いつ戻るかは、自分で計算するより、この表示の時刻を見るのが確実です。</p>
+<h3 id="週ごとの上限はある">週ごとの上限はある?</h3>
+<p>有料プランには、5時間のセッション上限とは別に「週の上限」があります。毎週決まった時刻にリセットされます（<a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" rel="noopener">What is the Pro plan?</a>・<a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" rel="noopener">How do usage and length limits work?</a>）。無料プランのヘルプで説明されているのは5時間のセッション上限だけです。ただし、先ほどの「ほかの種類の上限を設けることがある」という一文があります。無料なら週の上限は絶対に無い、とまでは言い切れません。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">週ごとの上限はある?</caption><thead><tr><th>上限の種類</th><th>無料</th><th>Pro</th><th>Max</th></tr></thead><tbody><tr><td>5時間ごとのセッション上限</td><td>あり</td><td>あり</td><td>あり</td></tr><tr><td>週の上限</td><td>無料プランのヘルプには記載なし（ほかの上限を設ける場合ありと記載）</td><td>あり（毎週決まった時刻にリセット）</td><td>あり</td></tr><tr><td>混み具合で変わる</td><td>変わると明記</td><td>ヘルプでは「使うモデル・機能で変わる」と記載</td><td>混雑時の優先アクセスあり</td></tr></tbody></table></div>
+<p>（2026年10月時点・<a href="https://claude.com/pricing" rel="noopener">料金</a>・各プランのヘルプより）</p>
+<h2 id="claude無料で制限に達するとどうなる">Claude無料で制限に達するとどうなる?</h2>
+<p>新しいメッセージを送れなくなり、次に使える時刻が表示されます。</p>
+<p>公式のエラー一覧に載っている、上限についての表示は次の2つです（<a href="https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages" rel="noopener">Troubleshoot Claude error messages</a>・英語表示の原文）。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude無料で制限に達するとどうなる?</caption><thead><tr><th>表示</th><th>意味</th><th>直し方</th></tr></thead><tbody><tr><td>5-hour limit reached - resets [time]</td><td>5時間の枠を使い切った</td><td>表示の時刻まで待つ。有料プランなら利用クレジットも使える</td></tr><tr><td>You've reached your weekly limit. It resets [day] at [time].</td><td>週の上限に届いた</td><td>表示の曜日・時刻まで待つ</td></tr></tbody></table></div>
+<p>上限とまちがえやすい表示が、ほかに2つあります。</p>
+<ol><li><strong>「Your message will exceed the length limit for this chat. Try attaching fewer or smaller files or starting a new conversation.」</strong></li></ol>
+<p>これは利用上限ではなく、その1つのチャットに入る長さの上限です。待っても直りません。添付ファイルを減らすか小さくする、新しい会話を始める、要点だけを先にまとめてから送る、のどれかで直ります。</p>
+<ol><li><strong>「Due to unexpected capacity constraints, Claude is unable to respond to your message. Please try again soon.」</strong></li></ol>
+<p>一時的に混んでいるという表示で、あなたの上限とは関係ありません。公式は、数分おいてもう一度送るよう案内しています。全体の障害かどうかは <a href="https://status.claude.com" rel="noopener">status.claude.com</a> で確かめられます。</p>
+<h3 id="つまずきやすい所-待ち時間に別のaiへ移ると-続きが途切れる">つまずきやすい所: 待ち時間に別のAIへ移ると、続きが途切れる</h3>
+<p>上限に届いても、それまでの会話は消えません。リセット後に同じチャットを開けば、続きから頼めます。待つあいだにChatGPTなどへ移る人もいますが、それまでの前提をもう一度説明し直すことになります。どの道具を何に使うかは <a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT・Claude・Copilot使い分け|料金と用途の比較表</a> を参考にしてください。</p>
+<h2 id="claude無料とproの制限はどう違う">Claude無料とProの制限はどう違う?</h2>
+<p>Proは、5時間のセッションあたり<strong>無料の少なくとも5倍</strong>使えます。上位のモデルや、Claude Codeも使えるようになります。</p>
+<p>公式の料金ページの書き方は次のとおりです。</p>
+<blockquote><p>「at least 5x more usage per 5-hour session than Free」（<a href="https://claude.com/pricing" rel="noopener">Claude 料金</a>）</p></blockquote>
+<p>訳: 5時間のセッションあたり、無料より少なくとも5倍多く使えます。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude無料とProの制限はどう違う?</caption><thead><tr><th>項目</th><th>無料</th><th>Pro</th><th>Max</th></tr></thead><tbody><tr><td>料金（2026年10月時点）</td><td>0ドル</td><td>月20ドル（年払いは月17ドル相当・200ドル一括）</td><td>月100ドルから</td></tr><tr><td>5時間あたりの量</td><td>基準</td><td>無料の少なくとも5倍</td><td>Proの5倍か20倍</td></tr><tr><td>週の上限</td><td>ヘルプに記載なし</td><td>あり</td><td>あり</td></tr><tr><td>使えるモデル</td><td>SonnetとHaiku</td><td>Opusなどを含むより多くのモデル</td><td>Proと同じ＋新機能の先行利用</td></tr><tr><td>Claude Code</td><td>含まれない</td><td>含まれる</td><td>含まれる</td></tr><tr><td>プロジェクト</td><td>5個まで</td><td>制限の記載なし</td><td>制限の記載なし</td></tr><tr><td>上限を超えて使う手段（利用クレジット）</td><td>なし</td><td>あり</td><td>あり</td></tr><tr><td>混雑時の優先</td><td>なし</td><td>記載なし</td><td>あり</td></tr></tbody></table></div>
+<p>（出典: <a href="https://claude.com/pricing" rel="noopener">料金</a>・<a href="https://claude.com/ja-jp/pricing" rel="noopener">日本語の料金ページ</a>・<a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" rel="noopener">Manage usage credits</a>。料金と内容は変わることがあるので、最新は公式で確認してください）</p>
+<p>公式の料金ページを数えると、個人と組織向けに載っているプランは Free・Pro・Max・Team・Enterprise の5つでした。日本語の料金ページで無料プランに挙げられている機能は6項目です（<a href="https://claude.com/ja-jp/pricing" rel="noopener">料金</a>・2026-10-28に数えた）。チャット、Web検索、メモリ、Artifactsなど、試すのに十分な機能は無料にもそろっています。無料とProの差は、機能の有無より使える量のほうが大きい、と言えます。</p>
+<h3 id="proの注意点-無制限-ではない">Proの注意点: 「無制限」ではない</h3>
+<p>Proにも5時間の上限と週の上限があります（<a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" rel="noopener">What is the Pro plan?</a>）。「お金を払えば好きなだけ使える」と思って切り替えると、長いファイルを毎日読ませる使い方ではPro でも上限に届きます。Proで上限に届いたときは、利用クレジット（量に応じた追加の支払い）を有効にすれば、そのまま使い続けられます（<a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" rel="noopener">Manage usage credits</a>）。この利用クレジットは有料プランだけの機能です。無料プランでは使えません。</p>
+<p><strong>Proが向いている人</strong>: 平日ほぼ毎日Claudeで資料作成・文章の直し・要約をしていて、待ち時間で作業が止まる人。Opusや Claude Code も使いたい人。 <strong>Proが向いていない人</strong>: 週に数回、短い質問をするだけの人。上限に届いたことが無い人には、5倍の量は使い道がありません。</p>
+<h2 id="claude無料の制限は何を基準に決まる">Claude無料の制限は何を基準に決まる?</h2>
+<p>送った回数ではなく、使った量で決まります。会話の長さと複雑さ、使う機能、モデル、努力レベル（effort）の4つで量が変わります。</p>
+<p>公式ヘルプは、使う量に影響するものとして次を挙げています（<a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" rel="noopener">How do usage and length limits work?</a>）。</p>
+<blockquote><p>「the length and complexity of your conversations, the features you use, which Claude model you're chatting with, and the effort level you've selected」</p></blockquote>
+<p>訳: 会話の長さと複雑さ、使っている機能、どのClaudeモデルと話しているか、選んだ努力レベル。</p>
+<p>これを、無料プランでよくある場面に当てはめてみます。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude無料の制限は何を基準に決まる?</caption><thead><tr><th>量が増えるもの</th><th>なぜ増えるか</th><th>たとえば</th></tr></thead><tbody><tr><td>長い会話</td><td>Claudeは返事のたびに、それまでの会話も読み直す</td><td>朝から同じチャットで50往復している</td></tr><tr><td>添付ファイル</td><td>ファイルの中身もすべて読む</td><td>50ページの報告書PDFを毎回添付し直す</td></tr><tr><td>Web検索・Webページの読み込み</td><td>検索結果や記事の本文を読む分が加わる。公式も上限に数えると明記（<a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener">Web検索のヘルプ</a>）</td><td>長い記事のURLを貼って「要約して」と頼む</td></tr><tr><td>ツール・コネクタ</td><td>公式いわく「Tools and connectors are token-intensive」（量を多く使う）</td><td>使っていない連携をオンにしたまま</td></tr><tr><td>拡張思考・高い努力レベル</td><td>答える前に長く考える分だけ増える</td><td>簡単な言い換えに拡張思考をオンのまま</td></tr></tbody></table></div>
+<p>公式は、Web検索のヘルプでも「長い記事へのリンクを直接貼ると、上限のかなりの部分を使うことがある」と注意しています（<a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener">Enable and use web search</a>）。</p>
+<h3 id="つまずきやすい所-長い1つのチャットを使い続ける">つまずきやすい所: 長い1つのチャットを使い続ける</h3>
+<p>会話が長くなるほど、1往復ごとの量が増えていきます。話題が変わったら新しいチャットを始めるだけで、同じ5時間で頼める回数が増えやすくなります。前の会話の結論が必要なら、「ここまでの決定事項を5行でまとめて」と頼みます。その5行を新しいチャットの最初に貼れば、前提を引き継げます。</p>
+<h2 id="claude無料の制限時間を増やす方法はある">Claude無料の制限時間を増やす方法はある?</h2>
+<p>無料のまま上限そのものを増やす公式の方法はありません。できるのは、同じ上限の中で使う量を減らすことです。</p>
+<p>上限に届いたときに公式が案内している選択肢は、「リセットを待つ」「プランを上げる」「利用クレジットを買う」の3つです（<a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" rel="noopener">How do usage and length limits work?</a>）。このうち利用クレジットは、Pro・Max 5x・Max 20xが対象と書かれています（<a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" rel="noopener">Manage usage credits</a>）。無料プランで使えるのは「待つ」と「節約する」の2つです。</p>
+<p>もう1つ、「Limit reset」という機能があります。使うとすぐに5時間の上限か週の上限が満タンに戻るもので、対象のプランにときどき配られます。「Settings &gt; Usage」の「Reset for free」から使います（<a href="https://support.claude.com/en/articles/17007452-what-is-a-limit-reset" rel="noopener">What is a limit reset?</a>）。ただ、どのプランが対象かはヘルプに書かれていません。無料プランで必ずもらえるものではない、と考えておくのが安全です。</p>
+<h3 id="無料のまま使える量を増やす手順">無料のまま使える量を増やす手順</h3>
+<p>公式の「Usage limit best practices」と「How do usage and length limits work?」に書かれている方法を、無料プランで使える形に並べ直しました。</p>
+<ol><li><strong>送る前に、質問をまとめる。</strong> 関係する質問は1通にまとめます。たとえば「この文を短くして」「次に敬語にして」「最後に件名をつけて」を3回に分けず、「次の文を①短く②敬語にし③件名を1つつけて」と1回で頼みます。</li><li><strong>指示を具体的に書く。</strong> 「いい感じに直して」だと何度もやり直しになります。「200字以内・取引先あて・結論を先に」のように条件をつけると、1回で終わりやすくなります。</li><li><strong>送る前に見直す。</strong> 書き足しの往復を減らせます。</li><li><strong>使わないツールを切る。</strong> 検索が要らない作業では、Web検索や連携をオフにします。</li><li><strong>簡単な作業では拡張思考を切る。</strong> 言い換え・誤字直しのような作業に、長い思考は要りません。</li><li><strong>何度も使う資料はプロジェクトに入れる。</strong> 公式によると、プロジェクトの資料はキャッシュ（一時保存）されているあいだにもう一度参照すると、上限への数え方が少なくなります。無料でもプロジェクトは5個まで作れます（<a href="https://claude.com/pricing" rel="noopener">料金</a>）。作り方は <a href="/claude-project-usage-guide/">Claudeプロジェクト使い方|作成から共有まで5手順と比較表</a> で説明しています。</li><li><strong>プロジェクトの不要なファイルを消す。</strong> 使わないファイルが入ったままだと、そのたびに読まれる量が増えます。</li></ol>
+<h3 id="つまずきやすい所-アカウントを複数作って回す">つまずきやすい所: アカウントを複数作って回す</h3>
+<p>上限を避けるためにアカウントを何個も作るやり方は、公式の案内にはありません。仕事のデータが別々のアカウントに散らばり、あとで探せなくなります。そこまで必要になったら、それがProに切り替える合図です。</p>
+<h2 id="claude無料からproに切替える判断基準は">Claude無料からProに切替える判断基準は?</h2>
+<p>上限に届くのが<strong>週2回以上</strong>で、待ち時間に仕事が止まるならProに切り替えます。月1回以下なら無料のままで十分です。</p>
+<p>この「週2回」は、このサイトが判断のために置いた目安です。Anthropicの基準ではありません。根拠は次の計算です。</p>
+<ul><li>Proは月20ドル。月の営業日を20日とすると、<strong>1日あたり約1ドル</strong>です（2026年10月時点・年払いなら月17ドル相当で約0.85ドル）。</li><li>上限に届くと、最長で5時間待つことになります。平日の昼に届けば、その日の午後の作業が丸ごと止まりかねません。</li><li>週2回届くなら、月に8回ほど仕事が止まる計算です。1回あたりに直すと2.5ドルほどになります。</li></ul>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude無料からProに切替える判断基準は?</caption><thead><tr><th>上限に届く頻度</th><th>待ち時間の影響</th><th>おすすめ</th></tr></thead><tbody><tr><td>まだ一度も無い</td><td>なし</td><td>無料のまま</td></tr><tr><td>月1回以下</td><td>夜や休日なら困らない</td><td>無料のまま＋節約の手順</td></tr><tr><td>週1回くらい</td><td>締め切りの日だけ困る</td><td>節約の手順を1週間試し、それでも届くならPro</td></tr><tr><td>週2回以上</td><td>平日の作業が止まる</td><td>Pro</td></tr><tr><td>Proで毎日届く</td><td>Proでも足りない</td><td>Maxか、Proの利用クレジット</td></tr></tbody></table></div>
+<p>頻度のほかに、次のどれかに当てはまる場合も、Proを考えるきっかけになります。</p>
+<ul><li><strong>Opusを使いたい。</strong> 無料で使えるのはSonnetとHaikuで、Opusは Pro以上です（<a href="https://claude.com/ja-jp/pricing" rel="noopener">料金</a>）。</li><li><strong>Claude Codeを使いたい。</strong> Claude CodeはProから含まれます（<a href="https://claude.com/pricing" rel="noopener">料金</a>）。無料で使える範囲は <a href="/claude-code-how-to-use-free/">Claude Code使い方|無料の範囲と料金表・導入7手順</a> にまとめています。</li><li><strong>上限に届いたあとも、お金を払ってでも続けたい日がある。</strong> 利用クレジットは有料プランだけで使えます。</li></ul>
+<h3 id="proに切り替える手順">Proに切り替える手順</h3>
+<p>公式ヘルプが案内している入口は、Webの <a href="https://claude.ai/upgrade" rel="noopener">claude.ai/upgrade</a> と、スマホのアプリストアの2つです（<a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" rel="noopener">What is the Pro plan?</a>）。</p>
+<ol><li>パソコンのブラウザで <a href="https://claude.ai" rel="noopener">claude.ai</a> にログインします。</li><li><a href="https://claude.ai/upgrade" rel="noopener">claude.ai/upgrade</a> を開きます。</li><li>Proを選び、月払いか年払いかを選びます。</li><li>支払い情報を入れて申し込みます。</li><li>切り替わったら「Settings &gt; Usage」を開き、5時間の上限と週の上限の進み具合がバーで出ているか確かめます（<a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" rel="noopener">Usage limit best practices</a>）。</li></ol>
+<p>つまずきやすいのは支払い先です。iPhoneやAndroidのアプリから申し込むと、支払いはApple・Googleのストア経由になります。ストアでの価格はWebと違うことがあります。公式も、地域ごとの価格はアプリストアで確かめるよう書いています。どこで申し込んだかによって解約する場所も変わるので、申し込んだ入口をメモしておきましょう。円での実額は <a href="/claude-pro-price-jpy/">Claude Pro料金|日本円の実額を月払い・年払い別に表で</a> で比べられます。</p>
+<h2 id="claude無料の制限はアプリとweb版で違う">Claude無料の制限はアプリとWeb版で違う?</h2>
+<p>違いません。上限はアカウント単位で、Web・デスクトップ・スマホのどれから送っても同じ枠を使います。</p>
+<p>無料プランでは、Web・デスクトップ・モバイルのどれでもチャットできます（<a href="https://claude.com/pricing" rel="noopener">料金</a>）。ヘルプには、アプリごとに別の枠がある、という説明はありません。有料プランについては、もっとはっきり書かれています。</p>
+<blockquote><p>「These limits are shared across Claude and Claude Code, meaning all activity in both tools counts against the same limits.」（<a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" rel="noopener">Using Claude Code with your Pro or Max plan</a>）</p></blockquote>
+<p>訳: これらの上限はClaudeとClaude Codeで共通です。両方での利用は、すべて同じ上限に数えられます。</p>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">Claude無料の制限はアプリとWeb版で違う?</caption><thead><tr><th>使う場所</th><th>無料プランで使えるか</th><th>上限の枠</th></tr></thead><tbody><tr><td>Web（claude.ai）</td><td>使える</td><td>アカウントで共通</td></tr><tr><td>デスクトップアプリ</td><td>使える</td><td>アカウントで共通</td></tr><tr><td>スマホアプリ</td><td>使える</td><td>アカウントで共通</td></tr><tr><td>Claude Code</td><td>Pro以上</td><td>有料プランではチャットと共通と明記</td></tr></tbody></table></div>
+<h3 id="つまずきやすい所-スマホに切り替えれば続けられると思う">つまずきやすい所: スマホに切り替えれば続けられると思う</h3>
+<p>たとえば、パソコンのブラウザで上限に届いたあとに、スマホのアプリを開いても、同じアカウントなら同じ時刻まで待つことになります。今どのモデルで話しているかは、Webとデスクトップでは入力欄の下、スマホでは画面の上に出ています（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>）。</p>
+<h2 id="次にやること">次にやること</h2>
+<h3 id="自分でやる人の今日の一歩">自分でやる人の今日の一歩</h3>
+<ol><li>次に上限に届いたら、「5-hour limit reached - resets ○○」の時刻と、それまでにしていた作業を1行メモします。1週間メモすれば、「週2回以上か」がはっきりします。</li><li>いちばん使う作業（メールの下書き、議事録の要約など）の指示を1つの文にまとめ、プロジェクトに入れておきます。</li><li>1週間メモして週2回以上なら、<a href="https://claude.ai/upgrade" rel="noopener">claude.ai/upgrade</a> からProの月払いを1か月だけ試し、上限に届く回数が減ったかを比べます。</li></ol>
+<p>無料で始める流れを最初から確かめたい人は、<a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a> から読むと迷いません。</p>
+<h3 id="自分でやるのが大変-早く確実にしたい人">自分でやるのが大変・早く確実にしたい人</h3>
+<div class="tbl"><table><caption class="ui-cap ui-cap-sr">自分でやるのが大変・早く確実にしたい人</caption><thead><tr><th>選択肢</th><th>費用（2026年10月時点・最新は公式で確認）</th><th>向いている人</th><th>向いていない人</th></tr></thead><tbody><tr><td>Claude Pro</td><td>月20ドル（年払いは月17ドル相当）</td><td>個人で毎日使い、待ち時間を無くしたい人</td><td>週に数回の短い質問だけの人</td></tr><tr><td>Claude Team</td><td>Standardシート 月20〜25ドル（年払い・月払い）</td><td>会社で何人かで使い、請求と管理をまとめたい人</td><td>1人だけで使う人（Proで足ります）</td></tr><tr><td>AIスクール・講座</td><td>スクールにより違う。給付金の対象講座もある</td><td>仕事での使い方を、決まった期間で体系的に身につけたい人</td><td>Claudeの上限だけが悩みの人（Proのほうが安く済みます）</td></tr></tbody></table></div><p class="ui-also"><strong>同じ道具の記事:</strong><a href="/claude-howto-beginner-3steps/">Claude使い方 初心者向け|最初の3手順と無料・有料の違い</a></p>
+<p>有料プランにも上限はあります。お金を払えば何でも解決する、というものではない点は覚えておいてください。講座の選び方と給付金の条件は <a href="/ai-school-comparison-subsidy/">AIスクール比較【2026年】給付金対象と自己負担で選ぶ</a> で比べています。</p>
+<h3 id="このサイトの関係する記事">このサイトの関係する記事</h3>
+<ul><li><a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a></li><li><a href="/claude-pro-price-jpy/">Claude Pro料金|日本円の実額を月払い・年払い別に表で</a></li><li><a href="/claude-project-usage-guide/">Claudeプロジェクト使い方|作成から共有まで5手順と比較表</a></li><li><a href="/claude-code-how-to-use-free/">Claude Code使い方|無料の範囲と料金表・導入7手順</a></li></ul>
+<aside class="ui-pick" aria-label="この記事のまとめ: 最初の一歩"><p class="ui-pick-k">迷ったら、まずこれ</p><p class="ui-pick-h">無料プランのまま</p><p>初めて使う。上限にはまだ届いたことがないなら。</p><p class="ui-cta"><a class="ui-btn ui-btn-primary" href="https://claude.ai" rel="noopener">公式サイトを見る</a></p><p class="ui-pick-n">この記事の「あなたに合うのはどれ?」の表の1行目です。料金・条件は変わることがあるので、申し込む前に公式の情報で確かめてください。</p></aside><h2 id="よくある質問">よくある質問</h2>
+<h3 id="claude無料版は1日何回まで使えますか">Claude無料版は1日何回まで使えますか?</h3>
+<p>公式は「1日○回」という数字を出していません。無料プランの上限は5時間ごとにリセットされ、送れるメッセージ数は混み具合で変わる、と説明されています（<a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>）。短い質問なら多く送れますし、長いファイルを読ませると少なくなります。</p>
+<h3 id="制限は夜中の0時にリセットされますか">制限は夜中の0時にリセットされますか?</h3>
+<p>されません。無料プランの上限は5時間単位のセッションで、日付とは関係なく戻ります。正確な時刻は、上限に届いたときの「resets [time]」の表示で確かめてください。</p>
+<h3 id="無料プランでopusは使えますか">無料プランでOpusは使えますか?</h3>
+<p>2026年10月時点の公式の料金ページでは、無料で使えるのはSonnetとHaikuです。Opusは Pro以上で使えます（<a href="https://claude.com/ja-jp/pricing" rel="noopener">料金</a>）。</p>
+<h3 id="proにすれば制限は無くなりますか">Proにすれば制限は無くなりますか?</h3>
+<p>無くなりません。Proは5時間あたり無料の少なくとも5倍使えますが、5時間の上限と週の上限があります（<a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" rel="noopener">What is the Pro plan?</a>）。上限を超えて使いたいときは、利用クレジットを有効にすると続けられます。</p>
+<h3 id="web検索をオンにすると早く上限に届きますか">Web検索をオンにすると早く上限に届きますか?</h3>
+<p>届きやすくなります。公式ヘルプは、Web検索とWebページの読み込みは、どちらも無料プランの上限に数えられると書いています（<a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener">Enable and use web search</a>）。検索が要らない作業ではオフにしておくのが無難です。</p>
+<h2 id="出典">出典</h2>
+<ul><li><a href="https://claude.com/pricing" rel="noopener">Claude 料金（英語）</a>（2026-10-28確認）</li><li><a href="https://claude.com/ja-jp/pricing" rel="noopener">Claude 料金（日本語）</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/8114491-get-started-with-claude" rel="noopener">Get started with Claude</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" rel="noopener">How do usage and length limits work?</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/9797557-usage-limit-best-practices" rel="noopener">Usage limit best practices</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener">Enable and use web search</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/12466728-troubleshoot-claude-error-messages" rel="noopener">Troubleshoot Claude error messages</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/8325606-what-is-the-pro-plan" rel="noopener">What is the Pro plan?</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/11049741-what-is-the-max-plan" rel="noopener">What is the Max plan?</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/9266767-what-is-the-team-plan" rel="noopener">What is the Team plan?</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans" rel="noopener">Manage usage credits for paid Claude plans</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/17007452-what-is-a-limit-reset" rel="noopener">What is a limit reset?</a>（2026-10-28確認）</li><li><a href="https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan" rel="noopener">Using Claude Code with your Pro or Max plan</a>（2026-10-28確認）</li><li><a href="https://status.claude.com" rel="noopener">Claude Status</a></li></ul>
+<p>検索上位の構成確認に使ったページ（内容は写していません）:</p>
+<ul><li><a href="https://cloudpack.jp/column/generative-ai/claude-free-limit-guide.html" rel="noopener">Claude 無料版の制限完全ガイド（cloudpack）</a></li><li><a href="https://ai-navi.app/articles/claude-free-limit" rel="noopener">Claude無料版の制限まとめ（ai-navi）</a></li><li><a href="https://uravation.com/media/claude-opus-free-guide-2026/" rel="noopener">Claude Opusは無料で使える？（Uravation）</a></li></ul>
+<h2 id="次に検討するなら-pr">次に検討するなら(PR)</h2>
+<ul><li><a href="https://af.moshimo.com/af/c/click?a_id=5857977&amp;p_id=6298&amp;pc_id=17753&amp;pl_id=81511" rel="sponsored nofollow noopener">バイテック生成AI(生成AIのオンラインスクール・無料説明会)</a> — 生成AIを仕事で使う力を学ぶオンラインスクール。説明会で内容を確かめられます</li><li><a href="https://af.moshimo.com/af/c/click?a_id=5857980&amp;p_id=7629&amp;pc_id=22069&amp;pl_id=95321" rel="sponsored nofollow noopener">バイテックGEEK(Claude Code 特化のオンラインAIプログラミングスクール・無料説明会)</a> — Claude Code を使った開発を学ぶオンラインスクール。説明会で内容を確かめられます</li></ul><aside class="credit" aria-label="この記事の作り方"><p><strong>この記事の作り方</strong>: 各サービスの公式ページ・ヘルプなどの公開情報を、AI の助けを借りて調べてまとめ、出典・誇張・PR 表示の自動の点検を通してから公開しています。体験談や試した結果は書いていません(<a href="/about/">編集方針</a>)。</p><p>公式の情報で確かめた日: <time datetime="2026-10-28">2026年10月28日</time></p></aside><p class="note">内容の誤りや古くなった情報に気づいたら、<a href="mailto:shigoto.ai.note@gmail.com">shigoto.ai.note@gmail.com</a> までお知らせください。記事は順番に公式の情報で確かめ直しています。</p></article><section class="related ui-nx" aria-labelledby="ui-nx-h"><div class="ui-nxh"><h2 id="ui-nx-h">次に読む</h2><div class="mx-ctl"></div></div><ol class="ui-nxr" id="ui-nxr" data-mx="前へ|次へ" tabindex="0" aria-label="次に読む(横にスクロールできます)"><li><p class="d"><time datetime="2026-10-19">2026年10月19日</time> · 16分で読めます</p><h3><a href="/claude-shikata-muryou-hani/">Claudeの使い方|無料で始める4手順とProに替える判断表</a></h3><p>「claude 使い方 無料」で調べた人向けに、無料プランでできることと始め方の4手順を説明します。公式ヘルプをもとに、5時間ごとの利用制限、使える量が減りやすい使い方、Proに替える目安も表にしました。</p></li><li><p class="d"><time datetime="2026-10-22">2026年10月22日</time> 更新 · 29分で読めます</p><h3><a href="/chatgpt-claude-copilot-tsukaiwake/">ChatGPT・Claude・Copilot使い分け|料金と用途の比較表</a></h3><p>ChatGPT・Claude・Copilotの使い分けを、資料作成はChatGPT、社内データ参照はMicrosoft 365 Copilot、複数ファイルのコードはClaude Codeと場面別に整理。2026年10月時点の料金と注意点も解説。</p></li><li><p class="d"><time datetime="2026-10-17">2026年10月17日</time> · 15分で読めます</p><h3><a href="/claude-howto-beginner-3steps/">Claude使い方 初心者向け|最初の3手順と無料・有料の違い</a></h3><p>Claudeの使い方を初心者向けに3手順で解説。無料登録と最初に見る設定、最初に入れる文章のひな形、返答の直させ方まで、画面の言葉どおりに紹介します。つまずきやすい所の直し方と料金の目安ものせています。</p></li></ol><div class="mx-foot" aria-hidden="true"><p class="mx-count"><b>1</b> / 3</p><span class="mx-bar"><i style="--p:0.3333"></i></span></div></section></main><footer><p><strong>AIツール比較</strong> — AIツールの比較と仕事での使い方(ChatGPT・Claude・Copilot の使い分け、GAS での業務の自動化)を公式情報で解説</p>
+<p><a href="/">記事一覧</a> · <a href="/about/">このサイトについて・編集方針</a> · <a href="/privacy/">プライバシーポリシー</a> · <a href="/feed.xml">RSS</a></p><p>© 2026 AIツール比較</p></footer><script src="/ui.js" defer></script><script id="ui-motion-js">(function(){if(!window.IntersectionObserver||matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var h=innerHeight,io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);e.target.classList.remove('m-w')}})},{rootMargin:'0px 0px -6% 0px'});[].forEach.call(d.querySelectorAll('article>*:not(.ui-cards),main>*:not(article):not(.ui-cards):not(.crumbs),.ui-cards>li'),function(el){if(el.getBoundingClientRect().top>h){el.classList.add('m-w','m-in');io.observe(el)}})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();document.addEventListener('touchstart',function(){},{passive:true});(function(){function go(){var a=d.querySelector('article');if(!a)return;var b=d.querySelector('.ui-bar'),t=0;if(!b){b=d.createElement('div');b.className='ui-bar';b.setAttribute('aria-hidden','true');d.body.appendChild(b)}function u(){t=0;var h=a.offsetHeight-innerHeight;b.style.transform='scaleX('+Math.min(1,Math.max(0,-a.getBoundingClientRect().top/(h>0?h:1)))+')'}addEventListener('scroll',function(){if(!t){t=1;requestAnimationFrame(u)}},{passive:true});u()}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();(function(){var R=matchMedia('(prefers-reduced-motion: reduce)').matches,P='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="';function go(){[].forEach.call(d.querySelectorAll('[data-mx]'),function(r){var it=r.children,n=it.length,w=r.parentNode,c=w.querySelector('.mx-ctl'),ds=w.querySelector('.mx-dots'),ps=w.querySelector('.mx-pos'),L=r.getAttribute('data-mx').split('|'),k=-1,u=0,s=0,v=0,h=0,q=0;if(n<2||!c||c.firstChild)return;function to(i){i=(i+n)%n;r.scrollTo({left:it[i].offsetLeft-it[0].offsetLeft,behavior:R?'auto':'smooth'})}function b(i,l,p){var e=d.createElement('button');e.type='button';e.className='mx-btn';e.setAttribute('aria-label',l);e.setAttribute('aria-controls',r.id);e.innerHTML=P+p+'"/></svg>';e.onclick=function(){s=u=1;to(k+i)};c.appendChild(e)}b(-1,L[0],'M19 12H5M12 19l-7-7 7-7');b(1,L[1],'M5 12h14M12 5l7 7-7 7');for(var i=0;ds&&i<n;i++)ds.appendChild(d.createElement('i'));function up(){q=0;var x=r.scrollLeft,j=0,m;if(x+r.clientWidth>=r.scrollWidth-4)j=n-1;else for(m=1;m<n;m++)if(it[m].offsetLeft-it[0].offsetLeft<=x+8)j=m;if(j==k)return;k=j;if(ds)for(m=0;m<n;m++)ds.children[m].className=m==k?'on':'';if(u&&ps)ps.textContent=(k+1)+' / '+n}r.addEventListener('scroll',function(){if(!q){q=1;requestAnimationFrame(up)}},{passive:true});up();['pointerdown','wheel','keydown','touchstart','focusin'].forEach(function(e){w.addEventListener(e,function(){s=u=1},{passive:true})});w.addEventListener('mouseenter',function(){h=1});w.addEventListener('mouseleave',function(){h=0});if(R||!r.hasAttribute('data-mx-auto')||!window.IntersectionObserver)return;new IntersectionObserver(function(es){v=es[0].isIntersecting},{threshold:.6}).observe(r);setInterval(function(){if(v&&!s&&!h&&!d.hidden)to(k+1)},5000)})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();(function(){function go(){[].forEach.call(d.querySelectorAll('[data-mx]'),function(r){var w=r.parentNode,c=w.querySelector('.mx-count b'),b=w.querySelector('.mx-bar i'),it=r.children,n=it.length,q=0;if(!c||n<2)return;function u(){q=0;var x=r.scrollLeft,j=0,m;if(x+r.clientWidth>=r.scrollWidth-4)j=n-1;else for(m=1;m<n;m++)if(it[m].offsetLeft-it[0].offsetLeft<=x+8)j=m;c.textContent=j+1;if(b)b.style.setProperty('--p',(j+1)/n)}r.addEventListener('scroll',function(){if(!q){q=1;requestAnimationFrame(u)}},{passive:true});u()})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();(function(){if(!window.IntersectionObserver||matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var h=innerHeight,io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);e.target.classList.add('m-ld')}})},{rootMargin:'0px 0px -10% 0px'});[].forEach.call(d.querySelectorAll('main h2,main .tbl,main .table-wrap'),function(t){if(!(t.getBoundingClientRect().top>h)||t.closest('.hx,.ui-nx,.ui-find'))return;var c=t.matches('h2')?t.nextElementSibling:t.querySelector('table');if(!c||/^H\d$/.test(c.tagName))return;t.classList.add('m-l');c.classList.add('m-w','m-c');io.observe(t)})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();(function(){if(!window.IntersectionObserver||matchMedia('(prefers-reduced-motion: reduce)').matches)return;function go(){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;var e=x.target,t=e.textContent,k=0,h='<span class="od-sr">'+t.replace(/[<&]/g,'')+'</span>',i,c;io.unobserve(e);for(i=0;i<t.length;i++){c=t.charAt(i);h+=/\d/.test(c)?'<span class="od" aria-hidden="true"><span class="od-s" data-d="'+c+'">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</span></span>':'<span aria-hidden="true">'+c.replace(/[<&]/g,'')+'</span>'}e.innerHTML=h;[].forEach.call(e.querySelectorAll('.od-s'),function(s){s.style.transitionDelay=(k++*.08)+'s';requestAnimationFrame(function(){requestAnimationFrame(function(){s.style.setProperty('--y',s.getAttribute('data-d'))})})})})},{threshold:.6});[].forEach.call(d.querySelectorAll('[data-od]'),function(e){io.observe(e)})}var d=document;d.readyState=='loading'?d.addEventListener('DOMContentLoaded',go):go()})();</script><script id="ui-look-js">(function(){var d=document,q0=(new URLSearchParams(location.search).get('q')||'').trim(),q=q0.toLowerCase();if(!q)return;var t=d.querySelector('main table'),ja=/^ja/.test(d.documentElement.lang);if(!t||!t.tBodies[0])return;var w=q.split(/\s+/),n=0;[].forEach.call(t.tBodies[0].rows,function(r){var x=r.textContent.toLowerCase(),m=w.every(function(k){return x.indexOf(k)>-1});r.hidden=!m;if(m)n++});var p=d.createElement('p'),a=d.createElement('a');p.className='ui-qn';p.setAttribute('role','status');p.textContent=ja?'「'+q0+'」を含む行: '+n+'件':'Rows matching “'+q0+'”: '+n;a.href=location.pathname;a.textContent=ja?'すべて表示':'Show all';p.appendChild(a);(t.closest('.table-wrap,.tbl')||t).insertAdjacentElement('beforebegin',p)})();</script></body></html>
