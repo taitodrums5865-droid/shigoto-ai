@@ -100,6 +100,12 @@ body > header{position:relative;padding-right:120px}body > header .ui-menu-btn{p
 .ui-side p{font-weight:700;color:var(--sub);margin:0 0 6px;font-size:.8125rem}.ui-side ol{list-style:none;padding:0;margin:0}.ui-side li{margin:0}
 .ui-side a{display:block;padding:5px 0;color:var(--sub);text-decoration:none;line-height:1.4}.ui-side a:hover,.ui-side a.on{color:var(--accent)}.ui-side a.on{font-weight:700}
 .ui-fab button{display:none}}
+@media (min-width:1240px){.ui-side{width:min(260px,calc(50vw - 48px - var(--col,44rem) / 2));overscroll-behavior:contain}}
+/* スマホの表: 読み上げ用の題(caption)が横にはみ出して、ページ全体が横に動いていた(2026-10-30) */
+@media (max-width:640px){table.ui-stack caption.ui-cap-sr{position:absolute;width:1px;height:1px;overflow:hidden}
+  article table.ui-stack td:first-child{position:static;box-shadow:none}}
+.ui-side.ui-off{opacity:0;visibility:hidden}.ui-fab.ui-tuck{transform:translateY(calc(100% + 24px));opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:no-preference){.ui-side{transition:opacity .2s,visibility .2s}.ui-fab{transition:transform .2s ease-out,opacity .2s}}
 @media (prefers-reduced-motion:reduce){.ui-drawer,.ui-scrim{transition:none}html{scroll-behavior:auto}}
 @media print{.ui-bar,.ui-fab,.ui-drawer,.ui-scrim,.ui-menu-btn{display:none}}
 :root{--font-body:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","BIZ UDPGothic",Meiryo,system-ui,sans-serif;--font-head:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","BIZ UDPMincho",serif;--font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Noto Sans Mono",monospace;--mark-ch:"AI";--mark-fs:.75rem;--fs-body:1.0625rem;--lh-body:1.85;--ls-body:.02em;--ls-head:.02em;--measure:40em;--page:1120px;--col:44rem;--danger-bg:#faf3e8;--danger-tx:#6e4a12;--danger-bd:#c8a46e;--warn-bg:#faf3e8;--warn-tx:#6e4a12;--warn-bd:#c8a46e;--ok-bg:#f5f6f8;--ok-tx:#1b1f24;--code-bg:var(--s2);--code-ink:var(--ink);--code-sub:var(--sub);--code-line:var(--line);--bg:#ffffff;--card:#ffffff;--surface:#ffffff;--s2:#f5f6f8;--pre:#f5f6f8;--ink:#1b1f24;--sub:#4f5964;--line:#e3e6ea;--border:#8a939d;--accent:#1f4f7a;--link:#1f4f7a;--on-accent:#ffffff;--due-bg:#faf3e8;--due-tx:#6e4a12;--focus:#1f4f7a;--head-bg:#ffffff;--head-ink:#1b1f24;--head-sub:#4f5964;--hover:#f6f7f9;}
